@@ -1,0 +1,114 @@
+[
+    {
+      "title": "Full Stack Software Engineering Bootcamp",
+      "description": "Completed an intensive 520-hour live bootcamp, mastering full-stack development, RESTful APIs, authentication, responsive design, and agile methodologies.",
+      "image": "https://picsum.photos/seed/bootcamp/400/300",
+      "tools": "React,Node.js,Express,PostgreSQL,TailwindCSS,Git,Docker",
+      "category": "Software Development"
+    },
+    {
+      "title": "Cloud Solutions Implementation",
+      "description": "Served as a Cloud & Data Associate Consultant at Insight Enterprises. Contributed to cloud solutions implementation using Azure, designed robust data governance frameworks.",
+      "image": "https://picsum.photos/seed/cloud/400/300",
+      "tools": "Azure,AWS,Terraform,Git,Docker",
+      "category": "Project Management"
+    },
+    {
+      "title": "Cybersecurity Cloud Migration",
+      "description": "Led the migration of critical Office 365 and Azure security components for a firearms manufacturer, reinforcing cybersecurity infrastructure.",
+      "image": "https://picsum.photos/seed/cybersecurity/400/300",
+      "tools": "Azure,AWS,Security Hub,Active Directory,Database",
+      "category": "Software Development"
+    },
+    {
+      "title": "Unfinished Project Completion",
+      "description": "Rescued an unfinished project, finalized KPIs, streamlined financial reports, and collaborated with third-party resources.",
+      "image": "https://picsum.photos/seed/projectcompletion/400/300",
+      "tools": "React,Node.js,Python,Power BI",
+      "category": "Project Management"
+    },
+    {
+      "title": "Full Stack Web Development Projects",
+      "description": "Designed and developed full-stack web applications as a freelance engineer, integrating modern web technologies to meet business needs.",
+      "image": "https://picsum.photos/seed/webdev/400/300",
+      "tools": "React,Next.js,TailwindCSS,Git,PostgreSQL,MongoDB,Docker",
+      "category": "Software Development"
+    },
+    {
+      "title": "Machine Learning Workout App",
+      "description": "Co-developing a machine learning-driven workout app for personalized exercise regimens, utilizing ML algorithms and React/Next.js.",
+      "image": "https://picsum.photos/seed/mlapp/400/300",
+      "tools": "React,Next.js,Python,Pandas,Scikit-learn,TensorFlow,PyTorch",
+      "category": "Other Projects"
+    },
+    {
+      "title": "Virtual Reality Game",
+      "description": "Developed an immersive virtual reality game using Unity and C#, focusing on interactive gameplay and stunning visuals.",
+      "image": "https://picsum.photos/seed/vrgame/400/300",
+      "tools": "Unity,C#,VR,Oculus SDK",
+      "category": "Other Projects"
+    },
+    {
+      "title": "E-commerce Platform",
+      "description": "Created a scalable e-commerce platform with secure payment integration and a responsive design for an enhanced user experience.",
+      "image": "https://picsum.photos/seed/ecommerce/400/300",
+      "tools": "React,Node.js,Express,Stripe API,MongoDB,TailwindCSS",
+      "category": "Software Development"
+    },
+    {
+      "title": "AWS EC2 Hosted Website",
+      "description": "Deployed a fully functional web application using an AWS EC2 instance, ensuring security, scalability, and uptime monitoring for production-level performance.",
+      "image": "https://picsum.photos/seed/ec2/400/300",
+      "tools": "AWS,EC2,Nginx,React,Node.js,MongoDB,Docker",
+      "category": "Software Development"
+    },
+    {
+      "title": "SQL Database Management Project",
+      "description": "Built an advanced SQL database management system during MIS coursework, creating complex queries to handle customer data and business metrics.",
+      "image": "https://picsum.photos/seed/sql/400/300",
+      "tools": "MySQL,PostgreSQL,Draw.io",
+      "category": "MIS Projects"
+    },
+    {
+      "title": "Marketing Analytics and A/B Testing",
+      "description": "Executed A/B testing for a digital marketing campaign, optimizing email click-through rates and conversion rates. Performed statistical analysis using marketing analytics techniques.",
+      "image": "https://picsum.photos/seed/abtesting/400/300",
+      "tools": "Google Analytics,Python,Pandas,Excel",
+      "category": "Marketing"
+    },
+    {
+      "title": "Chase Sapphire Rewards Case Study",
+      "description": "Performed an in-depth case study analyzing the Chase Sapphire Rewards Card, its customer segmentation, value proposition, and market impact.",
+      "image": "https://picsum.photos/seed/chase/400/300",
+      "tools": "Qualtrics,PowerPoint,Excel",
+      "category": "Marketing"
+    },
+    {
+      "title": "Monster Energy HR Consulting Project",
+      "description": "Developed a human resources consulting plan for Monster Energy, focusing on workforce revitalization and strategies for employee retention.",
+      "image": "https://picsum.photos/seed/monster/400/300",
+      "tools": "PowerPoint,Excel,Qualtrics",
+      "category": "Marketing"
+    },
+    {
+      "title": "ERP System Analysis",
+      "description": "Walked through ERP system analysis for a theoretical business, evaluating business processes and designing workflows for system integration.",
+      "image": "https://picsum.photos/seed/erp/400/300",
+      "tools": "PowerPoint,Visio",
+      "category": "MIS Projects"
+    },
+    {
+      "title": "Big Data Health Watch Analysis",
+      "description": "Used Kaggle health fitness watch data to perform big data analysis using machine learning models. Conducted feature extraction and provided insights using Jupyter Notebook.",
+      "image": "https://picsum.photos/seed/bigdata/400/300",
+      "tools": "Python,Pandas,Jupyter Notebook,Kaggle,TensorFlow",
+      "category": "MIS Projects"
+    },
+    {
+      "title": "UX/UI Design Study",
+      "description": "Studied advanced UX/UI principles, conducting user testing and designing wireframes to optimize user experience on web and mobile platforms.",
+      "image": "https://picsum.photos/seed/uxui/400/300",
+      "tools": "Figma,Draw.io,TheUXCookbook",
+      "category": "MIS Projects"
+    }
+  ]

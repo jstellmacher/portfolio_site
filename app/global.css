@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+section {
+  min-height: 100vh; /* Ensures sections are tall enough to be scrollable */
+}
+/* global.css */
+/* global.css */
+.global-cube {
+  position: fixed; /* Ensure it stays in place */
+  top: 0;
+  right: 0;
+  height: 100vh; /* Full height */
+  width: 50vw; /* Adjust width as needed */
+  z-index: -1; /* Ensure it's behind other content */
+  pointer-events: none; /* Allow clicks to pass through */
+}
+canvas {
+  position: absolute; /* or relative, fixed, sticky */
+  z-index: 1; /* Ensure this is lower than the z-index of other elements */
+}
+@keyframes bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bobbing {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-bob {
+  animation: bobbing 1.5s ease-in-out infinite;
+}
+/* Add this to your global CSS file */
+
+@keyframes bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hover\:animate-bob:hover {
+  animation: bob 0.5s ease-in-out;
+}/* Add this CSS to your stylesheet */
+.parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+.parallax-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateY(calc(-50% + var(--scroll-y)));
+  z-index: 0;
+}
+/* global.css or a specific PDF viewer CSS file */
+.pdf-viewer-container {
+  max-width: 100%;
+  height: auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resume-page {
+  padding: 2rem;
+  text-align: center;
+}
