@@ -27,7 +27,7 @@ const HeroSection = () => {
     <div className="relative flex flex-col lg:flex-row items-center justify-between p-4 bg-transparent text-white min-h-screen">
       <div className="flex flex-col items-center lg:items-start space-y-2 lg:w-1/2">
         <div 
-          className={`w-64 h-64 rounded-full overflow-hidden mb-2 bg-white shadow-lg cursor-pointer transition-all duration-300 ${isFlipped ? 'rotate-y-180' : ''} hover:shadow-[0_0_20px_5px_rgba(59,130,246,0.7)] hover:scale-105`}
+          className={`w-64 h-64 rounded-full overflow-hidden mb-2 cursor-pointer transition-all duration-300 ${isFlipped ? 'rotate-y-180' : ''} hover:shadow-[0_0_20px_5px_rgba(0,162,255,0.7)]`}
           onClick={handleImageClick}
         >
           <div className="relative w-full h-full transition-transform duration-500 transform-style-3d">
@@ -37,7 +37,6 @@ const HeroSection = () => {
                 alt="Jaichuang Stellmacher giving a thumbs up, showcasing enthusiasm and positivity"
                 layout="fill"
                 objectFit="cover"
-                className="p-1" // Added padding to reduce margins
               />
             </div>
             <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-green-400 flex items-center justify-center text-black font-bold text-2xl p-4 text-center">
