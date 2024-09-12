@@ -19,7 +19,7 @@ const resizeRendererToDisplaySize = (renderer) => {
   return false;
 };
 
-const RotatingSquid = ({ scrollY, modelPath }) => {
+const RotatingSquid = ({ scrollY, modelPath, rotationSpeed = 0.005 }) => {
   const squidModel = useLoader(GLTFLoader, modelPath, (loader) => {
     loader.onError = (error) => {
       console.error('Error loading GLTF model:', error);
@@ -42,7 +42,7 @@ const RotatingSquid = ({ scrollY, modelPath }) => {
     }
 
     if (squidMeshRef.current) {
-      squidMeshRef.current.rotation.y = scrollY * 0.01; // Apply rotation based on scroll
+      squidMeshRef.current.rotation.y = scrollY * rotationSpeed; // Reduced multiplier
     }
   });
 
@@ -76,12 +76,10 @@ const SquidScene = ({ scrollY }) => (
         {/* Glass Effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent to-blue-800 opacity-40 z-10"></div>
         
-        {/* Video */}
-        <video 
-          src="/assets/3765059-uhd_3840_2160_30fps.mp4" 
-          autoPlay
-          loop
-          muted
+        {/* Placeholder Image */}
+        <img 
+          src="https://picsum.photos/1920/1080" 
+          alt="Underwater scene"
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
         

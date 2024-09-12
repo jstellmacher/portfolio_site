@@ -117,3 +117,14 @@ canvas {
   padding: 2rem;
   text-align: center;
 }
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
