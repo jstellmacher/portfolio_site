@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import LoginForm from './LoginForm'; // We'll create this component next
-import { FaUser, FaBars, FaTimes, FaHome } from 'react-icons/fa'; // Import the user icon
+import { FaUser, FaBars, FaTimes, FaHome, FaBriefcase } from 'react-icons/fa'; // Added FaBriefcase icon
 
 const Navigation = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -83,6 +83,7 @@ const Navigation = () => {
             <div className="absolute top-full left-0 right-0 bg-gray-900 py-2 px-4 z-50">
               <NavLink href="#about" label="About" color="green" mobile onClick={toggleMenu} smoothScroll={smoothScroll} />
               <NavLink href="#projects" label="Projects" color="blue" mobile onClick={toggleMenu} smoothScroll={smoothScroll} />
+              <NavLink href="#experience" label="Work" color="yellow" mobile onClick={toggleMenu} smoothScroll={smoothScroll} />
               <NavLink href="#contact" label="Contact" color="purple" mobile onClick={toggleMenu} smoothScroll={smoothScroll} />
               <LoginButton isLoggedIn={isLoggedIn} onClick={isLoggedIn ? handleLogout : handleLoginClick} mobile />
             </div>
@@ -92,6 +93,7 @@ const Navigation = () => {
         <div className="flex items-center space-x-2 sm:space-x-4">
           <NavLink href="#about" label="About" color="green" smoothScroll={smoothScroll} />
           <NavLink href="#projects" label="Projects" color="blue" smoothScroll={smoothScroll} />
+          <NavLink href="#experience" label="Work" color="yellow" smoothScroll={smoothScroll} />
           <NavLink href="#contact" label="Contact" color="purple" smoothScroll={smoothScroll} />
           <LoginButton isLoggedIn={isLoggedIn} onClick={isLoggedIn ? handleLogout : handleLoginClick} />
         </div>
@@ -125,7 +127,7 @@ const LoginButton = ({ isLoggedIn, onClick, mobile }) => (
   <button
     onClick={onClick}
     className={`
-      ${mobile ? 'w-full text-left py-2 text-white' : 'p-1 sm:p-2 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-yellow-600 active:bg-yellow-700 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10'}
+      ${mobile ? 'w-full text-left py-2 text-white' : 'p-1 sm:p-2 bg-orange-500 text-white rounded-lg shadow-md hover:bg-orange-600 active:bg-orange-700 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10'}
       transition duration-300
     `}
     aria-label={isLoggedIn ? "Logout" : "Login"}
