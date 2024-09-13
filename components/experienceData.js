@@ -1,4 +1,11 @@
-import { FaCloud, FaDatabase, FaUniversity, FaCode, FaPython, FaCashRegister, FaLeaf, FaHammer } from 'react-icons/fa';
+import { FaDatabase, FaUniversity, FaPython, FaCashRegister, FaLeaf, FaHammer, FaTshirt } from 'react-icons/fa';
+import { AiOutlineCloudServer } from 'react-icons/ai';
+import { CiCoffeeCup } from 'react-icons/ci';
+import { GiMeat, GiPlantWatering, GiTechnoHeart } from 'react-icons/gi';
+import { LuCroissant } from 'react-icons/lu';
+import { TbGardenCart, TbPlant, TbDeviceDesktopAnalytics, TbCube3dSphere } from 'react-icons/tb';
+import { LiaLaptopCodeSolid } from 'react-icons/lia';
+import { MdOutlineAnalytics } from 'react-icons/md';
 
 // Helper function to parse and sort roles by date
 const sortRolesByDate = (roles) => {
@@ -12,14 +19,14 @@ const sortRolesByDate = (roles) => {
 export const experiences = [
   {
     section: 'Technical Experience',
-    icon: () => <FaCloud className="text-blue-600 text-6xl" />,
+    icon: () => <GiTechnoHeart className="text-blue-600 text-6xl" />,
     roles: sortRolesByDate([
       {
         title: 'Cloud & Data Associate Consultant',
         company: 'Insight Enterprises',
         location: 'Chandler, Arizona',
         duration: 'Jul. 17, 2023 – Mar. 5, 2024',
-        icon: () => <FaDatabase className="text-purple-600 text-5xl" />,
+        icon: () => <AiOutlineCloudServer className="text-blue-600 text-5xl" />,
         category: 'technical',
         description: [
           'Led data governance initiatives to support data-driven decision-making using Azure tools.',
@@ -58,7 +65,7 @@ export const experiences = [
         company: 'Freelance Client',
         location: 'Denver, Colorado',
         duration: 'Mar. 2, 2023 – May 1, 2023',
-        icon: () => <FaCode className="text-green-600 text-5xl" />,
+        icon: () => <LiaLaptopCodeSolid className="text-green-600 text-5xl" />,
         category: 'technical',
         description: [
           'Managed full lifecycle web development projects from planning to execution.',
@@ -70,7 +77,7 @@ export const experiences = [
         company: 'University of Arizona Information Technology',
         location: 'Tucson, Arizona',
         duration: 'Jan. 2022 – Dec. 2022',
-        icon: () => <FaUniversity className="text-red-600 text-5xl" />,
+        icon: () => <TbDeviceDesktopAnalytics className="text-red-600 text-5xl" />,
         category: 'technical',
         description: [
           'Conducted website testing to enhance user experience and accessibility.',
@@ -83,7 +90,7 @@ export const experiences = [
         company: 'Biosphere 2 Tech Core',
         location: 'Tucson, Arizona',
         duration: 'Jun. 2021 – Aug. 2021',
-        icon: () => <FaPython className="text-yellow-600 text-5xl" />,
+        icon: () => <TbCube3dSphere className="text-yellow-600 text-5xl" />,
         category: 'technical',
         description: [
           'Collaborated with cross-functional teams to streamline data processing workflows.',
@@ -98,11 +105,17 @@ export const experiences = [
     icon: () => <FaCashRegister className="text-orange-600 text-6xl" />,
     roles: sortRolesByDate([
       {
-        title: 'Deli Clerk & Cashier',
+        title: 'Deli Clerk, Barista & Cashier',
         company: 'Safeway & Starbucks',
         location: 'Arizona',
         duration: 'Apr. 2024 – Present',
-        icon: () => <FaCashRegister className="text-pink-600 text-5xl" />,
+        icon: () => (
+          <div className="flex items-center">
+            <GiMeat className="text-pink-600 text-5xl mr-2" />
+            <FaCashRegister className="text-pink-600 text-5xl mr-2" />
+            <CiCoffeeCup className="text-pink-600 text-5xl" />
+          </div>
+        ),
         category: 'service',
         description: [
           'Provided high-quality service, enhancing customer loyalty.',
@@ -111,11 +124,17 @@ export const experiences = [
         ]
       },
       {
-        title: 'Barista / Cashier',
+        title: 'Barista & Cashier',
         company: 'La Petit, UofA Campus',
         location: 'Tucson, Arizona',
         duration: 'Aug. 2019 – Dec. 2019',
-        icon: () => <FaCashRegister className="text-teal-600 text-5xl" />,
+        icon: () => (
+          <div className="flex items-center">
+            <CiCoffeeCup className="text-teal-600 text-5xl mr-2" />
+            <FaCashRegister className="text-teal-600 text-5xl mr-2" />
+            <LuCroissant className="text-teal-600 text-5xl" />
+          </div>
+        ),
         category: 'service',
         description: [
           'Adhered to food safety protocols and delivered quick service.',
@@ -128,23 +147,39 @@ export const experiences = [
         company: 'Homco Lumber and Hardware',
         location: 'Flagstaff, Arizona',
         duration: 'Aug. 2018 – Aug. 2019',
-        icon: () => <FaHammer className="text-indigo-600 text-5xl" />,
+        icon: () => (
+          <div className="flex items-center">
+            <FaTshirt className="text-indigo-600 text-5xl mr-2" />
+            <FaHammer className="text-indigo-600 text-5xl mr-2" />
+            <TbGardenCart className="text-indigo-600 text-5xl" />
+          </div>
+        ),
         category: 'service',
         description: [
           'Assisted customers with detailed product information on tools, plumbing, and electrical equipment.',
-          'Managed inventory levels and ensured accurate product stocking.'
+          'Managed inventory levels and ensured accurate product stocking.',
+          'Handled Carhartt clothing sales and inventory management.',
+          'Operated the lumberyard booth, efficiently processing transactions and reading change backwards.'
         ]
       },
       {
-        title: 'Garden Center Specialist',
+        title: 'Garden Center Retailer',
         company: 'Viola\'s Flower Garden',
         location: 'Flagstaff, Arizona',
         duration: 'May 2015 – Aug. 2017',
-        icon: () => <FaLeaf className="text-green-800 text-5xl" />,
+        icon: () => (
+          <div className="flex items-center">
+            <TbPlant className="text-green-800 text-5xl mr-2" />
+            <FaLeaf className="text-green-800 text-5xl mr-2" />
+            <GiPlantWatering className="text-green-800 text-5xl" />
+          </div>
+        ),
         category: 'service',
         description: [
           'Maintained nursery health and appearance, ensuring plant longevity.',
-          'Provided expert plant and supply recommendations to customers.'
+          'Provided expert plant care advice and product recommendations to customers.',
+          'Assisted with inventory management and restocking of plants and gardening supplies.',
+          'Demonstrated proper planting techniques and educated customers on plant care requirements.'
         ]
       }
     ])

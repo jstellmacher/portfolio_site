@@ -41,7 +41,7 @@ const ExperienceSection = () => {
               <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-gray-800 flex items-center justify-center space-x-2 sm:space-x-4 bg-gray-200 p-3 sm:p-4 rounded-lg shadow-lg">
                 {expSection.icon()} <span>{expSection.section}</span>
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
                 {expSection.roles.map((role, roleIndex) => (
                   <RoleCard key={roleIndex} role={role} />
                 ))}

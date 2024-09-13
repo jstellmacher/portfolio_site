@@ -9,6 +9,7 @@
 .skill-card:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 
 @keyframes wiggle {
@@ -103,4 +104,48 @@
 .skill-card.glow:hover {
   transform: scale(1.05);
 }
+
+.skill-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem; /* Increased from 1rem */
+  position: relative;
+  max-width: 1200px; /* Added to control overall width */
+  margin: 0 auto; /* Center the container */
+}
+
+.skill-card {
+  width: calc(33.333% - 2rem); /* Adjusted for increased gap */
+  max-width: 450px; /* Increased from 400px */
+  padding: 2rem; /* Increased from 1.5rem */
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 2rem; /* Added to increase vertical spacing */
+}
+
+.skill-card.hovered {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 100%;
+  max-width: 550px; /* Increased from 500px */
+}
+
+@media (max-width: 1200px) {
+  .skill-card {
+    width: calc(50% - 2rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .skill-card {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+/* ... rest of your existing styles ... */
 

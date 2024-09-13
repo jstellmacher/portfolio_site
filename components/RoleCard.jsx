@@ -16,8 +16,8 @@ const RoleCard = ({ role }) => {
         <p className="text-lg font-medium text-gray-700">{role.company} | {role.location}</p>
         <p className="text-gray-600 mb-4">{role.duration}</p>
       </div>
-      <div className="flex-1">
-        <ul className="list-disc list-inside text-gray-800 mb-4">
+      <div className="flex-1 w-full">
+        <ul className="list-disc list-inside text-gray-800 mb-4 text-left">
           {role.description.map((desc, idx) => (
             <li key={idx} className="mb-2">{desc}</li>
           ))}
@@ -39,7 +39,7 @@ const RoleCard = ({ role }) => {
                   transition={{ duration: 0.3 }}
                   className="mt-2"
                 >
-                  <ul className="list-disc list-inside text-gray-700">
+                  <ul className="list-disc list-inside text-gray-700 text-left">
                     {info.details.map((detail, detailIdx) => (
                       <li key={detailIdx} className="mb-2">{detail}</li>
                     ))}

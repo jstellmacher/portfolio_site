@@ -60,10 +60,14 @@ const CTASection = () => {
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
   return (
-    <section id="about" className="py-20 bg-transparent text-center text-white">
+    <section id="about" className="py-20 bg-transparent text-center text-white relative">
       <div className="container mx-auto px-4">
         <div className="bg-white text-gray-800 p-10 rounded-lg shadow-lg mx-auto max-w-4xl mb-16">
-        <FaHandsHelping className="inline-block text-black"/> <MdComputer className="inline-block text-black" /> <h2 className="text-4xl font-extrabold mb-8">About Me</h2>
+          <div className="flex items-center justify-center mb-8">
+            <FaHandsHelping className="text-black text-3xl mr-4" />
+            <h2 className="text-4xl font-extrabold px-4">About Me</h2>
+            <MdComputer className="text-black text-3xl ml-4" />
+          </div>
           <p className="text-lg mb-8 leading-relaxed">
             I'm Jaichuang Stellmacher, a <strong >motivated (Cloud, Data, Digital) Information Technology Consultant</strong> with hands-on experience in <strong className="text-yellow-500 hover:text-yellow-700 cursor-pointer" onMouseEnter={() => setHoveredSkill('cloud')} onMouseLeave={() => setHoveredSkill(null)}>cloud computing</strong>, <strong className="text-green-500 hover:text-green-700 cursor-pointer" onMouseEnter={() => setHoveredSkill('full-stack')} onMouseLeave={() => setHoveredSkill(null)}>full-stack development</strong>, and <strong className="text-blue-500 hover:text-blue-700 cursor-pointer" onMouseEnter={() => setHoveredSkill('project-management')} onMouseLeave={() => setHoveredSkill(null)}>project management</strong>.
           </p>
@@ -76,11 +80,11 @@ const CTASection = () => {
         </div>
 
         {/* Skill Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        <div className="skill-cards-container mx-auto">
           {skills.map((skill) => (
             <div 
               key={skill.title} 
-              className={`skill-card ${skill.color} ${hoveredSkill === skill.key ? 'glow' : ''}`}
+              className={`skill-card ${skill.color} ${hoveredSkill === skill.key ? 'hovered glow' : ''}`}
               style={{ 
                 display: hoveredSkill ? 
                   (skill.key === hoveredSkill ? 'block' : 'none') : 
