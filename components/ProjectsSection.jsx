@@ -62,17 +62,17 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-20 text-center bg-gray-900">
-      <div className="relative z-10">
-        <h2 className="text-5xl font-bold text-white mb-12">Projects</h2>
+    <section id="projects" className="py-12 sm:py-16 md:py-20 text-center bg-gray-900">
+      <div className="w-full sm:w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] mx-auto px-4 sm:px-6">
+        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 sm:mb-12">Projects</h2>
         
-        {/* Updated Category filter buttons */}
-        <div className="flex justify-center space-x-4 mb-8">
+        {/* Category filter buttons */}
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
           {categories.map(category => (
             <button
               key={category}
               onClick={() => setFilter(category)}
-              className={`px-4 py-2 rounded-full text-white transition-colors duration-300 ${
+              className={`px-3 sm:px-4 py-2 rounded-full text-white text-sm sm:text-base transition-colors duration-300 ${
                 filter === category
                   ? getButtonColors(category)
                   : 'bg-gray-700 hover:bg-gray-600'
@@ -83,12 +83,12 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        <div className="p-8 max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="w-full mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
             {filteredProjects.map((project) => (
               <div
                 key={project.title}
-                className={`relative p-6 rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex flex-col h-full bg-gradient-to-br ${getCategoryGradient(project.category)}`}
+                className={`relative p-4 sm:p-6 rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex flex-col h-full bg-gradient-to-br ${getCategoryGradient(project.category)}`}
               >
                 {/* Card Overlay */}
                 <div className="absolute inset-0 bg-black opacity-0 hover:opacity-30 transition-opacity duration-300"></div>
@@ -104,16 +104,16 @@ const ProjectsSection = () => {
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-48 object-cover rounded-lg transition-transform transform hover:scale-110"
+                        className="w-full h-40 sm:h-48 object-cover rounded-lg transition-transform transform hover:scale-110"
                       />
                     </div>
-                    <h3 className="text-2xl font-semibold mb-2 text-gray-800">{project.title}</h3>
-                    <p className="text-gray-600 mb-4">{project.description}</p>
+                    <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-gray-800">{project.title}</h3>
+                    <p className="text-sm sm:text-base text-gray-600 mb-4">{project.description}</p>
                   </div>
 
                   {/* Container for icons */}
                   <div className="mt-auto mb-4">
-                    <div className="flex justify-center space-x-4">
+                    <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
                       {project.tools.split(',').map((tool, index) => {
                         const iconName = tool.toLowerCase().replace('.', '').replace(' ', '');
                         return (
@@ -143,7 +143,7 @@ const ProjectsSection = () => {
                   {/* View Project Button */}
                   <a
                     href={`/projects/${project.title.replace(/\s+/g, '-').toLowerCase()}`}
-                    className="block text-center text-white bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-3 rounded-full shadow-lg transform transition-transform hover:scale-105"
+                    className="block text-center text-white bg-gradient-to-r from-indigo-500 to-purple-600 px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg transform transition-transform hover:scale-105 text-sm sm:text-base"
                   >
                     View Project
                   </a>
