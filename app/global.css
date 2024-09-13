@@ -2,12 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base Layer */
 @layer base {
   body {
     @apply font-sans;
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
   }
 }
 
+/* Root Variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -19,44 +24,35 @@
     --foreground: #ededed;
   }
 }
+
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* Adjust based on navbar height */
+}
+
+body {
+  min-height: 100vh; /* Ensures body is tall enough to be scrollable */
+}
+
+section {
+  min-height: 100vh; /* Ensures sections are tall enough to be scrollable */
+}
+
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
+/* Utilities */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
-html {
-  scroll-behavior: smooth;
-}
-section {
-  min-height: 100vh; /* Ensures sections are tall enough to be scrollable */
-}
-/* global.css */
-/* global.css */
-.global-cube {
-  position: fixed; /* Ensure it stays in place */
-  top: 0;
-  right: 0;
-  height: 100vh; /* Full height */
-  width: 50vw; /* Adjust width as needed */
-  z-index: -1; /* Ensure it's behind other content */
-  pointer-events: none; /* Allow clicks to pass through */
-}
-canvas {
-  position: absolute; /* or relative, fixed, sticky */
-  z-index: 1; /* Ensure this is lower than the z-index of other elements */
-}
+
+/* Animations */
 @keyframes bob {
   0%, 100% {
     transform: translateY(0);
@@ -75,20 +71,40 @@ canvas {
 .animate-bob {
   animation: bobbing 1.5s ease-in-out infinite;
 }
-/* Add this to your global CSS file */
-
-@keyframes bob {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
 
 .hover\:animate-bob:hover {
   animation: bob 0.5s ease-in-out;
-}/* Add this CSS to your stylesheet */
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 1s linear;
+}
+
+/* Layout and Component Styles */
+.global-cube {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50vw;
+  z-index: -1;
+  pointer-events: none;
+}
+
+canvas {
+  position: absolute;
+  z-index: 1;
+}
+
 .parallax {
   position: absolute;
   top: 0;
@@ -100,6 +116,7 @@ canvas {
   background-position: center;
   z-index: -1;
 }
+
 .parallax-bg {
   position: absolute;
   inset: 0;
@@ -109,7 +126,8 @@ canvas {
   transform: translateY(calc(-50% + var(--scroll-y)));
   z-index: 0;
 }
-/* global.css or a specific PDF viewer CSS file */
+
+/* PDF Viewer */
 .pdf-viewer-container {
   max-width: 100%;
   height: auto;
@@ -123,6 +141,8 @@ canvas {
   padding: 2rem;
   text-align: center;
 }
+
+/* Transform Utilities */
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
@@ -133,16 +153,4 @@ canvas {
 
 .transform-style-3d {
   transform-style: preserve-3d;
-}
-@keyframes spin-reverse {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
-}
-
-.animate-spin-reverse {
-  animation: spin-reverse 1s linear;
 }
