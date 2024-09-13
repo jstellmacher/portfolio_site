@@ -44,6 +44,8 @@ const MeditationPage = () => {
 
     return (
         <div className="relative min-h-screen">
+            {/* Remove the Home button */}
+
             {/* Make controls background transparent */}
             <div className="fixed top-24 left-0 w-full p-4 flex justify-center items-center z-30">
                 <div className="flex flex-col items-center w-full max-w-screen-lg mx-auto">
