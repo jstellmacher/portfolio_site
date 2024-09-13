@@ -1,0 +1,129 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px; /* Increased top and bottom padding */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2.5rem; /* Slightly larger title */
+    margin-bottom: 40px; /* More space below the title */
+    text-align: center;
+}
+
+.infoBox {
+    background-color: #f0f8ff; /* Light blue background */
+    border-radius: 10px;
+    padding: 30px; /* More internal padding */
+    margin-bottom: 40px; /* More space below the info box */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.explanation, .instructions {
+    font-size: 1.1rem; /* Slightly larger text */
+    line-height: 1.6;
+    margin-bottom: 20px; /* More space between paragraphs */
+    text-align: left;
+    color: #666d9b; /* Dark gray for better contrast */
+}
+
+.startButton, .stopButton {
+    font-size: 1.1rem; /* Slightly larger button text */
+    padding: 12px 24px; /* Larger button */
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Space above the button */
+}
+
+.startButton:hover, .stopButton:hover {
+    background-color: #2980b9;
+}
+
+/* Circle styles */
+.circleContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    margin: 40px 0; /* Add space above and below the circle */
+}
+
+.circle {
+    color: #3498db;
+    transition: all 0.25s linear;
+    z-index: 1;
+}
+
+.ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.pulsingRing {
+    animation: pulse 4s linear infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    12.5%, 37.5%, 62.5%, 87.5% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    25%, 50%, 75% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+/* Add space below the phase description */
+.description {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.circleContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remainingTime {
+  position: absolute;
+  color: white;
+  font-size: 1.5rem; /* Adjust size as needed */
+  font-weight: bold;
+  z-index: 10; /* Ensure it's on top */
+}
+.largeText {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.largeText {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 32px; /* Adjust this value as needed */
+}

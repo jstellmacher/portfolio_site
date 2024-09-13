@@ -1,15 +1,16 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import HeroSection from '../components/HeroSection';
 import CTASection from '../components/CTASection';
 import IconSkills from '../components/IconSkills';
 import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
-import FloatingSquid from '../components/FloatingSquid'; // Import the FloatingSquid component
-import ExperienceSection from '../components/Experience'; // Import the ExperienceSection component
-import SoftSkills from '../components/SoftSkills'; // Import the SoftSkills component
+import ExperienceSection from '../components/Experience';
+import SoftSkills from '../components/SoftSkills';
 import ConditionalFloatingSquid from '../components/ConditionalFloatingSquid';
+import ReCenterButton from '../components/ReCenter'; // Ensure the import path is correct
 
 const Page = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -29,11 +30,13 @@ const Page = () => {
       <CTASection />
       <IconSkills />
       <SoftSkills />
-      <ExperienceSection /> {/* Add the ExperienceSection here */}
+      <ExperienceSection />
       <ProjectsSection />
       <ContactSection />
-      
-      <ConditionalFloatingSquid scrollY={scrollY} /> {/* Replacing FloatingCube with FloatingSquid */}
+      <div className="flex justify-center mt-10">
+        <ReCenterButton />
+      </div>
+      <ConditionalFloatingSquid scrollY={scrollY} />
     </>
   );
 };
