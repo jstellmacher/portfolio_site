@@ -8,7 +8,7 @@ const ConditionalFloatingSquid = ({ scrollY }) => {
 
   useEffect(() => {
     const detectBrave = async () => {
-      if (navigator.brave && await navigator.brave.isBrave()) {
+      if (navigator.brave && (await navigator.brave.isBrave())) {
         setIsBraveBrowser(true);
       }
     };

@@ -17,6 +17,9 @@ module.exports = {
         sans: ['var(--font-montserrat)', ...fontFamily.sans],
         serif: ['var(--font-playfair)', ...fontFamily.serif],
       },
+      boxShadow: {
+        'custom-inset': 'inset 0 0 10px 5px rgba(255, 255, 255, 0.8)',
+      },
     },
   },
   plugins: [],

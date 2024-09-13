@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import SocialIcons from './SocialIcons';
 import BraveHeroSection from './BraveHeroSection';
 
@@ -13,7 +13,7 @@ const HeroSection = () => {
 
   useEffect(() => {
     const detectBrave = async () => {
-      if (navigator.brave && await navigator.brave.isBrave()) {
+      if (navigator.brave && (await navigator.brave.isBrave())) {
         setIsBraveBrowser(true);
       }
     };

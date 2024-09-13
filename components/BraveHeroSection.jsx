@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import SocialIcons from './SocialIcons';
 import { GiLion } from "react-icons/gi";
 
@@ -12,7 +12,7 @@ const BraveHeroSection = () => {
   // Detect Brave Browser
   useEffect(() => {
     const detectBrave = async () => {
-      if (navigator.brave && await navigator.brave.isBrave()) {
+      if (navigator.brave && (await navigator.brave.isBrave())) {
         setIsBraveBrowser(true);
       }
     };
