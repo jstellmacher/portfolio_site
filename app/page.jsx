@@ -30,18 +30,6 @@ const Page = () => {
   return (
     <>
       <HeroSection />
-      <div className="flex flex-col items-center mt-6 mb-8">
-            <ReCenterButton />
-            <p className="mt-2 text-xl text-gray-50 text-center flex items-center justify-center">
-                <span className="mr-2 text-xl">
-                    <BsTools />
-                </span>
-                I built and use this productivity tool daily!
-                <span className="ml-2 text-xl">
-                    <FaLaptopCode />
-                </span>
-            </p>
-        </div>
       <CTASection />
       <IconSkills />
       <SoftSkills />
