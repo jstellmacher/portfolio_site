@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import SocialIcons from './SocialIcons';
+import { GiLion } from "react-icons/gi";
 
 const BraveHeroSection = () => {
   const [isBraveBrowser, setIsBraveBrowser] = useState(false);
   const [showPDF, setShowPDF] = useState(false);
+  const [isRotating, setIsRotating] = useState(false);
+  const [rotateClockwise, setRotateClockwise] = useState(true);
 
   // Detect Brave Browser
   useEffect(() => {
@@ -27,10 +30,30 @@ const BraveHeroSection = () => {
     setShowPDF(false);
   };
 
+  const handleImageClick = () => {
+    setIsRotating(true);
+    setRotateClockwise(prev => !prev);
+    setTimeout(() => setIsRotating(false), 1000); // Stop rotating after 1 second
+  };
+
   return (
-    <div className="flex items-center justify-center min-h-screen p-4 bg-transparent text-white">
+    <div className="flex items-center justify-center min-h-screen p-4 bg-transparent text-white relative">
+      {isBraveBrowser && (
+        <div className="absolute top-4 right-4 flex flex-col items-center">
+          <div className="w-16 h-16 md:w-24 md:h-24 bg-[#FB542B] rounded-full flex items-center justify-center">
+            <GiLion className="w-3/4 h-3/4 text-white" />
+          </div>
+          <span className="mt-2 text-xs md:text-sm font-bold text-white">My Logo Representation of Brave Browser</span>
+        </div>
+      )}
       <div className="flex flex-col items-center space-y-6 text-center">
-        <div className="relative w-64 h-64 rounded-full overflow-hidden mb-2">
+        <div 
+          className={`relative w-64 h-64 rounded-full overflow-hidden mb-2 cursor-pointer
+                      transition-all duration-300 ease-in-out
+                      hover:shadow-[0_0_15px_5px_rgba(59,130,246,0.5)]
+                      ${isRotating ? (rotateClockwise ? 'animate-spin' : 'animate-spin-reverse') : ''}`}
+          onClick={handleImageClick}
+        >
           <Image
             src="/assets/thumbsup-removebg-preview.png"
             alt="Jaichuang Stellmacher giving a thumbs up, showcasing enthusiasm and positivity"
