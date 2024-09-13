@@ -9,7 +9,7 @@ import ContactSection from '../components/ContactSection';
 import FloatingSquid from '../components/FloatingSquid'; // Import the FloatingSquid component
 import ExperienceSection from '../components/Experience'; // Import the ExperienceSection component
 import SoftSkills from '../components/SoftSkills'; // Import the SoftSkills component
-
+import ConditionalFloatingSquid from '../components/ConditionalFloatingSquid';
 
 const Page = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -33,7 +33,7 @@ const Page = () => {
       <ProjectsSection />
       <ContactSection />
       
-      <FloatingSquid scrollY={scrollY} /> {/* Replacing FloatingCube with FloatingSquid */}
+      <ConditionalFloatingSquid scrollY={scrollY} /> {/* Replacing FloatingCube with FloatingSquid */}
     </>
   );
 };
