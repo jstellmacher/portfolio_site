@@ -16,6 +16,7 @@ const GrowingCircle = () => {
     const [isPulsing, setIsPulsing] = useState(false);
     const [started, setStarted] = useState(false);
     const [remainingTime, setRemainingTime] = useState(phaseDuration / 1000); // initial time in seconds
+    const [count, setCount] = useState(1); // New state for the countdown
 
     useEffect(() => {
         if (!started) return;
@@ -23,6 +24,7 @@ const GrowingCircle = () => {
         let timer;
         let growthInterval;
         let phaseEndTime;
+        let countInterval;
 
         const updateRemainingTime = () => {
             const now = Date.now();
@@ -34,28 +36,32 @@ const GrowingCircle = () => {
             }
         };
 
-        if (phase === 'inhale') {
+        const updateCount = () => {
+            if (phase === 'inhale') {
+                setCount(prev => prev < 3 ? prev + 1 : 3);
+            } else if (phase === 'exhale') {
+                setCount(prev => prev > 1 ? prev - 1 : 1);
+            }
+        };
+
+        if (phase === 'inhale' || phase === 'exhale') {
             phaseEndTime = Date.now() + phaseDuration;
             let progress = 0;
             growthInterval = setInterval(() => {
                 progress += 0.25;
-                setSize(minSize + (maxSize - minSize) * (progress / 4));
+                setSize(phase === 'inhale' 
+                    ? minSize + (maxSize - minSize) * (progress / 4)
+                    : maxSize - (maxSize - minSize) * (progress / 4)
+                );
                 if (progress >= 4) {
                     clearInterval(growthInterval);
-                    setPhase('holdIn');
+                    setPhase(phase === 'inhale' ? 'holdIn' : 'holdOut');
                 }
             }, 250);
-        } else if (phase === 'exhale') {
-            phaseEndTime = Date.now() + phaseDuration;
-            let progress = 0;
-            growthInterval = setInterval(() => {
-                progress += 0.25;
-                setSize(maxSize - (maxSize - minSize) * (progress / 4));
-                if (progress >= 4) {
-                    clearInterval(growthInterval);
-                    setPhase('holdOut');
-                }
-            }, 250);
+
+            // Set up count interval
+            setCount(phase === 'inhale' ? 1 : 3);
+            countInterval = setInterval(updateCount, 1000);
         } else {
             phaseEndTime = Date.now() + phaseDuration;
             timer = setInterval(updateRemainingTime, 1000);
@@ -67,6 +73,7 @@ const GrowingCircle = () => {
             clearTimeout(timer);
             clearInterval(growthInterval);
             clearInterval(timer);
+            clearInterval(countInterval);
         };
     }, [phase, started]);
 
@@ -101,6 +108,7 @@ const GrowingCircle = () => {
         setSize(minSize);
         setPhase('inhale');
         setRemainingTime(phaseDuration / 1000);
+        setCount(1);
     };
 
     const handleStop = () => {
@@ -108,6 +116,7 @@ const GrowingCircle = () => {
         setSize(minSize);
         setPhase('inhale');
         setRemainingTime(phaseDuration / 1000);
+        setCount(1);
     };
 
     return (
@@ -117,7 +126,7 @@ const GrowingCircle = () => {
                 <>
                     <div className={styles.infoBox}>
                         <p className={styles.explanation}>
-                            When I need to ground myself and find calm during stressful moments, I turn to box breathing. It’s a simple yet powerful technique that helps me regain my center. Here’s how it works: I breathe in slowly for 4 seconds, hold the breath for 4 seconds, exhale gently for 4 seconds, and then hold again for 4 seconds. This rhythm creates a soothing "box" pattern, offering a moment of peace and clarity amidst the chaos.
+                            When I need to ground myself and find calm during stressful moments, I turn to box breathing. It's a simple yet powerful technique that helps me regain my center. Here's how it works: I breathe in slowly for 4 seconds, hold the breath for 4 seconds, exhale gently for 4 seconds, and then hold again for 4 seconds. This rhythm creates a soothing "box" pattern, offering a moment of peace and clarity amidst the chaos.
                         </p>
                         <p className={styles.instructions}>
                             Click "Start" to begin. Follow the circle's growth and the on-screen instructions 
@@ -140,7 +149,7 @@ const GrowingCircle = () => {
                             }}
                         />
                         <div className={styles.remainingTime}>
-                            {remainingTime}
+                            {(phase === 'inhale' || phase === 'exhale') ? count : remainingTime}
                         </div>
                     </div>
                     <button className={styles.stopButton} onClick={handleStop}>

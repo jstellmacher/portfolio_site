@@ -17,10 +17,17 @@ const MeditationPage = () => {
     const [showFakeYoutube, setShowFakeYoutube] = useState(true);
 
     const handleVideoChange = (url) => {
-        setVideoUrl(url);
-        setIsVideoPlaying(true);
-        setSelectedVideo(videoOptions.find(video => video.url === url));
-        setShowFakeYoutube(false);
+        if (url === '') {
+            setVideoUrl('');
+            setIsVideoPlaying(false);
+            setSelectedVideo(null);
+            setShowFakeYoutube(true);
+        } else {
+            setVideoUrl(url);
+            setIsVideoPlaying(true);
+            setSelectedVideo(videoOptions.find(video => video.url === url));
+            setShowFakeYoutube(false);
+        }
     };
 
     const handleVideoPlay = () => {
@@ -73,6 +80,7 @@ const MeditationPage = () => {
                     <div className="flex gap-4">
                         <select
                             onChange={(e) => handleVideoChange(e.target.value)}
+                            value={videoUrl}
                             className="p-2 border border-gray-300 rounded-lg bg-white bg-opacity-50 text-gray-800 shadow-sm"
                         >
                             <option value="">Select Background Music</option>
@@ -111,11 +119,26 @@ const MeditationPage = () => {
                 ) : (
                     <>
                         {showFakeYoutube ? (
-                            <div className="relative pb-[56.25%] bg-black bg-opacity-10 overflow-hidden">
+                            <div className="relative pb-[56.25%] bg-white overflow-hidden rounded-lg shadow-lg border-8 border-gray-200">
                                 <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
-                                    <FaYoutube className="text-red-600 text-8xl mb-4" />
-                                    <p className="text-2xl font-semibold text-gray-800">Choose a background music to start</p>
-                                    <p className="text-lg text-gray-700 mt-2">Relax and focus with soothing tunes</p>
+                                    <div className="w-full h-full flex flex-col items-center justify-center">
+                                        <div className="bg-white p-8 rounded-lg shadow-md text-center">
+                                            <FaYoutube className="text-red-600 text-6xl mb-4 mx-auto" />
+                                            <h2 className="text-2xl font-semibold text-gray-800 mb-2">Choose a background music to start</h2>
+                                            <p className="text-lg text-gray-600">Relax and focus with soothing tunes</p>
+                                        </div>
+                                        <div className="mt-8 flex flex-wrap justify-center gap-4">
+                                            {videoOptions.map((video) => (
+                                                <button
+                                                    key={video.url}
+                                                    onClick={() => handleVideoChange(video.url)}
+                                                    className="px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition duration-300"
+                                                >
+                                                    {video.title}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         ) : videoUrl && (
@@ -135,8 +158,10 @@ const MeditationPage = () => {
             </div>
 
             {/* PomodoroTimer always visible */}
-            <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
-                <PomodoroTimer />
+            <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none">
+                <div className="pointer-events-auto transform -translate-x-1/2 -translate-y-1/2">
+                    <PomodoroTimer />
+                </div>
             </div>
         </div>
     );
