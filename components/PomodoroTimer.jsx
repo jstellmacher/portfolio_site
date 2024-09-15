@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { FaRestroom } from 'react-icons/fa';
+import { FaRestroom, FaLightbulb } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Draggable from 'react-draggable';
 
@@ -13,7 +13,7 @@ const TimerDisplay = ({ minutes, seconds, isBreak, blinkingColon }) => (
     </div>
 );
 
-const TimerControls = ({ isRunning, handleStart, handleStop, handleReset, handleBathroomBreak, isPaused }) => (
+const TimerControls = ({ isRunning, handleStart, handleStop, handleReset, toggleFocusMode, isFocusMode }) => (
     <div className="grid grid-cols-2 gap-3 mb-4">
         <button onClick={handleStart} className="py-3 bg-green-400 text-gray-800 text-lg font-bold rounded-lg hover:bg-green-300 transition duration-200">
             Start
@@ -24,9 +24,9 @@ const TimerControls = ({ isRunning, handleStart, handleStop, handleReset, handle
         <button onClick={handleReset} className="py-3 bg-gray-400 text-gray-800 text-lg font-bold rounded-lg hover:bg-gray-300 transition duration-200">
             Reset
         </button>
-        <button onClick={handleBathroomBreak} className={`py-3 text-gray-800 text-lg font-bold rounded-lg flex items-center justify-center transition duration-200 ${isPaused ? 'bg-purple-400 hover:bg-purple-300' : 'bg-purple-500 hover:bg-purple-400'}`}>
-            <FaRestroom className="mr-2 text-base" />
-            {isPaused ? 'Resume' : 'Break'}
+        <button onClick={toggleFocusMode} className={`py-3 text-gray-800 text-lg font-bold rounded-lg flex items-center justify-center transition duration-200 ${isFocusMode ? 'bg-yellow-400 hover:bg-yellow-300' : 'bg-blue-400 hover:bg-blue-300'}`}>
+            <FaLightbulb className="mr-2 text-base" />
+            {isFocusMode ? 'Normal Mode' : 'Focus Mode'}
         </button>
     </div>
 );
@@ -40,7 +40,7 @@ const PomodoroTimer = () => {
     const [showCongrats, setShowCongrats] = useState(false);
     const [breakMinutes, setBreakMinutes] = useState(5);
     const [breakSeconds, setBreakSeconds] = useState(0);
-    const [isPaused, setIsPaused] = useState(false);
+    const [isFocusMode, setIsFocusMode] = useState(false);
 
     const calculateBreakTime = (workMinutes) => (workMinutes <= 25 ? 5 : workMinutes <= 45 ? 10 : 15);
     const [breakTime, setBreakTime] = useState(calculateBreakTime(timeInput));
@@ -63,7 +63,7 @@ const PomodoroTimer = () => {
         setBreakSeconds(0);
         setShowCongrats(false);
         setIsBreak(false);
-        setIsPaused(false);
+        setIsFocusMode(false);
     };
 
     useEffect(() => {
@@ -73,7 +73,7 @@ const PomodoroTimer = () => {
 
     useEffect(() => {
         let interval;
-        if (isRunning && !isPaused) {
+        if (isRunning && !isFocusMode) {
             interval = setInterval(() => {
                 const stillRunning = isBreak
                     ? decrementTimer(breakMinutes, breakSeconds, setBreakMinutes, setBreakSeconds)
@@ -87,14 +87,26 @@ const PomodoroTimer = () => {
             }, 1000);
         }
         return () => clearInterval(interval);
-    }, [seconds, minutes, isBreak, isRunning, isPaused, breakMinutes, breakSeconds]);
+    }, [seconds, minutes, isBreak, isRunning, isFocusMode, breakMinutes, breakSeconds]);
 
     const handleStart = () => setIsRunning(true);
     const handleStop = () => setIsRunning(false);
     const handleReset = () => { resetTimer(); setIsRunning(false); };
-    const handleBathroomBreak = () => { setIsPaused(!isPaused); setIsRunning(isPaused); };
+    const toggleFocusMode = () => {
+        setIsFocusMode(!isFocusMode);
+        // You can add additional focus mode logic here
+    };
 
     const blinkingColon = { opacity: [1, 0], transition: { duration: 1, repeat: Infinity, repeatType: 'reverse' } };
+
+    useEffect(() => {
+        const root = document.documentElement;
+        if (isFocusMode) {
+            root.classList.add('grayscale');
+        } else {
+            root.classList.remove('grayscale');
+        }
+    }, [isFocusMode]);
 
     return (
         <Draggable defaultPosition={{x: 20, y: 20}}>
@@ -119,8 +131,8 @@ const PomodoroTimer = () => {
                     handleStart={handleStart}
                     handleStop={handleStop}
                     handleReset={handleReset}
-                    handleBathroomBreak={handleBathroomBreak}
-                    isPaused={isPaused}
+                    toggleFocusMode={toggleFocusMode}
+                    isFocusMode={isFocusMode}
                 />
                 {showCongrats && <div className="text-lg font-bold text-green-300 text-center">Congratulations! Break Time!</div>}
             </div>

@@ -10,6 +10,7 @@ const VideoPlayer = () => {
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [videoOptions, setVideoOptions] = useState([]);
     const [showFakeYoutube, setShowFakeYoutube] = useState(true);
+    const [showMessage, setShowMessage] = useState(false);
 
     useEffect(() => {
         const fetchVideoOptions = async () => {
@@ -44,6 +45,11 @@ const VideoPlayer = () => {
     };
 
     const handleVideoPlay = () => {
+        if (!videoUrl) {
+            setShowMessage(true);
+            setTimeout(() => setShowMessage(false), 3000); // Hide message after 3 seconds
+            return;
+        }
         setIsVideoPlaying(!isVideoPlaying);
         if (videoUrl) {
             const iframe = document.querySelector('iframe');
@@ -57,8 +63,13 @@ const VideoPlayer = () => {
     };
 
     return (
-        <div>
-            <div className="flex gap-4 mb-4">
+        <div className="w-full">
+            {showMessage && (
+                <div className="absolute top-0 left-0 right-0 bg-white text-red-500 px-4 py-2 rounded-xl text-center animate-fade-out">
+                    Try choosing a video to play instead
+                </div>
+            )}
+            <div className="flex flex-wrap gap-4 mb-4">
                 <select
                     onChange={(e) => handleVideoChange(e.target.value)}
                     value={videoUrl}
@@ -91,10 +102,12 @@ const VideoPlayer = () => {
                 )}
             </div>
             {showFakeYoutube ? (
-                <div className="relative pb-[56.25%] bg-white overflow-hidden rounded-lg shadow-lg border-8 border-gray-200">
-                    <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
-                        <FaHeadphones className="mr-2" />
-                        <h2 className="text-2xl font-semibold text-gray-800 mb-2 flex items-center justify-center">
+                <div className="bg-white overflow-hidden rounded-lg shadow-lg border-8 border-gray-200 w-full p-8">
+                    <div className="flex flex-col items-center justify-center">
+                        <div className="bg-red-600 rounded-full p-6 mb-6 shadow-lg hover:bg-red-700 transition duration-300">
+                            <FaHeadphones className="text-6xl text-white" />
+                        </div>
+                        <h2 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center justify-center">
                             Choose some background music to start
                             <GiMusicalNotes className="ml-2" />
                         </h2>

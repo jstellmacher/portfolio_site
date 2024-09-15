@@ -154,3 +154,14 @@ canvas {
 .transform-style-3d {
   transform-style: preserve-3d;
 }
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.animate-fade-out {
+  animation: fadeOut 4s forwards;
+}
+.grayscale {
+  filter: grayscale(100%);
+}
