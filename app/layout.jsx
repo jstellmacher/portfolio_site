@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect, Children, isValidElement, cloneElement } from 'react';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation'; // Import usePathname
 import './global.css';
 import Navigation from '../components/Navigation';
 import { Montserrat, Playfair_Display } from 'next/font/google';
@@ -19,9 +20,13 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
-const Layout = ({ children, showNav = true }) => { // Add showNav prop
+const Layout = ({ children }) => {
   const [isBraveBrowser, setIsBraveBrowser] = useState(false);
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true);
+  const pathname = usePathname(); // Get the current pathname
+
+  // Determine if navigation should be shown
+  const showNav = pathname !== '/meditation';
 
   useEffect(() => {
     const detectBrave = async () => {
@@ -40,18 +45,16 @@ const Layout = ({ children, showNav = true }) => { // Add showNav prop
   return (
     <html lang="en" className={`${montserrat.variable} ${playfair.variable}`}>
       <body className='bg-gradient-to-r from-green-400 to-blue-500 font-sans'>
-        {loading && <Loader />} {/* Add the Loader component */}
-        <header className="bg-white/30 backdrop-blur-md text-white p-4 shadow-md fixed w-full top-0 left-0 z-50" aria-label="Site Header">
-          <div className="container mx-auto">
-            {showNav && <Navigation />} {/* Conditionally render Navigation */}
-          </div>
-        </header>
-        <main className="pt-16 flex-grow">                                                                                                                                                                                                                                               
-          {Children.map(children, child =>
-            isValidElement(child)
-              ? cloneElement(child, { isBraveBrowser })
-              : child
-          )}
+        {loading && <Loader />}
+        {showNav && (
+          <header className="bg-white/30 backdrop-blur-md text-white p-4 shadow-md fixed w-full top-0 left-0 z-50" aria-label="Site Header">
+            <div className="container mx-auto">
+              <Navigation />
+            </div>
+          </header>
+        )}
+        <main className={`${showNav ? 'pt-16' : ''} flex-grow`}>
+          {children}
         </main>
         <footer className="bg-gradient-to-r from-green-400 to-blue-500 text-white p-4 text-center" aria-label="Site Footer">
           <p>&copy; {new Date().getFullYear()} Jai Stellmacher. All rights reserved.</p>
@@ -61,4 +64,4 @@ const Layout = ({ children, showNav = true }) => { // Add showNav prop
   );
 };
 
-export default Layout;                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+export default Layout;
