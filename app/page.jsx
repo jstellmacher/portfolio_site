@@ -10,7 +10,6 @@ import ContactSection from '../components/ContactSection';
 import ExperienceSection from '../components/Experience';
 import SoftSkills from '../components/SoftSkills';
 import ConditionalFloatingSquid from '../components/ConditionalFloatingSquid';
-import ReCenterButton from '../components/ReCenter'; // Ensure the import path is correct
 
 const Page = () => {
   const [scrollY, setScrollY] = useState(0);

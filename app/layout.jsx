@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
-const Layout = ({ children }) => {
+const Layout = ({ children, showNav = true }) => { // Add showNav prop
   const [isBraveBrowser, setIsBraveBrowser] = useState(false);
   const [loading, setLoading] = useState(true); // Add loading state
 
@@ -43,10 +43,10 @@ const Layout = ({ children }) => {
         {loading && <Loader />} {/* Add the Loader component */}
         <header className="bg-white/30 backdrop-blur-md text-white p-4 shadow-md fixed w-full top-0 left-0 z-50" aria-label="Site Header">
           <div className="container mx-auto">
-            <Navigation />
+            {showNav && <Navigation />} {/* Conditionally render Navigation */}
           </div>
         </header>
-        <main className="pt-16 flex-grow">
+        <main className="pt-16 flex-grow">                                                                                                                                                                                                                                               
           {Children.map(children, child =>
             isValidElement(child)
               ? cloneElement(child, { isBraveBrowser })
@@ -61,4 +61,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default Layout;                                                                                                                                                                                                                                                                                                                                                                                                                                                      

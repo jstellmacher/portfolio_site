@@ -9,37 +9,32 @@ const MeditationPage = () => {
 
     return (
         <div className="relative min-h-screen">
-            {/* Position buttons below navbar */}
-            <div className="fixed top-16 left-0 w-full p-4 flex justify-center items-center z-30">
-                <div className="flex mb-4">
-                    <button
-                        onClick={() => setShowGrowingCircle(false)}
-                        className={`mr-2 px-6 py-3 rounded text-lg font-medium ${
-                            !showGrowingCircle ? 'bg-blue-500 text-white' : 'bg-opacity-50 bg-gray-200 text-gray-800'
-                        }`}
-                    >
-                        Pomodoro Timer
-                    </button>
-                    <button
-                        onClick={() => setShowGrowingCircle(true)}
-                        className={`px-6 py-3 rounded text-lg font-medium ${
-                            showGrowingCircle ? 'bg-blue-500 text-white' : 'bg-opacity-50 bg-gray-200 text-gray-800'
-                        }`}
-                    >
-                        Growing Circle
-                    </button>
+            <div className="fixed top-24 left-0 w-full p-4 flex justify-center items-center z-30">
+                <div className="flex flex-col items-center w-full max-w-screen-lg mx-auto">
+                    <div className="flex mb-4">
+                        <button
+                            onClick={() => setShowGrowingCircle(false)}
+                            className={`mr-2 px-6 py-3 rounded text-lg font-medium ${
+                                !showGrowingCircle ? 'bg-blue-500 text-white' : 'bg-opacity-50 bg-gray-200 text-gray-800'
+                            }`}
+                        >
+                            Pomodoro Timer
+                        </button>
+                        <button
+                            onClick={() => setShowGrowingCircle(true)}
+                            className={`px-6 py-3 rounded text-lg font-medium ${
+                                showGrowingCircle ? 'bg-blue-500 text-white' : 'bg-opacity-50 bg-gray-200 text-gray-800'
+                            }`}
+                        >
+                            Growing Circle
+                        </button>
+                    </div>
+
+                    {!showGrowingCircle && <VideoPlayer />}
                 </div>
             </div>
 
-            {/* Full screen video player */}
-            {!showGrowingCircle && (
-                <div className="fixed inset-0 z-10">
-                    <VideoPlayer />
-                </div>
-            )}
-
-            {/* Adjust positioning for GrowingCircle and PomodoroTimer */}
-            <div className="pt-32 relative">
+            <div className="pt-48 relative">
                 {showGrowingCircle ? (
                     <GrowingCircle />
                 ) : (
