@@ -1,8 +1,5 @@
 'use client';
 
-import { GiMeditation } from 'react-icons/gi';
-import { BsTools } from 'react-icons/bs';
-import { FaLaptopCode } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import HeroSection from '../components/HeroSection';
