@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from 'react';
 
-// Add this import at the top of your file
-import projectsData from './projects.json';
-
-// Define an array of project objects with relevant icons
-
 const ProjectsSection = () => {
-  const [filter, setFilter] = useState('All');
-  // Add this state to store the projects
   const [projects, setProjects] = useState([]);
+  const [filter, setFilter] = useState('All');
   const [selectedTool, setSelectedTool] = useState(null);
 
-  // Add this useEffect hook to load the projects
   useEffect(() => {
-    setProjects(projectsData);
+    const loadProjects = async () => {
+      try {
+        const response = await fetch('/data/projects.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setProjects(data);
+      } catch (error) {
+        console.error("Could not load projects:", error);
+      }
+    };
+
+    loadProjects();
   }, []);
 
   // Get unique categories from projects data

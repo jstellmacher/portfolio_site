@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { experiences } from './experienceData';
+import { experiences } from '../public/data/experienceData';
 import RoleCard from './RoleCard';
 
 const ExperienceSection = () => {
