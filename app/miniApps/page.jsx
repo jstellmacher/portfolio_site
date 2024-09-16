@@ -21,7 +21,10 @@ const CoinFlip = dynamic(() => import('../../components/CoinFlip'), {
 const Checkers = dynamic(() => import('../../components/Checkers'), {
   ssr: false,
 });
-const StickyNotes = dynamic(() => import('../../components/StickyNote'), {
+const StickyNote = dynamic(() => import('../../components/StickyNote'), {
+  ssr: false,
+});
+const JSCodeEditor = dynamic(() => import('../../components/JSCodeEditor'), {
   ssr: false,
 });
 
@@ -32,7 +35,8 @@ export default function MiniApps() {
   const [showSQLGame, setShowSQLGame] = useState(false);
   const [showCoinFlip, setShowCoinFlip] = useState(false);
   const [showCheckers, setShowCheckers] = useState(false);
-  const [showStickyNotes, setShowStickyNotes] = useState(false);
+  const [showStickyNote, setShowStickyNote] = useState(false);
+  const [showJSCodeEditor, setShowJSCodeEditor] = useState(false);
 
   const toggleResumeGenerator = () => setShowResumeGenerator(prev => !prev);
   const toggleHourlySalary = () => setShowHourlySalary(prev => !prev);
@@ -40,7 +44,8 @@ export default function MiniApps() {
   const toggleSQLGame = () => setShowSQLGame(prev => !prev);
   const toggleCoinFlip = () => setShowCoinFlip(prev => !prev);
   const toggleCheckers = () => setShowCheckers(prev => !prev);
-  const toggleStickyNotes = () => setShowStickyNotes(prev => !prev);
+  const toggleStickyNote = () => setShowStickyNote(prev => !prev);
+  const toggleJSCodeEditor = () => setShowJSCodeEditor(prev => !prev);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -91,10 +96,17 @@ export default function MiniApps() {
           </button>
           
           <button 
-            onClick={toggleStickyNotes}
+            onClick={toggleStickyNote}
             className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
-            {showStickyNotes ? 'Hide Sticky Notes' : 'Show Sticky Notes'}
+            {showStickyNote ? 'Hide Sticky Notes' : 'Show Sticky Notes'}
+          </button>
+          
+          <button 
+            onClick={toggleJSCodeEditor}
+            className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            {showJSCodeEditor ? 'Hide JS Code Editor' : 'Show JS Code Editor'}
           </button>
         </div>
         
@@ -104,7 +116,8 @@ export default function MiniApps() {
         {showSQLGame && <SQLGame />}
         {showCoinFlip && <CoinFlip />}
         {showCheckers && <Checkers />}
-        {showStickyNotes && <StickyNotes />}
+        {showStickyNote && <StickyNote />}
+        {showJSCodeEditor && <JSCodeEditor />}
       </div>
     </div>
   );
