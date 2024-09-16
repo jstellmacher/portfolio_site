@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useFrame, useLoader, Canvas, useThree } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import * as THREE from 'three';
+import Image from 'next/image';
 
 // Helper function to resize the renderer based on the canvas size
 const resizeRendererToDisplaySize = (renderer) => {
@@ -113,9 +114,11 @@ const SquidScene = ({ scrollY }) => {
             <div className="absolute inset-[-5%] rounded-full bg-black opacity-50 blur-xl"></div>
             <div className="absolute inset-0 rounded-full border-[24px] border-gray-800 overflow-hidden shadow-[inset_0_0_30px_10px_rgba(0,0,0,0.5)]">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-blue-800 opacity-40"></div>
-              <img 
+              <Image 
                 src="https://picsum.photos/1920/1080" 
                 alt="Underwater scene"
+                width={500}
+                height={500}
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <Canvas className="absolute inset-0">

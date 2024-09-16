@@ -10,27 +10,18 @@ const Birthday = () => {
   const [editingIndex, setEditingIndex] = useState(null);
 
   useEffect(() => {
-    // Check if Google API credentials are available
-    if (process.env.NEXT_PUBLIC_GOOGLE_API_KEY && process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID) {
-      setUseGoogleCalendar(true);
-      gapi.load('client:auth2', initClient);
-    } else {
-      // Load birthdays from local storage as fallback
-      const storedBirthdays = JSON.parse(localStorage.getItem('birthdays') || '[]');
-      setBirthdays(storedBirthdays);
-    }
-  }, [initClient]); // Add initClient to the dependency array
-
-  const initClient = () => {
-    gapi.client.init({
-      apiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
-      clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
-      discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
-      scope: 'https://www.googleapis.com/auth/calendar.events',
-    }).then(() => {
-      loadBirthdays();
-    });
-  };
+    const initClient = () => {
+      gapi.client.init({
+        apiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
+        clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+        discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+        scope: 'https://www.googleapis.com/auth/calendar.events',
+      }).then(() => {
+        loadBirthdays();
+      });
+    };
+    initClient();
+  }, []);
 
   const loadBirthdays = () => {
     gapi.client.calendar.events.list({
