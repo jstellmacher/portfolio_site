@@ -3,6 +3,7 @@ import Editor from 'react-simple-code-editor';
 import { Highlight, themes } from 'prism-react-renderer';
 import { FaPlay, FaUndo, FaInfoCircle } from 'react-icons/fa';
 
+/* eslint-disable react/jsx-key */
 const JSCodeEditor = () => {
   const [code, setCode] = useState(
     '// Write your JavaScript code here\nconsole.log("Hello, World!");\nconsole.log("This is a test");'

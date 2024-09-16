@@ -172,7 +172,7 @@ const PomodoroTimer = () => {
 
     useEffect(() => {
         // Your code here
-    }, [breakMinutes, minutes]);
+    }, [breakMinutes, minutes]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <>

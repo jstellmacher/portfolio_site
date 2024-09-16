@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { FaUser, FaBars, FaTimes, FaHome, FaRocket } from 'react-icons/fa';
 import LoginForm from './LoginForm'; // Adjust the path as necessary
 
+/* eslint-disable react/jsx-no-undef */
+
 const Navigation = ({ pathname }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
