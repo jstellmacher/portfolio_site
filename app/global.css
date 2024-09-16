@@ -165,3 +165,12 @@ canvas {
 .grayscale {
   filter: grayscale(100%);
 }
+/* Add this to your global CSS file */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

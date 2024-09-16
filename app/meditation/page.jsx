@@ -9,25 +9,22 @@ const MeditationPage = () => {
     const [showGrowingCircle, setShowGrowingCircle] = useState(false);
 
     return (
-        <div className="relative min-h-screen">
+        <div className="flex flex-col min-h-screen">
             <MeditationNav 
                 showGrowingCircle={showGrowingCircle} 
                 setShowGrowingCircle={setShowGrowingCircle} 
             />
-            <div className="fixed top-24 left-0 w-full p-4 flex justify-center items-center z-30">
-                <div className="flex flex-col items-center w-full max-w-screen-lg mx-auto">
-                    {!showGrowingCircle && <VideoPlayer />}
-                </div>
-            </div>
-
-            <div className="pt-48 relative">
-                {showGrowingCircle ? (
-                    <GrowingCircle />
+            <div className="flex-grow relative">
+                {!showGrowingCircle ? (
+                    <div className="absolute inset-0">
+                        <VideoPlayer />
+                    </div>
                 ) : (
-                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div className="pointer-events-auto">
-                            <PomodoroTimer />
-                        </div>
+                    <GrowingCircle />
+                )}
+                {!showGrowingCircle && (
+                    <div className="absolute bottom-4 right-4 z-10">
+                        <PomodoroTimer />
                     </div>
                 )}
             </div>

@@ -37,7 +37,8 @@ const VideoPlayer = () => {
             setSelectedVideo(null);
             setShowFakeYoutube(true);
         } else {
-            setVideoUrl(url);
+            // Remove the autoplay parameter when setting the selected value
+            setVideoUrl(url.replace('&autoplay=1', ''));
             setIsVideoPlaying(true);
             setSelectedVideo(videoOptions.find(video => video.url === url));
             setShowFakeYoutube(false);
@@ -63,13 +64,13 @@ const VideoPlayer = () => {
     };
 
     return (
-        <div className="w-full">
+        <div className="flex flex-col h-full">
             {showMessage && (
-                <div className="absolute top-0 left-0 right-0 bg-white text-red-500 px-4 py-2 rounded-xl text-center animate-fade-out">
+                <div className="absolute top-16 left-0 right-0 bg-white text-red-500 px-4 py-2 text-center animate-fade-out z-20">
                     Try choosing a video to play instead
                 </div>
             )}
-            <div className="flex flex-wrap gap-4 mb-4">
+            <div className="flex justify-center items-center gap-4 p-2 mt-16 z-10">
                 <select
                     onChange={(e) => handleVideoChange(e.target.value)}
                     value={videoUrl}
@@ -77,7 +78,7 @@ const VideoPlayer = () => {
                 >
                     <option value="">Select Background Music</option>
                     {videoOptions.map((video) => (
-                        <option key={video.url} value={video.url}>
+                        <option key={video.url} value={video.url.replace('&autoplay=1', '')}>
                             {video.title}
                         </option>
                     ))}
@@ -101,46 +102,48 @@ const VideoPlayer = () => {
                     </button>
                 )}
             </div>
-            {showFakeYoutube ? (
-                <div className="bg-white overflow-hidden rounded-lg shadow-lg border-8 border-gray-200 w-full p-8">
-                    <div className="flex flex-col items-center justify-center">
-                        <div className="bg-red-600 rounded-full p-6 mb-6 shadow-lg hover:bg-red-700 transition duration-300">
-                            <FaHeadphones className="text-6xl text-white" />
-                        </div>
-                        <h2 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center justify-center">
-                            Choose some background music to start
-                            <GiMusicalNotes className="ml-2" />
-                        </h2>
-                        <p className="text-lg text-gray-600 mb-6 flex items-center justify-center">
-                            <GiMeditation className="mr-2" />
-                            Relax and focus with soothing tunes
-                            <FaGuitar className="ml-2" />
-                        </p>
-                        <div className="flex flex-wrap justify-center gap-4">
-                            {videoOptions.map((video) => (
-                                <button
-                                    key={video.url}
-                                    onClick={() => handleVideoChange(video.url)}
-                                    className="px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition duration-300"
-                                >
-                                    {video.title}
-                                </button>
-                            ))}
+            <div className="flex-grow relative">
+                {showFakeYoutube ? (
+                    <div className="absolute inset-0 bg-white overflow-hidden rounded-lg shadow-lg border-8 border-gray-200">
+                        <div className="flex flex-col items-center justify-center h-full">
+                            <div className="bg-red-600 rounded-full p-6 mb-6 shadow-lg hover:bg-red-700 transition duration-300">
+                                <FaHeadphones className="text-6xl text-white" />
+                            </div>
+                            <h2 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center justify-center">
+                                Choose some background music to start
+                                <GiMusicalNotes className="ml-2" />
+                            </h2>
+                            <p className="text-lg text-gray-600 mb-6 flex items-center justify-center">
+                                <GiMeditation className="mr-2" />
+                                Relax and focus with soothing tunes
+                                <FaGuitar className="ml-2" />
+                            </p>
+                            <div className="flex flex-wrap justify-center gap-4">
+                                {videoOptions.map((video) => (
+                                    <button
+                                        key={video.url}
+                                        onClick={() => handleVideoChange(video.url)}
+                                        className="px-4 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition duration-300"
+                                    >
+                                        {video.title}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
-            ) : videoUrl && (
-                <div className="relative pb-[56.25%] overflow-hidden">
-                    <iframe
-                        src={`${videoUrl}&enablejsapi=1`}
-                        title="YouTube video"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="absolute top-0 left-0 w-full h-full"
-                    />
-                </div>
-            )}
+                ) : videoUrl && (
+                    <div className="absolute inset-0">
+                        <iframe
+                            src={`${videoUrl}&autoplay=1`}
+                            title="YouTube video"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="w-full h-full"
+                        />
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
