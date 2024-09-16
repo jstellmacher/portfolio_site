@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
-import { FaFileAlt, FaMoneyBillWave, FaLinkedin, FaDatabase, FaCoins, FaChessBoard, FaStickyNote, FaCode, FaBirthdayCake, FaAlignLeft, FaShoppingCart, FaGamepad, FaPalette, FaCalculator, FaCalendarAlt } from 'react-icons/fa';
+import { FaFileAlt, FaMoneyBillWave, FaLinkedin, FaDatabase, FaCoins, FaChessBoard, FaStickyNote, FaCode, FaBirthdayCake, FaAlignLeft, FaShoppingCart, FaGamepad, FaPalette, FaCalculator, FaCalendarAlt, FaHamburger } from 'react-icons/fa';
 
 const ResumeGenerator = dynamic(() => import('../../components/ResumeGenerator'), {
   ssr: false,
@@ -50,6 +50,9 @@ const Calculator = dynamic(() => import('../../components/Calculator'), {
   ssr: false,
 });
 const Birthday = dynamic(() => import('../../components/Birthday'), {
+  ssr: false,
+});
+const CrabbyPatty = dynamic(() => import('../../components/CrabbyPatty'), {
   ssr: false,
 });
 
@@ -193,6 +196,14 @@ export default function MiniApps() {
             <FaCalendarAlt className="mr-2" />
             {activeApp === 'birthday' ? 'Hide Birthday Calendar' : 'Show Birthday Calendar'}
           </button>
+          
+          <button 
+            onClick={() => toggleApp('crabbyPatty')}
+            className={`${activeApp === 'crabbyPatty' ? 'bg-yellow-700' : 'bg-yellow-500 hover:bg-yellow-700'} text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center`}
+          >
+            <FaHamburger className="mr-2" />
+            {activeApp === 'crabbyPatty' ? 'Hide Crabby Patty Maker' : 'Show Crabby Patty Maker'}
+          </button>
         </div>
         
         {activeApp === 'resumeGenerator' && <ResumeGenerator />}
@@ -215,6 +226,7 @@ export default function MiniApps() {
         {activeApp === 'ageCalculator' && <AgeCalculator />}
         {activeApp === 'calculator' && <Calculator />}
         {activeApp === 'birthday' && <Birthday />}
+        {activeApp === 'crabbyPatty' && <CrabbyPatty />}
       </div>
     </div>
   );
