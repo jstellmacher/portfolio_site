@@ -27,6 +27,21 @@ const StickyNote = dynamic(() => import('../../components/StickyNote'), {
 const JSCodeEditor = dynamic(() => import('../../components/JSCodeEditor'), {
   ssr: false,
 });
+const BirthdayCountdown = dynamic(() => import('../../components/BdayCountdown'), {
+  ssr: false,
+});
+const CustomLoremIpsum = dynamic(() => import('../../components/LoremIpsum'), {
+  ssr: false,
+});
+const GroceryList = dynamic(() => import('../../components/GroceryList'), {
+  ssr: false,
+});
+const PlatformerGame = dynamic(() => import('../../components/PlatformerGame'), {
+  ssr: false,
+});
+const ColorTools = dynamic(() => import('../../components/ColorTools'), {
+  ssr: false,
+});
 
 export default function MiniApps() {
   const [showResumeGenerator, setShowResumeGenerator] = useState(false);
@@ -37,6 +52,11 @@ export default function MiniApps() {
   const [showCheckers, setShowCheckers] = useState(false);
   const [showStickyNote, setShowStickyNote] = useState(false);
   const [showJSCodeEditor, setShowJSCodeEditor] = useState(false);
+  const [showBirthdayCountdown, setShowBirthdayCountdown] = useState(false);
+  const [showCustomLoremIpsum, setShowCustomLoremIpsum] = useState(false);
+  const [showGroceryList, setShowGroceryList] = useState(false);
+  const [showPlatformerGame, setShowPlatformerGame] = useState(false);
+  const [showColorTools, setShowColorTools] = useState(false);
 
   const toggleResumeGenerator = () => setShowResumeGenerator(prev => !prev);
   const toggleHourlySalary = () => setShowHourlySalary(prev => !prev);
@@ -46,6 +66,11 @@ export default function MiniApps() {
   const toggleCheckers = () => setShowCheckers(prev => !prev);
   const toggleStickyNote = () => setShowStickyNote(prev => !prev);
   const toggleJSCodeEditor = () => setShowJSCodeEditor(prev => !prev);
+  const toggleBirthdayCountdown = () => setShowBirthdayCountdown(prev => !prev);
+  const toggleCustomLoremIpsum = () => setShowCustomLoremIpsum(prev => !prev);
+  const toggleGroceryList = () => setShowGroceryList(prev => !prev);
+  const togglePlatformerGame = () => setShowPlatformerGame(prev => !prev);
+  const toggleColorTools = () => setShowColorTools(prev => !prev);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -108,6 +133,41 @@ export default function MiniApps() {
           >
             {showJSCodeEditor ? 'Hide JS Code Editor' : 'Show JS Code Editor'}
           </button>
+          
+          <button 
+            onClick={toggleBirthdayCountdown}
+            className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            {showBirthdayCountdown ? 'Hide Birthday Countdown' : 'Show Birthday Countdown'}
+          </button>
+          
+          <button 
+            onClick={toggleCustomLoremIpsum}
+            className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            {showCustomLoremIpsum ? 'Hide Custom Lorem Ipsum' : 'Show Custom Lorem Ipsum'}
+          </button>
+          
+          <button 
+            onClick={toggleGroceryList}
+            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            {showGroceryList ? 'Hide Grocery List' : 'Show Grocery List'}
+          </button>
+          
+          <button 
+            onClick={togglePlatformerGame}
+            className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            {showPlatformerGame ? 'Hide Platformer Game' : 'Show Platformer Game'}
+          </button>
+          
+          <button 
+            onClick={toggleColorTools}
+            className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            {showColorTools ? 'Hide Color Tools' : 'Show Color Tools'}
+          </button>
         </div>
         
         {showResumeGenerator && <ResumeGenerator />}
@@ -118,6 +178,15 @@ export default function MiniApps() {
         {showCheckers && <Checkers />}
         {showStickyNote && <StickyNote />}
         {showJSCodeEditor && <JSCodeEditor />}
+        {showBirthdayCountdown && <BirthdayCountdown />}
+        {showCustomLoremIpsum && <CustomLoremIpsum />}
+        {showGroceryList && <GroceryList />}
+        {showPlatformerGame && (
+          <div className="w-full mb-6">
+            <PlatformerGame />
+          </div>
+        )}
+        {showColorTools && <ColorTools />}
       </div>
     </div>
   );
