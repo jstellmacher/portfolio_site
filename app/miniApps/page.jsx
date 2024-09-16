@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
-import { FaFileAlt, FaMoneyBillWave, FaLinkedin, FaDatabase, FaCoins, FaChessBoard, FaStickyNote, FaCode, FaBirthdayCake, FaAlignLeft, FaShoppingCart, FaGamepad, FaPalette, FaCalculator } from 'react-icons/fa';
+import { FaFileAlt, FaMoneyBillWave, FaLinkedin, FaDatabase, FaCoins, FaChessBoard, FaStickyNote, FaCode, FaBirthdayCake, FaAlignLeft, FaShoppingCart, FaGamepad, FaPalette, FaCalculator, FaCalendarAlt } from 'react-icons/fa';
 
 const ResumeGenerator = dynamic(() => import('../../components/ResumeGenerator'), {
   ssr: false,
@@ -47,6 +47,9 @@ const AgeCalculator = dynamic(() => import('../../components/Age'), {
   ssr: false,
 });
 const Calculator = dynamic(() => import('../../components/Calculator'), {
+  ssr: false,
+});
+const Birthday = dynamic(() => import('../../components/Birthday'), {
   ssr: false,
 });
 
@@ -182,6 +185,14 @@ export default function MiniApps() {
             <FaCalculator className="mr-2" />
             {activeApp === 'calculator' ? 'Hide Calculator' : 'Show Calculator'}
           </button>
+          
+          <button 
+            onClick={() => toggleApp('birthday')}
+            className={`${activeApp === 'birthday' ? 'bg-pink-700' : 'bg-pink-500 hover:bg-pink-700'} text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center`}
+          >
+            <FaCalendarAlt className="mr-2" />
+            {activeApp === 'birthday' ? 'Hide Birthday Calendar' : 'Show Birthday Calendar'}
+          </button>
         </div>
         
         {activeApp === 'resumeGenerator' && <ResumeGenerator />}
@@ -203,6 +214,7 @@ export default function MiniApps() {
         {activeApp === 'colorTools' && <ColorTools />}
         {activeApp === 'ageCalculator' && <AgeCalculator />}
         {activeApp === 'calculator' && <Calculator />}
+        {activeApp === 'birthday' && <Birthday />}
       </div>
     </div>
   );
