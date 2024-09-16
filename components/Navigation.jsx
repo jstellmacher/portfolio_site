@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaUser, FaBars, FaTimes, FaHome, FaRocket } from 'react-icons/fa';
+import LoginForm from './LoginForm'; // Adjust the path as necessary
 
 const Navigation = ({ pathname }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
