@@ -1,10 +1,10 @@
-// components/Navigation.js
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import LoginForm from './LoginForm'; // We'll create this component next
-import { FaUser, FaBars, FaTimes, FaHome, FaBriefcase } from 'react-icons/fa'; // Added FaBriefcase icon
+import { FaUser, FaBars, FaTimes, FaHome, FaRocket } from 'react-icons/fa';
 
-const Navigation = () => {
+const Navigation = ({ pathname }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,14 +19,6 @@ const Navigation = () => {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
-
-  const smoothScroll = (e, targetId) => {
-    e.preventDefault();
-    const target = document.querySelector(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   const handleLoginClick = () => {
     setShowLoginForm(true);
@@ -49,6 +41,31 @@ const Navigation = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const smoothScroll = (e, href) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleNavigation = (e, href) => {
+    e.preventDefault();
+    if (href.startsWith('#')) {
+      if (pathname === '/') {
+        smoothScroll(e, href);
+      } else {
+        window.location.href = `/${href}`;
+      }
+    } else {
+      window.location.href = href;
+    }
+    if (isMobile) {
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <nav aria-label="Main navigation" className="flex items-center justify-between relative px-4 py-3 sm:py-2 sm:px-6">
       <div className="flex items-center">
@@ -57,6 +74,7 @@ const Navigation = () => {
           aria-label="Jai Stellmacher - Home"
           onClick={(e) => {
             e.preventDefault();
+            window.location.href = '/';
             scrollToTop();
           }}
         >
@@ -77,20 +95,22 @@ const Navigation = () => {
           
           {isMenuOpen && (
             <div className="absolute top-full left-0 right-0 bg-gray-900 py-2 px-4 z-50">
-              <NavLink href="#about" label="About" color="green" mobile onClick={toggleMenu} smoothScroll={smoothScroll} />
-              <NavLink href="#projects" label="Projects" color="blue" mobile onClick={toggleMenu} smoothScroll={smoothScroll} />
-              <NavLink href="#experience" label="Work" color="yellow" mobile onClick={toggleMenu} smoothScroll={smoothScroll} />
-              <NavLink href="#contact" label="Contact" color="purple" mobile onClick={toggleMenu} smoothScroll={smoothScroll} />
+              <NavLink href="#about" label="About" color="green" mobile onClick={handleNavigation} smoothScroll={smoothScroll} />
+              <NavLink href="#projects" label="Projects" color="blue" mobile onClick={handleNavigation} smoothScroll={smoothScroll} />
+              <NavLink href="#experience" label="Work" color="yellow" mobile onClick={handleNavigation} smoothScroll={smoothScroll} />
+              <NavLink href="#contact" label="Contact" color="purple" mobile onClick={handleNavigation} smoothScroll={smoothScroll} />
+              <NavLink href="/miniApps" label="Mini Apps" color="red" mobile onClick={handleNavigation} />
               <LoginButton isLoggedIn={isLoggedIn} onClick={isLoggedIn ? handleLogout : handleLoginClick} mobile />
             </div>
           )}
         </>
       ) : (
         <div className="flex items-center space-x-2 sm:space-x-4">
-          <NavLink href="#about" label="About" color="green" smoothScroll={smoothScroll} />
-          <NavLink href="#projects" label="Projects" color="blue" smoothScroll={smoothScroll} />
-          <NavLink href="#experience" label="Work" color="yellow" smoothScroll={smoothScroll} />
-          <NavLink href="#contact" label="Contact" color="purple" smoothScroll={smoothScroll} />
+          <NavLink href="#about" label="About" color="green" onClick={handleNavigation} smoothScroll={smoothScroll} />
+          <NavLink href="#projects" label="Projects" color="blue" onClick={handleNavigation} smoothScroll={smoothScroll} />
+          <NavLink href="#experience" label="Work" color="yellow" onClick={handleNavigation} smoothScroll={smoothScroll} />
+          <NavLink href="#contact" label="Contact" color="purple" onClick={handleNavigation} smoothScroll={smoothScroll} />
+          <NavLink href="/miniApps" label="Mini Apps" color="red" icon={<FaRocket className="mr-2" />} onClick={handleNavigation} />
           <LoginButton isLoggedIn={isLoggedIn} onClick={isLoggedIn ? handleLogout : handleLoginClick} />
         </div>
       )}
@@ -102,19 +122,22 @@ const Navigation = () => {
   );
 };
 
-const NavLink = ({ href, label, color, mobile, onClick, smoothScroll }) => (
+const NavLink = ({ href, label, color, mobile, onClick, smoothScroll, icon }) => (
   <a 
     href={href} 
     onClick={(e) => {
-      smoothScroll(e, href);
-      if (onClick) onClick();
+      if (href.startsWith('#') && smoothScroll) {
+        smoothScroll(e, href);
+      }
+      if (onClick) onClick(e, href);
     }}
     className={`
-      ${mobile ? 'block py-2 text-white' : `px-3 py-1 sm:px-4 sm:py-2 bg-${color}-500 text-white text-sm sm:text-base rounded-lg shadow-md hover:bg-${color}-600 active:bg-${color}-700`}
+      ${mobile ? 'block py-2 text-white' : `px-3 py-1 sm:px-4 sm:py-2 bg-${color}-500 text-white text-sm sm:text-base rounded-lg shadow-md hover:bg-${color}-600 active:bg-${color}-700 flex items-center`}
       transition duration-300
     `}
-    aria-label={`${label} section`}
+    aria-label={`${label} ${href.startsWith('#') ? 'section' : 'page'}`}
   >
+    {icon}
     {label}
   </a>
 );
