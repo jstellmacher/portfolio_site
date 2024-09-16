@@ -1,0 +1,138 @@
+[
+  {
+    "name": "Resume Generator",
+    "description": "A tool to generate resumes easily.",
+    "icon": "FaFileAlt",
+    "component": "ResumeGenerator",
+    "category": "Utility",
+    "path": "/resume-generator"
+  },
+  {
+    "name": "Salary Converter",
+    "description": "Convert hourly wage to salary.",
+    "icon": "FaMoneyBillWave",
+    "component": "HourlySalary",
+    "category": "Utility",
+    "path": "/salary-converter"
+  },
+  {
+    "name": "LinkedIn Message Maker",
+    "description": "Craft custom LinkedIn messages.",
+    "icon": "FaLinkedin",
+    "component": "LinkedinMsg",
+    "category": "Communication",
+    "path": "/linkedin-message-maker"
+  },
+  {
+    "name": "SQL Game",
+    "description": "Practice SQL skills with a game.",
+    "icon": "FaDatabase",
+    "component": "SQLGame",
+    "category": "Game",
+    "path": "/sql-game"
+  },
+  {
+    "name": "Coin Flip Game",
+    "description": "A simple coin flip game.",
+    "icon": "FaCoins",
+    "component": "CoinFlip",
+    "category": "Game",
+    "path": "/coin-flip-game"
+  },
+  {
+    "name": "Checkers",
+    "description": "Play a game of checkers.",
+    "icon": "FaChessBoard",
+    "component": "Checkers",
+    "category": "Game",
+    "path": "/checkers"
+  },
+  {
+    "name": "Sticky Notes",
+    "description": "A sticky notes app for reminders.",
+    "icon": "FaStickyNote",
+    "component": "StickyNote",
+    "category": "Utility",
+    "path": "/sticky-notes"
+  },
+  {
+    "name": "JS Code Editor",
+    "description": "Edit and run JavaScript code.",
+    "icon": "FaCode",
+    "component": "JSCodeEditor",
+    "category": "Development",
+    "path": "/js-code-editor"
+  },
+  {
+    "name": "Birthday Countdown",
+    "description": "Countdown to your birthday.",
+    "icon": "FaBirthdayCake",
+    "component": "BirthdayCountdown",
+    "category": "Utility",
+    "path": "/birthday-countdown"
+  },
+  {
+    "name": "Custom Lorem Ipsum",
+    "description": "Generate custom Lorem Ipsum text.",
+    "icon": "FaAlignLeft",
+    "component": "CustomLoremIpsum",
+    "category": "Utility",
+    "path": "/custom-lorem-ipsum"
+  },
+  {
+    "name": "Grocery List",
+    "description": "Manage your grocery shopping list.",
+    "icon": "FaShoppingCart",
+    "component": "GroceryList",
+    "category": "Utility",
+    "path": "/grocery-list"
+  },
+  {
+    "name": "Platformer Game",
+    "description": "Play a fun platformer game.",
+    "icon": "FaGamepad",
+    "component": "PlatformerGame",
+    "category": "Game",
+    "path": "/platformer-game"
+  },
+  {
+    "name": "Color Tools",
+    "description": "Color palette generator.",
+    "icon": "FaPalette",
+    "component": "ColorTools",
+    "category": "Utility",
+    "path": "/color-tools"
+  },
+  {
+    "name": "Age Calculator",
+    "description": "Calculate your age.",
+    "icon": "FaCalculator",
+    "component": "AgeCalculator",
+    "category": "Utility",
+    "path": "/age-calculator"
+  },
+  {
+    "name": "Simple Calculator",
+    "description": "A simple calculator app.",
+    "icon": "FaCalculator",
+    "component": "Calculator",
+    "category": "Utility",
+    "path": "/calculator"
+  },
+  {
+    "name": "Birthday Calendar",
+    "description": "Store and manage birthdays.",
+    "icon": "FaCalendarAlt",
+    "component": "Birthday",
+    "category": "Utility",
+    "path": "/birthday-calendar"
+  },
+  {
+    "name": "Crabby Patty Maker",
+    "description": "Make a Crabby Patty!",
+    "icon": "FaHamburger",
+    "component": "CrabbyPatty",
+    "category": "Game",
+    "path": "/crabby-patty-maker"
+  }
+]

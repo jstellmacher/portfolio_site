@@ -19,14 +19,14 @@ const sortRolesByDate = (roles) => {
 export const experiences = [
   {
     section: 'Technical Experience',
-    icon: () => <GiTechnoHeart className="text-blue-600 text-6xl" />,
+    icon: () => <GiTechnoHeart className="text-blue-600 text-5xl" />,
     roles: sortRolesByDate([
       {
         title: 'Cloud & Data Associate Consultant',
         company: 'Insight Enterprises',
         location: 'Chandler, Arizona',
         duration: 'Jul. 17, 2023 – Mar. 5, 2024',
-        icon: () => <AiOutlineCloudServer className="text-blue-600 text-5xl" />,
+        icon: () => <AiOutlineCloudServer className="text-cyan-500 text-4xl" />,
         category: 'technical',
         description: [
           'Led data governance initiatives to support data-driven decision-making using Azure tools.',
@@ -65,7 +65,7 @@ export const experiences = [
         company: 'Freelance Client',
         location: 'Denver, Colorado',
         duration: 'Mar. 2, 2023 – May 1, 2023',
-        icon: () => <LiaLaptopCodeSolid className="text-green-600 text-5xl" />,
+        icon: () => <LiaLaptopCodeSolid className="text-emerald-500 text-4xl" />,
         category: 'technical',
         description: [
           'Managed full lifecycle web development projects from planning to execution.',
@@ -77,7 +77,7 @@ export const experiences = [
         company: 'University of Arizona Information Technology',
         location: 'Tucson, Arizona',
         duration: 'Jan. 2022 – Dec. 2022',
-        icon: () => <TbDeviceDesktopAnalytics className="text-red-600 text-5xl" />,
+        icon: () => <TbDeviceDesktopAnalytics className="text-purple-500 text-4xl" />,
         category: 'technical',
         description: [
           'Conducted website testing to enhance user experience and accessibility.',
@@ -90,7 +90,7 @@ export const experiences = [
         company: 'Biosphere 2 Tech Core',
         location: 'Tucson, Arizona',
         duration: 'Jun. 2021 – Aug. 2021',
-        icon: () => <TbCube3dSphere className="text-yellow-600 text-5xl" />,
+        icon: () => <TbCube3dSphere className="text-amber-500 text-4xl" />,
         category: 'technical',
         description: [
           'Collaborated with cross-functional teams to streamline data processing workflows.',
@@ -102,7 +102,7 @@ export const experiences = [
   },
   {
     section: 'Service & Retail Experience',
-    icon: () => <FaCashRegister className="text-orange-600 text-6xl" />,
+    icon: () => <FaCashRegister className="text-orange-600 text-5xl" />,
     roles: sortRolesByDate([
       {
         title: 'Deli Clerk, Barista & Cashier',
@@ -111,9 +111,9 @@ export const experiences = [
         duration: 'Apr. 2024 – Present',
         icon: () => (
           <div className="flex items-center">
-            <GiMeat className="text-pink-600 text-5xl mr-2" />
-            <FaCashRegister className="text-pink-600 text-5xl mr-2" />
-            <CiCoffeeCup className="text-pink-600 text-5xl" />
+            <GiMeat className="text-pink-500 text-4xl mr-2" />
+            <FaCashRegister className="text-pink-500 text-4xl mr-2" />
+            <CiCoffeeCup className="text-pink-500 text-4xl" />
           </div>
         ),
         category: 'service',
@@ -130,9 +130,9 @@ export const experiences = [
         duration: 'Aug. 2019 – Dec. 2019',
         icon: () => (
           <div className="flex items-center">
-            <CiCoffeeCup className="text-teal-600 text-5xl mr-2" />
-            <FaCashRegister className="text-teal-600 text-5xl mr-2" />
-            <LuCroissant className="text-teal-600 text-5xl" />
+            <CiCoffeeCup className="text-teal-500 text-4xl mr-2" />
+            <FaCashRegister className="text-teal-500 text-4xl mr-2" />
+            <LuCroissant className="text-teal-500 text-4xl" />
           </div>
         ),
         category: 'service',
@@ -149,9 +149,9 @@ export const experiences = [
         duration: 'Aug. 2018 – Aug. 2019',
         icon: () => (
           <div className="flex items-center">
-            <FaTshirt className="text-indigo-600 text-5xl mr-2" />
-            <FaHammer className="text-indigo-600 text-5xl mr-2" />
-            <TbGardenCart className="text-indigo-600 text-5xl" />
+            <FaTshirt className="text-indigo-500 text-4xl mr-2" />
+            <FaHammer className="text-indigo-500 text-4xl mr-2" />
+            <TbGardenCart className="text-indigo-500 text-4xl" />
           </div>
         ),
         category: 'service',
@@ -169,9 +169,9 @@ export const experiences = [
         duration: 'May 2015 – Aug. 2017',
         icon: () => (
           <div className="flex items-center">
-            <TbPlant className="text-green-800 text-5xl mr-2" />
-            <FaLeaf className="text-green-800 text-5xl mr-2" />
-            <GiPlantWatering className="text-green-800 text-5xl" />
+            <TbPlant className="text-green-600 text-4xl mr-2" />
+            <FaLeaf className="text-green-600 text-4xl mr-2" />
+            <GiPlantWatering className="text-green-600 text-4xl" />
           </div>
         ),
         category: 'service',
