@@ -19,7 +19,7 @@ const Birthday = () => {
       const storedBirthdays = JSON.parse(localStorage.getItem('birthdays') || '[]');
       setBirthdays(storedBirthdays);
     }
-  }, []);
+  }, [initClient]); // Add initClient to the dependency array
 
   const initClient = () => {
     gapi.client.init({

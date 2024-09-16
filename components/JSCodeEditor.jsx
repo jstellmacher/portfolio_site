@@ -58,8 +58,10 @@ const JSCodeEditor = () => {
                 <>
                   {tokens.map((line, i) => (
                     <div {...getLineProps({ line, key: i })}>
-                      {line.map((token, key) => (
-                        <span {...getTokenProps({ token, key })} />
+                      {line.split('').map((char, charIndex) => (
+                        <span key={`${i}-${charIndex}`} style={{ ...getTokenProps({ token: char, key: charIndex }) }}>
+                          {char}
+                        </span>
                       ))}
                     </div>
                   ))}

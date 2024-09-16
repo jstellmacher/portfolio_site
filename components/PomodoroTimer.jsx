@@ -170,6 +170,10 @@ const PomodoroTimer = () => {
         return () => window.removeEventListener('resize', checkScreenSize);
     }, []);
 
+    useEffect(() => {
+        // Your code here
+    }, [breakMinutes, minutes]);
+
     return (
         <>
             {showConfetti && <Confetti />}

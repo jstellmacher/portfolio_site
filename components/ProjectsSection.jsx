@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const ProjectsSection = () => {
   const [projects, setProjects] = useState([]);
@@ -107,10 +108,12 @@ const ProjectsSection = () => {
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="flex-grow">
                     <div className="overflow-hidden rounded-lg mb-4">
-                      <img
+                      <Image
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-40 sm:h-48 object-cover rounded-lg transition-transform transform hover:scale-110"
+                        width={500}
+                        height={300}
+                        layout="responsive"
                       />
                     </div>
                     <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-gray-800">{project.title}</h3>
