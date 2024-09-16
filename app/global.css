@@ -174,3 +174,32 @@ canvas {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.resume-preview {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.resume-preview h1 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.resume-preview h2 {
+  color: #3498db;
+  margin-top: 20px;
+}
+
+.resume-preview h3 {
+  color: #2c3e50;
+}
+
+.resume-preview p {
+  margin: 5px 0;
+}

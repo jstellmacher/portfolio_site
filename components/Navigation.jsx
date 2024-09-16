@@ -52,18 +52,15 @@ const Navigation = () => {
   return (
     <nav aria-label="Main navigation" className="flex items-center justify-between relative px-4 py-3 sm:py-2 sm:px-6">
       <div className="flex items-center">
-        {!isMobile && (
-          <Link href="/"
-            className="mr-2 p-1 sm:p-2 bg-gray-900 text-white rounded-lg shadow-lg hover:bg-green-900 active:bg-gray-800 transition duration-300"
-            aria-label="Home"
-          >
-            <FaHome className="text-lg sm:text-xl" />
-          </Link>
-        )}
         <Link href="/"
-          className="px-3 py-1 sm:px-4 sm:py-2 bg-gray-800 text-white text-sm sm:text-base rounded-lg shadow-lg hover:bg-gray-700 active:bg-gray-900 transition duration-300"
-          aria-label="Jai Stellmacher - Back to top"
+          className="flex items-center px-3 py-1 sm:px-4 sm:py-2 bg-gray-800 text-white text-sm sm:text-base rounded-lg shadow-lg hover:bg-gray-700 hover:scale-105 active:bg-gray-900 transition-all duration-300 ease-in-out"
+          aria-label="Jai Stellmacher - Home"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToTop();
+          }}
         >
+          <FaHome className="mr-2 text-lg sm:text-xl" />
           Jai Stellmacher
         </Link>
       </div>
