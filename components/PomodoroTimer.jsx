@@ -1,36 +1,45 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { FaLightbulb } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { FaPlay, FaStop, FaRedo, FaRegLightbulb } from 'react-icons/fa';
+import { AiOutlineBulb } from 'react-icons/ai';import { motion } from 'framer-motion';
 import Draggable from 'react-draggable';
 import Confetti from 'react-confetti';
 import { differenceInSeconds } from 'date-fns';
 
-const TimerDisplay = ({ minutes, seconds, isBreak, blinkingColon }) => (
-    <div className="text-7xl font-mono text-white text-center" style={{ textShadow: '0 0 10px rgba(255,255,255,0.7)' }}>
+
+
+const TimerControls = ({ isRunning, handleStart, handleStop, handleReset, toggleFocusMode, isFocusMode }) => (
+    <div className="flex justify-center space-x-4 mb-4">
+        <Button onClick={handleStart} color="green">
+            <FaPlay className="text-2xl" />
+        </Button>
+        <Button onClick={handleStop} color="red">
+            <FaStop className="text-2xl" />
+        </Button>
+        <Button onClick={handleReset} color="yellow">
+            <FaRedo className="text-2xl" />
+        </Button>
+        <Button onClick={toggleFocusMode} color={isFocusMode ? 'white' : 'yellow'}>
+            {isFocusMode ? <AiOutlineBulb className="text-2xl" /> : <FaRegLightbulb className="text-2xl" />}
+        </Button>
+    </div>
+);
+const TimerDisplay = ({ minutes, seconds, blinkingColon }) => (
+    <div className="text-7xl font-mono text-white text-center" style={{ textShadow: '0 0 5px rgba(0,0,0,0.7)' }}>
         {String(minutes).padStart(2, '0')}
         <motion.span animate={blinkingColon}>:</motion.span>
         {String(seconds).padStart(2, '0')}
     </div>
 );
 
-const TimerControls = ({ isRunning, handleStart, handleStop, handleReset, toggleFocusMode, isFocusMode }) => (
-    <div className="grid grid-cols-2 gap-3 mb-4">
-        <button onClick={handleStart} className="py-3 bg-green-400 text-gray-800 text-lg font-bold rounded-lg hover:bg-green-300 transition duration-200">
-            Start
-        </button>
-        <button onClick={handleStop} className="py-3 bg-red-400 text-gray-800 text-lg font-bold rounded-lg hover:bg-red-300 transition duration-200">
-            Stop
-        </button>
-        <button onClick={handleReset} className="py-3 bg-gray-400 text-gray-800 text-lg font-bold rounded-lg hover:bg-gray-300 transition duration-200">
-            Reset
-        </button>
-        <button onClick={toggleFocusMode} className={`py-3 text-gray-800 text-lg font-bold rounded-lg flex items-center justify-center transition duration-200 ${isFocusMode ? 'bg-yellow-400 hover:bg-yellow-300' : 'bg-blue-400 hover:bg-blue-300'}`}>
-            <FaLightbulb className="mr-2 text-base" />
-            {isFocusMode ? 'Normal Mode' : 'Focus Mode'}
-        </button>
-    </div>
+const Button = ({ onClick, color, children }) => (
+    <button
+        onClick={onClick}
+        className={`flex items-center justify-center w-16 h-16 text-gray-800 text-lg font-bold rounded-lg hover:bg-${color}-300 bg-${color}-400 transition duration-300 ease-in-out transform hover:scale-105 shadow-md`}
+    >
+        {children}
+    </button>
 );
 
 const PomodoroTimer = () => {
@@ -86,18 +95,9 @@ const PomodoroTimer = () => {
 
     useEffect(() => {
         setMinutes(timeInput);
-        const calculatedBreakTime = calculateBreakTime(timeInput);
-        setBreakMinutes(calculatedBreakTime);
+        setBreakMinutes(calculateBreakTime(timeInput));
         setMultipleBreaks(timeInput > 60);
     }, [timeInput]);
-
-    const handleMultipleBreaksChange = (e) => {
-        setMultipleBreaks(e.target.checked);
-    };
-
-    const handleBreakIntervalChange = (e) => {
-        setBreakInterval(Number(e.target.value));
-    };
 
     useEffect(() => {
         let interval;
@@ -109,7 +109,6 @@ const PomodoroTimer = () => {
 
                 if (remainingSeconds <= 0) {
                     if (isBreak) {
-                        // Transition back to work session or reset
                         setIsBreak(false);
                         resetTimer();
                         setShowCongrats(true);
@@ -119,7 +118,6 @@ const PomodoroTimer = () => {
                             setBreakMinutes(calculateBreakTime(timeInput, true));
                         }
                     } else {
-                        // Transition to break session
                         setIsBreak(true);
                         setBreakMinutes(calculateBreakTime(timeInput));
                     }
@@ -135,7 +133,7 @@ const PomodoroTimer = () => {
             }, 1000);
         }
         return () => clearInterval(interval);
-    }, [isRunning, isBreak, startTime, breakMinutes, minutes, multipleBreaks, sessionCount, timeInput]); // Add all relevant dependencies
+    }, [isRunning, isBreak, startTime, breakMinutes, minutes, multipleBreaks, sessionCount, timeInput]);
 
     const handleStart = () => setIsRunning(true);
     const handleStop = () => setIsRunning(false);
@@ -150,12 +148,7 @@ const PomodoroTimer = () => {
     };
 
     useEffect(() => {
-        const root = document.documentElement;
-        if (isFocusMode) {
-            root.classList.add('grayscale');
-        } else {
-            root.classList.remove('grayscale');
-        }
+        document.documentElement.classList.toggle('grayscale', isFocusMode);
     }, [isFocusMode]);
 
     useEffect(() => {
@@ -164,7 +157,7 @@ const PomodoroTimer = () => {
             const timer = setTimeout(() => {
                 setShowConfetti(false);
                 setShowCongrats(false);
-            }, 10000); // Increased from 5000 to 10000 (10 seconds)
+            }, 10000);
             return () => clearTimeout(timer);
         }
     }, [showCongrats]);
@@ -175,16 +168,16 @@ const PomodoroTimer = () => {
         setSeconds(0);
     };
 
+    const handleMultipleBreaksChange = () => {
+        setMultipleBreaks(prev => !prev);
+    };
+
     const blinkingColon = { opacity: [1, 0], transition: { duration: 1, repeat: Infinity, repeatType: 'reverse' } };
 
     useEffect(() => {
-        const checkScreenSize = () => {
-            setIsSmallScreen(window.innerWidth < 640); // Adjust this value as needed
-        };
-
+        const checkScreenSize = () => setIsSmallScreen(window.innerWidth < 640);
         checkScreenSize();
         window.addEventListener('resize', checkScreenSize);
-
         return () => window.removeEventListener('resize', checkScreenSize);
     }, []);
 
@@ -196,39 +189,46 @@ const PomodoroTimer = () => {
                     Warning: This component is meant for larger screens.
                 </div>
             )}
-            <Draggable>
-                <div className="bg-gradient-to-b from-indigo-900 to-purple-800 rounded-xl shadow-2xl p-6 cursor-move fixed top-10 left-10 z-50">
-                    <div className="flex flex-col items-center">
-                        <TimerDisplay minutes={minutes} seconds={seconds} isBreak={isBreak} blinkingColon={blinkingColon} />
-                        <TimerControls
-                            isRunning={isRunning}
-                            handleStart={handleStart}
-                            handleStop={handleStop}
-                            handleReset={handleReset}
-                            toggleFocusMode={toggleFocusMode}
-                            isFocusMode={isFocusMode}
-                        />
-                        <div className="mt-4">
-                            <select value={timeInput} onChange={(e) => handleTimeChange(Number(e.target.value))} className="p-2 border border-gray-300 rounded">
-                                {presetTimes.map((time) => (
-                                    <option key={time} value={time}>{time} minutes</option>
-                                ))}
-                            </select>
-                            <input type="checkbox" checked={multipleBreaks} onChange={handleMultipleBreaksChange} className="ml-2" />
-                            <label className="ml-1">Multiple Breaks</label>
-                            {multipleBreaks && (
-                                <input
-                                    type="number"
-                                    value={breakInterval}
-                                    onChange={handleBreakIntervalChange}
-                                    className="ml-2 p-1 border border-gray-300 rounded"
-                                    min="5"
-                                />
-                            )}
-                        </div>
-                    </div>
-                </div>
-            </Draggable>
+    <Draggable>
+    <div
+        className="bg-gradient-to-b from-indigo-900 to-purple-800 rounded-xl shadow-2xl p-6 cursor-move fixed z-50"
+        style={{ top: '5px', right: '5px', position: 'fixed' }}
+    >
+            
+            <TimerDisplay minutes={minutes} seconds={seconds} blinkingColon={blinkingColon} />
+            <TimerControls
+                isRunning={isRunning}
+                handleStart={handleStart}
+                handleStop={handleStop}
+                handleReset={handleReset}
+                toggleFocusMode={toggleFocusMode}
+                isFocusMode={isFocusMode}
+            />
+            <div className="mt-4 flex items-center">
+                <select
+                    value={timeInput}
+                    onChange={(e) => handleTimeChange(Number(e.target.value))}
+                    className="p-2 border border-gray-300 rounded text-gray-900"
+                    onMouseDown={(e) => e.stopPropagation()}
+                >
+                    {presetTimes.map((time) => (
+                        <option key={time} value={time}>
+                            {time} minutes
+                        </option>
+                    ))}
+                </select>
+                <label className="ml-4 flex items-center">
+                    <input
+                        type="checkbox"
+                        checked={multipleBreaks}
+                        onChange={handleMultipleBreaksChange}
+                        className="mr-2"
+                    />
+                    Multiple Breaks
+                </label>
+            </div>
+        </div>
+</Draggable>
         </>
     );
 };
