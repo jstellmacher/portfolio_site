@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { FiDownload } from 'react-icons/fi';
-import { FaTrello, FaReact, FaAws, FaLaptopCode } from 'react-icons/fa';
-import { SiMicrosoftazure } from "react-icons/si";
-import { MdComputer } from "react-icons/md";
-import { FaHandsHelping } from "react-icons/fa";
+import { FaTrello, FaReact, FaAws, FaLaptopCode, FaHandsHelping } from 'react-icons/fa';
+import { SiMicrosoftazure } from 'react-icons/si';
+import { MdComputer } from 'react-icons/md';
 
 import './CTASection.css'; // Add this import
 
@@ -13,14 +12,14 @@ const skills = [
     description: 'Experienced in managing projects using Agile methodologies, ensuring timely and budget-compliant delivery with a focus on client satisfaction and technical excellence.',
     color: 'skill-card-blue',
     icon: <FaTrello size={40} />,
-    key: 'project-management'
+    key: 'project-management',
   },
   {
     title: 'Full Stack Development',
     description: 'Proficient in building and maintaining end-to-end solutions with expertise in Python, JavaScript, React, and frameworks such as Django and Flask.',
     color: 'skill-card-green',
     icon: <FaReact size={40} />,
-    key: 'full-stack'
+    key: 'full-stack',
   },
   {
     title: 'Cloud Administration',
@@ -36,7 +35,7 @@ const skills = [
         </div>
       </div>
     ),
-    key: 'cloud'
+    key: 'cloud',
   },
   {
     title: 'Microsoft Azure Fundamentals',
@@ -44,7 +43,7 @@ const skills = [
     color: 'skill-card-purple',
     icon: <SiMicrosoftazure size={40} />,
     key: 'azure',
-    hidden: true
+    hidden: true,
   },
   {
     title: 'Full Stack Software Engineering',
@@ -52,8 +51,8 @@ const skills = [
     color: 'skill-card-orange',
     icon: <FaLaptopCode size={40} />,
     key: 'full-stack-cert',
-    hidden: true
-  }
+    hidden: true,
+  },
 ];
 
 const CTASection = () => {
@@ -69,7 +68,7 @@ const CTASection = () => {
             <MdComputer className="text-black text-3xl ml-4" />
           </div>
           <p className="text-lg mb-8 leading-relaxed">
-            I'm Jaichuang Stellmacher, a <strong >motivated (Cloud, Data, Digital) Information Technology Consultant</strong> with hands-on experience in <strong className="text-yellow-500 hover:text-yellow-700 cursor-pointer" onMouseEnter={() => setHoveredSkill('cloud')} onMouseLeave={() => setHoveredSkill(null)}>cloud computing</strong>, <strong className="text-green-500 hover:text-green-700 cursor-pointer" onMouseEnter={() => setHoveredSkill('full-stack')} onMouseLeave={() => setHoveredSkill(null)}>full-stack development</strong>, and <strong className="text-blue-500 hover:text-blue-700 cursor-pointer" onMouseEnter={() => setHoveredSkill('project-management')} onMouseLeave={() => setHoveredSkill(null)}>project management</strong>.
+            I'm Jaichuang Stellmacher, a <strong>motivated (Cloud, Data, Digital) Information Technology Consultant</strong> with hands-on experience in <strong className="text-yellow-500 hover:text-yellow-700 cursor-pointer" onMouseEnter={() => setHoveredSkill('cloud')} onMouseLeave={() => setHoveredSkill(null)}>cloud computing</strong>, <strong className="text-green-500 hover:text-green-700 cursor-pointer" onMouseEnter={() => setHoveredSkill('full-stack')} onMouseLeave={() => setHoveredSkill(null)}>full-stack development</strong>, and <strong className="text-blue-500 hover:text-blue-700 cursor-pointer" onMouseEnter={() => setHoveredSkill('project-management')} onMouseLeave={() => setHoveredSkill(null)}>project management</strong>.
           </p>
           <p className="text-lg mb-8 leading-relaxed">
             I hold a BS in Business Administration with dual majors in <em>Management Information Systems and Marketing</em> from the <a href="https://eller.arizona.edu/why/rankings" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">University of Arizona's Eller College of Management</a>, consistently ranked as a top MIS program (#2 public, #3 overall).

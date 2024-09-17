@@ -112,8 +112,8 @@ const Checkers = () => {
           <p className="text-sm text-gray-700 flex items-start">
             <FaInfoCircle className="text-yellow-500 mr-2 mt-1 flex-shrink-0" />
             <span>
-              Note: This is a simplified version of Checkers. It doesn't include all the rules (like capturing pieces or king pieces). 
-              The game will be updated eventually to add more game logic, turn-based play, and other features to make it a complete checkers game.
+            It doesn&apos;t include all the rules (like capturing pieces or king pieces).
+            The game will be updated eventually to add more game logic, turn-based play, and other features to make it a complete checkers game.
             </span>
           </p>
         </div>
