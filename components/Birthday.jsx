@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import React, { useState, useEffect } from 'react';
-import { gapi } from 'gapi-script';
+// import { gapi } from 'gapi-script'; // Comment out the gapi import
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -11,33 +11,37 @@ const Birthday = () => {
   const [useGoogleCalendar, setUseGoogleCalendar] = useState(false);
   const [editingIndex, setEditingIndex] = useState(null);
 
+  // Comment out the gapi initialization and usage
   useEffect(() => {
-    const initClient = () => {
-      gapi.client.init({
-        apiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
-        clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
-        discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
-        scope: 'https://www.googleapis.com/auth/calendar.events',
-      }).then(() => {
-        loadBirthdays();
-      });
-    };
-    initClient();
+    // const initClient = () => {
+    //   gapi.client.init({
+    //     apiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
+    //     clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+    //     discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+    //     scope: 'https://www.googleapis.com/auth/calendar.events',
+    //   }).then(() => {
+    //     loadBirthdays();
+    //   });
+    // };
+    // initClient();
+    // Commenting out loading birthdays on mount
+    // loadBirthdays();
   }, []);
 
   const loadBirthdays = () => {
-    gapi.client.calendar.events.list({
-      'calendarId': 'primary',
-      'timeMin': (new Date()).toISOString(),
-      'showDeleted': false,
-      'singleEvents': true,
-      'maxResults': 250,
-      'orderBy': 'startTime'
-    }).then(response => {
-      const events = response.result.items;
-      const birthdayEvents = events.filter(event => event.summary.includes('Birthday'));
-      setBirthdays(birthdayEvents);
-    });
+    // Comment out the Google API call
+    // gapi.client.calendar.events.list({
+    //   'calendarId': 'primary',
+    //   'timeMin': (new Date()).toISOString(),
+    //   'showDeleted': false,
+    //   'singleEvents': true,
+    //   'maxResults': 250,
+    //   'orderBy': 'startTime'
+    // }).then(response => {
+    //   const events = response.result.items;
+    //   const birthdayEvents = events.filter(event => event.summary.includes('Birthday'));
+    //   setBirthdays(birthdayEvents);
+    // });
   };
 
   const formatDate = (date) => {
@@ -64,27 +68,28 @@ const Birthday = () => {
       updateBirthday();
     } else {
       if (useGoogleCalendar) {
-        const event = {
-          'summary': `${newBirthday.name}&apos;s Birthday`,
-          'start': {
-            'date': formatDateForStorage(newBirthday.date),
-            'timeZone': 'UTC'
-          },
-          'end': {
-            'date': formatDateForStorage(newBirthday.date),
-            'timeZone': 'UTC'
-          },
-          'recurrence': ['RRULE:FREQ=YEARLY'],
-        };
+        // Comment out the Google Calendar API call
+        // const event = {
+        //   'summary': `${newBirthday.name}&apos;s Birthday`,
+        //   'start': {
+        //     'date': formatDateForStorage(newBirthday.date),
+        //     'timeZone': 'UTC'
+        //   },
+        //   'end': {
+        //     'date': formatDateForStorage(newBirthday.date),
+        //     'timeZone': 'UTC'
+        //   },
+        //   'recurrence': ['RRULE:FREQ=YEARLY'],
+        // };
 
-        gapi.client.calendar.events.insert({
-          'calendarId': 'primary',
-          'resource': event
-        }).then(() => {
-          loadBirthdays();
-          setNewBirthday({ name: '', date: null });
-          setEditingIndex(null);
-        });
+        // gapi.client.calendar.events.insert({
+        //   'calendarId': 'primary',
+        //   'resource': event
+        // }).then(() => {
+        //   loadBirthdays();
+        //   setNewBirthday({ name: '', date: null });
+        //   setEditingIndex(null);
+        // });
       } else {
         const newBirthdayEvent = {
           summary: `${newBirthday.name}'s Birthday`,
@@ -102,20 +107,21 @@ const Birthday = () => {
 
   const updateBirthday = () => {
     if (useGoogleCalendar) {
-      const event = birthdays[editingIndex];
-      event.summary = `${newBirthday.name}'s Birthday`;
-      event.start.date = formatDateForStorage(newBirthday.date);
-      event.end.date = formatDateForStorage(newBirthday.date);
+      // Comment out the Google Calendar API call
+      // const event = birthdays[editingIndex];
+      // event.summary = `${newBirthday.name}'s Birthday`;
+      // event.start.date = formatDateForStorage(newBirthday.date);
+      // event.end.date = formatDateForStorage(newBirthday.date);
 
-      gapi.client.calendar.events.update({
-        calendarId: 'primary',
-        eventId: event.id,
-        resource: event,
-      }).then(() => {
-        loadBirthdays();
-        setNewBirthday({ name: '', date: null });
-        setEditingIndex(null);
-      });
+      // gapi.client.calendar.events.update({
+      //   calendarId: 'primary',
+      //   eventId: event.id,
+      //   resource: event,
+      // }).then(() => {
+      //   loadBirthdays();
+      //   setNewBirthday({ name: '', date: null });
+      //   setEditingIndex(null);
+      // });
     } else {
       const updatedBirthdays = [...birthdays];
       updatedBirthdays[editingIndex] = {
@@ -132,13 +138,14 @@ const Birthday = () => {
 
   const deleteBirthday = (index) => {
     if (useGoogleCalendar) {
-      const event = birthdays[index];
-      gapi.client.calendar.events.delete({
-        calendarId: 'primary',
-        eventId: event.id,
-      }).then(() => {
-        loadBirthdays();
-      });
+      // Comment out the Google Calendar API call
+      // const event = birthdays[index];
+      // gapi.client.calendar.events.delete({
+      //   calendarId: 'primary',
+      //   eventId: event.id,
+      // }).then(() => {
+      //   loadBirthdays();
+      // });
     } else {
       const updatedBirthdays = birthdays.filter((_, i) => i !== index);
       setBirthdays(updatedBirthdays);
@@ -149,7 +156,8 @@ const Birthday = () => {
   const editBirthday = (index) => {
     const birthday = birthdays[index];
     setNewBirthday({
-      name: birthday.summary.replace("&apos;s Birthday", ''),      date: new Date(birthday.start.date),
+      name: birthday.summary.replace("&apos;s Birthday", ''),      
+      date: new Date(birthday.start.date),
     });
     setEditingIndex(index);
   };
