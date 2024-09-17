@@ -37,7 +37,7 @@ const ProjectsSection = () => {
         return 'from-blue-100 to-blue-300';
       case 'Project Management':
         return 'from-green-100 to-green-300';
-      case 'Other Projects':
+      case 'Other':
         return 'from-purple-100 to-purple-300';
       case 'MIS Projects':
         return 'from-yellow-100 to-yellow-300';
