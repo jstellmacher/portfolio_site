@@ -26,7 +26,11 @@ export const experiences = [
         company: 'Insight Enterprises',
         location: 'Chandler, Arizona',
         duration: 'Jul. 17, 2023 – Mar. 5, 2024',
-        icon: () => <AiOutlineCloudServer className="text-cyan-500 text-4xl" />,
+        icon: () => (
+          <div className="flex items-center">
+            <AiOutlineCloudServer className="text-blue-500 text-4xl mr-2" />
+          </div>
+        ),
         category: 'technical',
         description: [
           'Led data governance initiatives to support data-driven decision-making using Azure tools.',
@@ -65,7 +69,11 @@ export const experiences = [
         company: 'Freelance Client',
         location: 'Denver, Colorado',
         duration: 'Mar. 2, 2023 – May 1, 2023',
-        icon: () => <LiaLaptopCodeSolid className="text-emerald-500 text-4xl" />,
+        icon: () => (
+          <div className="flex items-center">
+            <LiaLaptopCodeSolid className="text-green-500 text-4xl mr-2" />
+          </div>
+        ),
         category: 'technical',
         description: [
           'Managed full lifecycle web development projects from planning to execution.',
@@ -77,7 +85,11 @@ export const experiences = [
         company: 'University of Arizona Information Technology',
         location: 'Tucson, Arizona',
         duration: 'Jan. 2022 – Dec. 2022',
-        icon: () => <TbDeviceDesktopAnalytics className="text-purple-500 text-4xl" />,
+        icon: () => (
+          <div className="flex items-center">
+            <TbDeviceDesktopAnalytics className="text-purple-500 text-4xl mr-2" />
+          </div>
+        ),
         category: 'technical',
         description: [
           'Conducted website testing to enhance user experience and accessibility.',
@@ -90,7 +102,11 @@ export const experiences = [
         company: 'Biosphere 2 Tech Core',
         location: 'Tucson, Arizona',
         duration: 'Jun. 2021 – Aug. 2021',
-        icon: () => <TbCube3dSphere className="text-amber-500 text-4xl" />,
+        icon: () => (
+          <div className="flex items-center">
+            <TbCube3dSphere className="text-red-500 text-4xl mr-2" />
+          </div>
+        ),
         category: 'technical',
         description: [
           'Collaborated with cross-functional teams to streamline data processing workflows.',
