@@ -125,13 +125,13 @@ const GrowingCircle = () => {
             {!started ? (
                 <>
                     <div className={styles.infoBox}>
-                        <p className={styles.explanation}>
-                            When I need to ground myself and find calm during stressful moments, I turn to box breathing. It's a simple yet powerful technique that helps me regain my center. Here's how it works: I breathe in slowly for 4 seconds, hold the breath for 4 seconds, exhale gently for 4 seconds, and then hold again for 4 seconds. This rhythm creates a soothing "box" pattern, offering a moment of peace and clarity amidst the chaos.
-                        </p>
-                        <p className={styles.instructions}>
-                            Click "Start" to begin. Follow the circle's growth and the on-screen instructions 
-                            to guide your breathing.
-                        </p>
+                    <p className={styles.explanation}>
+  When I need to ground myself and find calm during stressful moments, I turn to box breathing. It&apos;s a simple yet powerful technique that helps me regain my center. Here&apos;s how it works: I breathe in slowly for 4 seconds, hold the breath for 4 seconds, exhale gently for 4 seconds, and then hold again for 4 seconds. This rhythm creates a soothing &quot;box&quot; pattern, offering a moment of peace and clarity amidst the chaos.
+</p>
+<p className={styles.instructions}>
+  Click &quot;Start&quot; to begin. Follow the circle&apos;s growth and the on-screen instructions 
+  to guide your breathing.
+</p>
                     </div>
                     <button className={styles.startButton} onClick={handleStart}>
                         Start
