@@ -58,14 +58,12 @@ const JSCodeEditor = () => {
               {({ tokens, getLineProps, getTokenProps }) => (
                 <>
                   {tokens.map((line, i) => (
-                    <div {...getLineProps({ line, key: i })}>
-                      {line.split('').map((char, charIndex) => (
-                        <span key={`${i}-${charIndex}`} style={{ ...getTokenProps({ token: char, key: charIndex }) }}>
-                          {char}
-                        </span>
-                      ))}
-                    </div>
-                  ))}
+  <div {...getLineProps({ line, key: i })} key={i}> {/* Add key here */}
+    {line.map((token, key) => (
+      <span {...getTokenProps({ token, key })} key={key} />
+    ))}
+  </div>
+))}
                 </>
               )}
             </Highlight>
@@ -95,8 +93,8 @@ const JSCodeEditor = () => {
           onClick={toggleLimitations}
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 flex items-center"
         >
-          <FaInfoCircle className="mr-2" /> {showLimitations ? 'Hide Limitations' : 'Show Limitations'}
-        </button>
+<FaInfoCircle className="mr-2" /> {showLimitations ? 'Hide Limitations' : 'Show Limitations'}        
+</button>
       </div>
       {showLimitations && (
         <div className="mb-4 p-4 bg-yellow-50 rounded-lg text-sm text-gray-800 border border-yellow-200">
