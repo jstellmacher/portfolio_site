@@ -65,7 +65,7 @@ const Birthday = () => {
     } else {
       if (useGoogleCalendar) {
         const event = {
-          'summary': `${newBirthday.name}'s Birthday`,
+          'summary': `${newBirthday.name}&apos;s Birthday`,
           'start': {
             'date': formatDateForStorage(newBirthday.date),
             'timeZone': 'UTC'
@@ -149,8 +149,7 @@ const Birthday = () => {
   const editBirthday = (index) => {
     const birthday = birthdays[index];
     setNewBirthday({
-      name: birthday.summary.replace("'s Birthday", ''),
-      date: new Date(birthday.start.date),
+      name: birthday.summary.replace("&apos;s Birthday", ''),      date: new Date(birthday.start.date),
     });
     setEditingIndex(index);
   };
