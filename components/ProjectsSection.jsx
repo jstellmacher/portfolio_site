@@ -127,10 +127,12 @@ const ProjectsSection = () => {
                         const iconName = tool.toLowerCase().replace('.', '').replace(' ', '');
                         return (
                           <div key={index} className="relative group">
-                            <img
+                            <Image
                               src={`https://skillicons.dev/icons?i=${iconName}`}
                               alt={tool}
-                              className="w-8 h-8 cursor-pointer"
+                              width={32} // adjust width as needed
+                              height={32} // adjust height as needed
+                              className="cursor-pointer"
                               onClick={() => setSelectedTool(selectedTool === tool ? null : tool)}
                             />
                             <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

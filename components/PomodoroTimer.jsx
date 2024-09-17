@@ -108,16 +108,34 @@ const PomodoroTimer = () => {
                 const remainingSeconds = (isBreak ? breakMinutes : minutes) * 60 - elapsedSeconds;
 
                 if (remainingSeconds <= 0) {
-                    // Handle timer completion
-                    // ...
+                    if (isBreak) {
+                        // Transition back to work session or reset
+                        setIsBreak(false);
+                        resetTimer();
+                        setShowCongrats(true);
+                        setSessionCount(prevCount => prevCount + 1);
+                        if (multipleBreaks && sessionCount % breakInterval === 0) {
+                            setIsBreak(true);
+                            setBreakMinutes(calculateBreakTime(timeInput, true));
+                        }
+                    } else {
+                        // Transition to break session
+                        setIsBreak(true);
+                        setBreakMinutes(calculateBreakTime(timeInput));
+                    }
                 } else {
-                    setMinutes(Math.floor(remainingSeconds / 60));
-                    setSeconds(remainingSeconds % 60);
+                    if (isBreak) {
+                        setBreakMinutes(Math.floor(remainingSeconds / 60));
+                        setBreakSeconds(remainingSeconds % 60);
+                    } else {
+                        setMinutes(Math.floor(remainingSeconds / 60));
+                        setSeconds(remainingSeconds % 60);
+                    }
                 }
             }, 1000);
         }
         return () => clearInterval(interval);
-    }, [isRunning, isBreak, startTime]);
+    }, [isRunning, isBreak, startTime, breakMinutes, minutes, multipleBreaks, sessionCount, timeInput]); // Add all relevant dependencies
 
     const handleStart = () => setIsRunning(true);
     const handleStop = () => setIsRunning(false);
@@ -170,10 +188,6 @@ const PomodoroTimer = () => {
         return () => window.removeEventListener('resize', checkScreenSize);
     }, []);
 
-    useEffect(() => {
-        // Your code here
-    }, [breakMinutes, minutes]); // Ensure dependencies are included
-
     return (
         <>
             {showConfetti && <Confetti />}
@@ -183,84 +197,36 @@ const PomodoroTimer = () => {
                 </div>
             )}
             <Draggable>
-                <div className="bg-gradient-to-b from-indigo-900 to-purple-800 rounded-xl shadow-2xl p-6 cursor-move fixed top-20 right-5" style={{ width: '400px', zIndex: 9999 }}>
-                    <div className="bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm rounded-lg p-4 mb-4">
-                        <TimerDisplay minutes={isBreak ? breakMinutes : minutes} seconds={isBreak ? breakSeconds : seconds} isBreak={isBreak} blinkingColon={blinkingColon} />
-                    </div>
-                    {!isBreak && (
-                        <div className="mb-4">
-                            <motion.div 
-                                className="flex overflow-x-auto pb-2 mb-2 scrollbar-hide"
-                                whileTap={{ cursor: "grabbing" }}
-                            >
-                                <motion.div 
-                                    className="flex space-x-2"
-                                    drag="x"
-                                    dragConstraints={{ right: 0, left: -((presetTimes.length - 1) * 70) }}
-                                >
-                                    {presetTimes.map(time => (
-                                        <motion.button
-                                            key={time}
-                                            onClick={() => handleTimeChange(time)}
-                                            className={`px-3 py-1 rounded-full text-sm flex-shrink-0 ${timeInput === time ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-800'}`}
-                                            whileHover={{ scale: 1.1 }}
-                                            whileTap={{ scale: 0.9 }}
-                                        >
-                                            {time}m
-                                        </motion.button>
-                                    ))}
-                                </motion.div>
-                            </motion.div>
-                            <div className="flex justify-center items-center">
-                                <input
-                                    type="number"
-                                    min="1"
-                                    value={timeInput}
-                                    onChange={(e) => handleTimeChange(Number(e.target.value))}
-                                    className="px-4 py-2 border border-gray-600 rounded-lg text-lg bg-gray-800 text-white shadow-inner focus:outline-none focus:ring-2 focus:ring-red-500 w-24 text-center"
-                                />
-                                <span className="ml-2 text-lg text-white">minutes</span>
-                            </div>
-                        </div>
-                    )}
-                    {timeInput > 60 && !isRunning && (
-                        <div className="mb-4 text-center">
-                            <label className="text-white flex items-center justify-center">
-                                <input
-                                    type="checkbox"
-                                    checked={multipleBreaks}
-                                    onChange={handleMultipleBreaksChange}
-                                    className="mr-2"
-                                />
-                                Enable breaks every
+                <div className="bg-gradient-to-b from-indigo-900 to-purple-800 rounded-xl shadow-2xl p-6 cursor-move fixed top-10 left-10 z-50">
+                    <div className="flex flex-col items-center">
+                        <TimerDisplay minutes={minutes} seconds={seconds} isBreak={isBreak} blinkingColon={blinkingColon} />
+                        <TimerControls
+                            isRunning={isRunning}
+                            handleStart={handleStart}
+                            handleStop={handleStop}
+                            handleReset={handleReset}
+                            toggleFocusMode={toggleFocusMode}
+                            isFocusMode={isFocusMode}
+                        />
+                        <div className="mt-4">
+                            <select value={timeInput} onChange={(e) => handleTimeChange(Number(e.target.value))} className="p-2 border border-gray-300 rounded">
+                                {presetTimes.map((time) => (
+                                    <option key={time} value={time}>{time} minutes</option>
+                                ))}
+                            </select>
+                            <input type="checkbox" checked={multipleBreaks} onChange={handleMultipleBreaksChange} className="ml-2" />
+                            <label className="ml-1">Multiple Breaks</label>
+                            {multipleBreaks && (
                                 <input
                                     type="number"
                                     value={breakInterval}
                                     onChange={handleBreakIntervalChange}
-                                    className="mx-2 w-16 bg-gray-800 text-white rounded px-2 py-1"
-                                    min="15"
-                                    max="60"
+                                    className="ml-2 p-1 border border-gray-300 rounded"
+                                    min="5"
                                 />
-                                minutes
-                            </label>
-                            <p className="text-sm text-gray-300 mt-1">
-                                (Recommended for sessions longer than 60 minutes)
-                            </p>
+                            )}
                         </div>
-                    )}
-                    <TimerControls
-                        isRunning={isRunning}
-                        handleStart={handleStart}
-                        handleStop={handleStop}
-                        handleReset={handleReset}
-                        toggleFocusMode={toggleFocusMode}
-                        isFocusMode={isFocusMode}
-                    />
-                    {showCongrats && (
-                        <div className="text-lg font-bold text-green-300 text-center">
-                            Congratulations! {isBreak ? "Back to work!" : "Break Time!"}
-                        </div>
-                    )}
+                    </div>
                 </div>
             </Draggable>
         </>

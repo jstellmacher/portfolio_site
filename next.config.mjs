@@ -6,7 +6,12 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'picsum.photos',
       },
+      {
+        protocol: 'https',
+        hostname: 'skillicons.dev',
+      },
     ],
+    dangerouslyAllowSVG: true, // Add this line to allow SVG images
   },
   eslint: {
     ignoreDuringBuilds: true,
