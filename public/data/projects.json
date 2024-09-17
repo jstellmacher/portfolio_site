@@ -7,10 +7,10 @@
       "category": "Software Development"
     },
     {
-      "title": "Cloud Solutions Implementation",
+      "title": "Cisco Collaboration Upgrade and Migration",
       "description": "Served as a Cloud & Data Associate Consultant at Insight Enterprises. Contributed to cloud solutions implementation using Azure, designed robust data governance frameworks.",
       "image": "https://picsum.photos/seed/cloud/400/300",
-      "tools": "Azure,AWS,Terraform,Git,Docker",
+      "tools": "Cisco",
       "category": "Project Management"
     },
     {
@@ -28,8 +28,8 @@
       "category": "Project Management"
     },
     {
-      "title": "Full Stack Web Development Projects",
-      "description": "Designed and developed full-stack web applications as a freelance engineer, integrating modern web technologies to meet business needs.",
+      "title": "Full Stack Food Truck Client Website",
+      "description": "Designed and developed a full-stack web app as a freelance engineer, integrating modern web technologies to meet business needs. It allowed my client's clients to make events with him.",
       "image": "https://picsum.photos/seed/webdev/400/300",
       "tools": "React,Next.js,TailwindCSS,Git,PostgreSQL,MongoDB,Docker",
       "category": "Software Development"
@@ -39,13 +39,6 @@
       "description": "Co-developing a machine learning-driven workout app for personalized exercise regimens, utilizing ML algorithms and React/Next.js.",
       "image": "https://picsum.photos/seed/mlapp/400/300",
       "tools": "React,Next.js,Python,Pandas,Scikit-learn,TensorFlow,PyTorch",
-      "category": "Other"
-    },
-    {
-      "title": "Virtual Reality Game",
-      "description": "Developed an immersive virtual reality game using Unity and C#, focusing on interactive gameplay and stunning visuals.",
-      "image": "https://picsum.photos/seed/vrgame/400/300",
-      "tools": "Unity,C#,VR,Oculus SDK",
       "category": "Other"
     },
     {
@@ -229,6 +222,13 @@
         "image": "https://picsum.photos/seed/crabbypatty/400/300",
         "tools": "React, Next.js",
         "category": "Other"
+      },
+      {
+        "title": "3D Data and Development Project",
+        "description": "During an internship with TechCore, I played a part in an immersive 3D project where we developed a virtual Biosphere 2. A combination of photogrammetry, Python, and Unity were used in order to recreate the entire Biosphere 2's jungle section. I specifically worked on the 3D data cleaning post-photogrammetry, and also other preparation before sending it off to the Unity Team.",
+        "image":"https://picsum.photos/seed/abtesting/400/302",
+        "tools": "Python",
+        "category":"Software Development"
       }
     
   ]
