@@ -38,7 +38,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="pt-24 pb-16 bg-gradient-to-r from-green-500/50 to-blue-500/50 text-white">
+    <section id="contact" className="pt-24 pb-16 text-white">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-extrabold mb-6 text-center">Connect With Me!</h2>
         <p className="text-lg font-light mb-8 text-center max-w-2xl mx-auto">

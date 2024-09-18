@@ -10,6 +10,7 @@ import ContactSection from '../components/ContactSection';
 import ExperienceSection from '../components/Experience';
 import SoftSkills from '../components/SoftSkills';
 import ConditionalFloatingSquid from '../components/ConditionalFloatingSquid';
+import FeedbackForm from '@/components/FeedbackForm';
 
 const Page = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -32,6 +33,7 @@ const Page = () => {
       <ExperienceSection />
       <ProjectsSection />
       <ContactSection />
+      <FeedbackForm />
       <ConditionalFloatingSquid scrollY={scrollY} />
     </>
   );
