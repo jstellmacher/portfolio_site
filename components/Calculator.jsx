@@ -76,6 +76,8 @@ const Calculator = () => {
       case '÷': return a / b;
       default: return b;
     }
+    return parseFloat(result.toFixed(10));
+
   };
 
   const Button = ({ children, onClick, className }) => (
