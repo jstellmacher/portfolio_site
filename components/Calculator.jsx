@@ -70,11 +70,11 @@ const Calculator = () => {
 
   const performOperation = (a, b, op) => {
     switch (op) {
-      case '+': return a + b;
-      case '-': return a - b;
-      case '×': return a * b;
-      case '÷': return a / b;
-      default: return b;
+      case '+': result = a + b;
+      case '-': result = a - b;
+      case '×': result = a * b;
+      case '÷': result = a / b;
+      default: result = b;
     }
     return parseFloat(result.toFixed(10));
 
