@@ -76,7 +76,7 @@ const Calculator = () => {
       case '÷': result = a / b;
       default: result = b;
     }
-    return parseFloat(result.toFixed(10));
+    return parseFloat(result.toFixed(2));
 
   };
 
