@@ -69,15 +69,24 @@ const Calculator = () => {
   };
 
   const performOperation = (a, b, op) => {
+    let ans;
     switch (op) {
-      case '+': result = a + b;
-      case '-': result = a - b;
-      case '×': result = a * b;
-      case '÷': result = a / b;
-      default: result = b;
+      case '+':
+        ans = a + b;
+      break;
+      case '-':
+        ans = a - b;
+      break;
+      case '×':
+        ans = a * b;
+      break;  
+      case '÷':
+        ans = a / b;
+      break;
+      default:
+        ans = b; // If none of the cases match, this will be the default behavior
     }
-    return parseFloat(result.toFixed(2));
-
+    return parseFloat(ans.toFixed(10));
   };
 
   const Button = ({ children, onClick, className }) => (
@@ -94,7 +103,7 @@ const Calculator = () => {
       <div className="mb-4 text-right h-24 flex flex-col justify-end">
         <div 
           ref={displayRef}
-          className="text-white text-3xl font-light truncate overflow-x-auto whitespace-nowrap"
+          className="text-white text-3xl font-light overflow-x-auto whitespace-nowrap"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {equation || display}
