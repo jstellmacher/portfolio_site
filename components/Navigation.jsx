@@ -3,7 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaUser, FaBars, FaTimes, FaHome, FaRocket } from 'react-icons/fa';
-import LoginForm from './LoginForm'; // Adjust the path as necessary
+import { GoSmiley } from "react-icons/go";
+import { PiFinnTheHumanLight } from "react-icons/pi";
+import { GiPaperCrane } from "react-icons/gi";
+import { FaComputer } from "react-icons/fa6";
+import { GiCandlestickPhone } from "react-icons/gi";
+
+import LoginForm from './LoginForm';
+// import { classNames } from '@react-pdf-viewer/core';
 
 const Navigation = ({ pathname }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -104,6 +111,7 @@ const Navigation = ({ pathname }) => {
                 <NavLink href="#experience" label="Work" color="yellow" mobile onClick={handleNavigation} smoothScroll={smoothScroll} />
                 <NavLink href="#contact" label="Contact" color="purple" mobile onClick={handleNavigation} smoothScroll={smoothScroll} />
                 <NavLink href="/miniApps" label="Mini Apps" color="red" mobile onClick={handleNavigation} />
+                <NavLink href="/interests" label="Interests" color="indigo" mobile onClick={handleNavigation} />
                 <LoginButton isLoggedIn={isLoggedIn} onClick={isLoggedIn ? handleLogout : handleLoginClick} mobile />
               </div>
             </div>
@@ -111,11 +119,12 @@ const Navigation = ({ pathname }) => {
         </>
       ) : (
         <div className="flex items-center space-x-2 sm:space-x-4 flex-nowrap overflow-x-auto whitespace-nowrap">
-          <NavLink href="#about" label="About" color="green" onClick={handleNavigation} smoothScroll={smoothScroll} />
-          <NavLink href="#projects" label="Projects" color="blue" onClick={handleNavigation} smoothScroll={smoothScroll} />
-          <NavLink href="#experience" label="Work" color="yellow" onClick={handleNavigation} smoothScroll={smoothScroll} />
-          <NavLink href="#contact" label="Contact" color="purple" onClick={handleNavigation} smoothScroll={smoothScroll} />
+          <NavLink href="#about" label="About" color="green" icon={<PiFinnTheHumanLight className="mr-2" />} onClick={handleNavigation} smoothScroll={smoothScroll} />
+          <NavLink href="#projects" label="Projects" color="blue" icon={<GiPaperCrane className="mr-2" />} onClick={handleNavigation} smoothScroll={smoothScroll} />
+          <NavLink href="#experience" label="Work" color="yellow" icon={<FaComputer className="mr-2"/>} onClick={handleNavigation} smoothScroll={smoothScroll} />
+          <NavLink href="#contact" label="Contact" color="purple" icon={<GiCandlestickPhone className="mr-2" />} onClick={handleNavigation} smoothScroll={smoothScroll} />
           <NavLink href="/miniApps" label="Mini Apps" color="red" icon={<FaRocket className="mr-2" />} onClick={handleNavigation} />
+          <NavLink href="/interests" label="Interests" color="indigo" icon={<GoSmiley className="mr-2" />} onClick={handleNavigation} />
           <LoginButton isLoggedIn={isLoggedIn} onClick={isLoggedIn ? handleLogout : handleLoginClick} />
         </div>
       )}
@@ -125,6 +134,7 @@ const Navigation = ({ pathname }) => {
       )}
     </nav>
   );
+  
   
 };
 
@@ -137,16 +147,14 @@ const NavLink = ({ href, label, color, mobile, onClick, smoothScroll, icon }) =>
       }
       if (onClick) onClick(e, href);
     }}
-    className={`
-      ${mobile ? 'block py-2 text-white' : `px-3 py-1 sm:px-4 sm:py-2 bg-${color}-500 text-white text-sm sm:text-base rounded-lg shadow-md hover:bg-${color}-600 active:bg-${color}-700 flex items-center whitespace-nowrap`}
-      transition duration-300
-    `}
+    className={`flex items-center px-3 py-1 sm:px-4 sm:py-2 bg-${color}-500 text-white text-sm sm:text-base rounded-lg shadow-md hover:bg-${color}-600 active:bg-${color}-700 transition duration-300 whitespace-nowrap`}
     aria-label={`${label} ${href.startsWith('#') ? 'section' : 'page'}`}
   >
     {icon}
     {label}
   </a>
 );
+
 
 const LoginButton = ({ isLoggedIn, onClick, mobile }) => (
   <button

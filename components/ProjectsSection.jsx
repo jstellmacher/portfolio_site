@@ -91,8 +91,8 @@ const ProjectsSection = () => {
         </div>
 
         <div className="w-full mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
-            {filteredProjects.map((project) => (
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+        {filteredProjects.map((project) => (
               <div
                 key={project.title}
                 className={`relative p-4 sm:p-6 rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex flex-col h-full bg-gradient-to-br ${getCategoryGradient(project.category)}`}
