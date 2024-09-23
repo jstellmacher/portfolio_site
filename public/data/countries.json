@@ -1,0 +1,973 @@
+[
+    {
+      "Country": "Afghanistan",
+      "Abbreviation": "AFG",
+      "Capital": "Kabul"
+    },
+    {
+      "Country": "Albania",
+      "Abbreviation": "ALB",
+      "Capital": "Tirana"
+    },
+    {
+      "Country": "Algeria",
+      "Abbreviation": "DZA",
+      "Capital": "Algiers"
+    },
+    {
+      "Country": "Andorra",
+      "Abbreviation": "AND",
+      "Capital": "Andorra la Vella"
+    },
+    {
+      "Country": "Angola",
+      "Abbreviation": "AGO",
+      "Capital": "Luanda"
+    },
+    {
+      "Country": "Antigua & Barbuda",
+      "Abbreviation": "ATG",
+      "Capital": "St. John's"
+    },
+    {
+      "Country": "Argentina",
+      "Abbreviation": "ARG",
+      "Capital": "Buenos Aires"
+    },
+    {
+      "Country": "Armenia",
+      "Abbreviation": "ARM",
+      "Capital": "Yerevan"
+    },
+    {
+      "Country": "Australia",
+      "Abbreviation": "AUS",
+      "Capital": "Canberra"
+    },
+    {
+      "Country": "Austria",
+      "Abbreviation": "AUT",
+      "Capital": "Vienna"
+    },
+    {
+      "Country": "Azerbaijan",
+      "Abbreviation": "AZE",
+      "Capital": "Baku"
+    },
+    {
+      "Country": "Bahamas",
+      "Abbreviation": "BHS",
+      "Capital": "Nassau"
+    },
+    {
+      "Country": "Bahrain",
+      "Abbreviation": "BHR",
+      "Capital": "Manama"
+    },
+    {
+      "Country": "Bangladesh",
+      "Abbreviation": "BGD",
+      "Capital": "Dhaka"
+    },
+    {
+      "Country": "Barbados",
+      "Abbreviation": "BRB",
+      "Capital": "Bridgetown"
+    },
+    {
+      "Country": "Belarus",
+      "Abbreviation": "BLR",
+      "Capital": "Minsk"
+    },
+    {
+      "Country": "Belgium",
+      "Abbreviation": "BEL",
+      "Capital": "Brussels"
+    },
+    {
+      "Country": "Belize",
+      "Abbreviation": "BLZ",
+      "Capital": "Belmopan"
+    },
+    {
+      "Country": "Benin",
+      "Abbreviation": "BEN",
+      "Capital": "Porto-Novo"
+    },
+    {
+      "Country": "Bhutan",
+      "Abbreviation": "BTN",
+      "Capital": "Thimphu"
+    },
+    {
+      "Country": "Bolivia",
+      "Abbreviation": "BOL",
+      "Capital": "La Paz"
+    },
+    {
+      "Country": "Bosnia & Herzegovina",
+      "Abbreviation": "BIH",
+      "Capital": "Sarajevo"
+    },
+    {
+      "Country": "Botswana",
+      "Abbreviation": "BWA",
+      "Capital": "Gaborone"
+    },
+    {
+      "Country": "Brazil",
+      "Abbreviation": "BRA",
+      "Capital": "Brasília"
+    },
+    {
+      "Country": "Brunei",
+      "Abbreviation": "BRN",
+      "Capital": "Bandar Seri Begawan"
+    },
+    {
+      "Country": "Bulgaria",
+      "Abbreviation": "BGR",
+      "Capital": "Sofia"
+    },
+    {
+      "Country": "Burkina Faso",
+      "Abbreviation": "BFA",
+      "Capital": "Ouagadougou"
+    },
+    {
+      "Country": "Burundi",
+      "Abbreviation": "BDI",
+      "Capital": "Gitega"
+    },
+    {
+      "Country": "Cabo Verde",
+      "Abbreviation": "CPV",
+      "Capital": "Praia"
+    },
+    {
+      "Country": "Cambodia",
+      "Abbreviation": "KHM",
+      "Capital": "Phnom Penh"
+    },
+    {
+      "Country": "Cameroon",
+      "Abbreviation": "CMR",
+      "Capital": "Yaoundé"
+    },
+    {
+      "Country": "Canada",
+      "Abbreviation": "CAN",
+      "Capital": "Ottawa"
+    },
+    {
+      "Country": "Central African Republic",
+      "Abbreviation": "CAF",
+      "Capital": "Bangui"
+    },
+    {
+      "Country": "Chad",
+      "Abbreviation": "TCD",
+      "Capital": "N'Djamena"
+    },
+    {
+      "Country": "Chile",
+      "Abbreviation": "CHL",
+      "Capital": "Santiago"
+    },
+    {
+      "Country": "China",
+      "Abbreviation": "CHN",
+      "Capital": "Beijing"
+    },
+    {
+      "Country": "Colombia",
+      "Abbreviation": "COL",
+      "Capital": "Bogotá"
+    },
+    {
+      "Country": "Comoros",
+      "Abbreviation": "COM",
+      "Capital": "Moroni"
+    },
+    {
+      "Country": "Congo",
+      "Abbreviation": "COG",
+      "Capital": "Brazzaville"
+    },
+    {
+      "Country": "Costa Rica",
+      "Abbreviation": "CRI",
+      "Capital": "San José"
+    },
+    {
+      "Country": "Côte d'Ivoire",
+      "Abbreviation": "CIV",
+      "Capital": "Yamoussoukro"
+    },
+    {
+      "Country": "Croatia",
+      "Abbreviation": "HRV",
+      "Capital": "Zagreb"
+    },
+    {
+      "Country": "Cuba",
+      "Abbreviation": "CUB",
+      "Capital": "Havana"
+    },
+    {
+      "Country": "Cyprus",
+      "Abbreviation": "CYP",
+      "Capital": "Nicosia"
+    },
+    {
+      "Country": "Czech Republic",
+      "Abbreviation": "CZE",
+      "Capital": "Prague"
+    },
+    {
+      "Country": "Denmark",
+      "Abbreviation": "DNK",
+      "Capital": "Copenhagen"
+    },
+    {
+      "Country": "Djibouti",
+      "Abbreviation": "DJI",
+      "Capital": "Djibouti"
+    },
+    {
+      "Country": "Dominica",
+      "Abbreviation": "DMA",
+      "Capital": "Roseau"
+    },
+    {
+      "Country": "Dominican Republic",
+      "Abbreviation": "DOM",
+      "Capital": "Santo Domingo"
+    },
+    {
+      "Country": "DR Congo",
+      "Abbreviation": "COD",
+      "Capital": "Kinshasa"
+    },
+    {
+      "Country": "Ecuador",
+      "Abbreviation": "ECU",
+      "Capital": "Quito"
+    },
+    {
+      "Country": "Egypt",
+      "Abbreviation": "EGY",
+      "Capital": "Cairo"
+    },
+    {
+      "Country": "El Salvador",
+      "Abbreviation": "SLV",
+      "Capital": "San Salvador"
+    },
+    {
+      "Country": "Equatorial Guinea",
+      "Abbreviation": "GNQ",
+      "Capital": "Malabo"
+    },
+    {
+      "Country": "Eritrea",
+      "Abbreviation": "ERI",
+      "Capital": "Asmara"
+    },
+    {
+      "Country": "Estonia",
+      "Abbreviation": "EST",
+      "Capital": "Tallinn"
+    },
+    {
+      "Country": "Eswatini",
+      "Abbreviation": "SWZ",
+      "Capital": "Mbabane"
+    },
+    {
+      "Country": "Ethiopia",
+      "Abbreviation": "ETH",
+      "Capital": "Addis Ababa"
+    },
+    {
+      "Country": "Fiji",
+      "Abbreviation": "FJI",
+      "Capital": "Suva"
+    },
+    {
+      "Country": "Finland",
+      "Abbreviation": "FIN",
+      "Capital": "Helsinki"
+    },
+    {
+      "Country": "France",
+      "Abbreviation": "FRA",
+      "Capital": "Paris"
+    },
+    {
+      "Country": "Gabon",
+      "Abbreviation": "GAB",
+      "Capital": "Libreville"
+    },
+    {
+      "Country": "Gambia",
+      "Abbreviation": "GMB",
+      "Capital": "Banjul"
+    },
+    {
+      "Country": "Georgia",
+      "Abbreviation": "GEO",
+      "Capital": "Tbilisi"
+    },
+    {
+      "Country": "Germany",
+      "Abbreviation": "DEU",
+      "Capital": "Berlin"
+    },
+    {
+      "Country": "Ghana",
+      "Abbreviation": "GHA",
+      "Capital": "Accra"
+    },
+    {
+      "Country": "Greece",
+      "Abbreviation": "GRC",
+      "Capital": "Athens"
+    },
+    {
+      "Country": "Grenada",
+      "Abbreviation": "GRD",
+      "Capital": "St. George's"
+    },
+    {
+      "Country": "Guatemala",
+      "Abbreviation": "GTM",
+      "Capital": "Guatemala City"
+    },
+    {
+      "Country": "Guinea",
+      "Abbreviation": "GIN",
+      "Capital": "Conakry"
+    },
+    {
+      "Country": "Guinea-Bissau",
+      "Abbreviation": "GNB",
+      "Capital": "Bissau"
+    },
+    {
+      "Country": "Guyana",
+      "Abbreviation": "GUY",
+      "Capital": "Georgetown"
+    },
+    {
+      "Country": "Haiti",
+      "Abbreviation": "HTI",
+      "Capital": "Port-au-Prince"
+    },
+    {
+      "Country": "Honduras",
+      "Abbreviation": "HND",
+      "Capital": "Tegucigalpa"
+    },
+    {
+      "Country": "Hungary",
+      "Abbreviation": "HUN",
+      "Capital": "Budapest"
+    },
+    {
+      "Country": "Iceland",
+      "Abbreviation": "ISL",
+      "Capital": "Reykjavík"
+    },
+    {
+      "Country": "India",
+      "Abbreviation": "IND",
+      "Capital": "New Delhi"
+    },
+    {
+      "Country": "Indonesia",
+      "Abbreviation": "IDN",
+      "Capital": "Jakarta"
+    },
+    {
+      "Country": "Iran",
+      "Abbreviation": "IRN",
+      "Capital": "Tehran"
+    },
+    {
+      "Country": "Iraq",
+      "Abbreviation": "IRQ",
+      "Capital": "Baghdad"
+    },
+    {
+      "Country": "Ireland",
+      "Abbreviation": "IRL",
+      "Capital": "Dublin"
+    },
+    {
+      "Country": "Israel",
+      "Abbreviation": "ISR",
+      "Capital": "Jerusalem"
+    },
+    {
+      "Country": "Italy",
+      "Abbreviation": "ITA",
+      "Capital": "Rome"
+    },
+    {
+      "Country": "Jamaica",
+      "Abbreviation": "JAM",
+      "Capital": "Kingston"
+    },
+    {
+      "Country": "Japan",
+      "Abbreviation": "JPN",
+      "Capital": "Tokyo"
+    },
+    {
+      "Country": "Jordan",
+      "Abbreviation": "JOR",
+      "Capital": "Amman"
+    },
+    {
+      "Country": "Kazakhstan",
+      "Abbreviation": "KAZ",
+      "Capital": "Astana"
+    },
+    {
+      "Country": "Kenya",
+      "Abbreviation": "KEN",
+      "Capital": "Nairobi"
+    },
+    {
+      "Country": "Kiribati",
+      "Abbreviation": "KIR",
+      "Capital": "Tarawa"
+    },
+    {
+      "Country": "Korea, North",
+      "Abbreviation": "PRK",
+      "Capital": "Pyongyang"
+    },
+    {
+      "Country": "Korea, South",
+      "Abbreviation": "KOR",
+      "Capital": "Seoul"
+    },
+    {
+      "Country": "Kuwait",
+      "Abbreviation": "KWT",
+      "Capital": "Kuwait City"
+    },
+    {
+      "Country": "Kyrgyzstan",
+      "Abbreviation": "KGZ",
+      "Capital": "Bishkek"
+    },
+    {
+      "Country": "Laos",
+      "Abbreviation": "LAO",
+      "Capital": "Vientiane"
+    },
+    {
+      "Country": "Latvia",
+      "Abbreviation": "LVA",
+      "Capital": "Riga"
+    },
+    {
+      "Country": "Lebanon",
+      "Abbreviation": "LBN",
+      "Capital": "Beirut"
+    },
+    {
+      "Country": "Lesotho",
+      "Abbreviation": "LSO",
+      "Capital": "Maseru"
+    },
+    {
+      "Country": "Liberia",
+      "Abbreviation": "LBR",
+      "Capital": "Monrovia"
+    },
+    {
+      "Country": "Libya",
+      "Abbreviation": "LBY",
+      "Capital": "Tripoli"
+    },
+    {
+      "Country": "Liechtenstein",
+      "Abbreviation": "LIE",
+      "Capital": "Vaduz"
+    },
+    {
+      "Country": "Lithuania",
+      "Abbreviation": "LTU",
+      "Capital": "Vilnius"
+    },
+    {
+      "Country": "Luxembourg",
+      "Abbreviation": "LUX",
+      "Capital": "Luxembourg"
+    },
+    {
+      "Country": "Madagascar",
+      "Abbreviation": "MDG",
+      "Capital": "Antananarivo"
+    },
+    {
+      "Country": "Malawi",
+      "Abbreviation": "MWI",
+      "Capital": "Lilongwe"
+    },
+    {
+      "Country": "Malaysia",
+      "Abbreviation": "MYS",
+      "Capital": "Kuala Lumpur"
+    },
+    {
+      "Country": "Maldives",
+      "Abbreviation": "MDV",
+      "Capital": "Malé"
+    },
+    {
+      "Country": "Mali",
+      "Abbreviation": "MLI",
+      "Capital": "Bamako"
+    },
+    {
+      "Country": "Malta",
+      "Abbreviation": "MLT",
+      "Capital": "Valletta"
+    },
+    {
+      "Country": "Marshall Islands",
+      "Abbreviation": "MHL",
+      "Capital": "Majuro"
+    },
+    {
+      "Country": "Mauritania",
+      "Abbreviation": "MRT",
+      "Capital": "Nouakchott"
+    },
+    {
+      "Country": "Mauritius",
+      "Abbreviation": "MUS",
+      "Capital": "Port Louis"
+    },
+    {
+      "Country": "Mexico",
+      "Abbreviation": "MEX",
+      "Capital": "Mexico City"
+    },
+    {
+      "Country": "Micronesia",
+      "Abbreviation": "FSM",
+      "Capital": "Palikir"
+    },
+    {
+      "Country": "Moldova",
+      "Abbreviation": "MDA",
+      "Capital": "Chișinău"
+    },
+    {
+      "Country": "Monaco",
+      "Abbreviation": "MCO",
+      "Capital": "Monaco"
+    },
+    {
+      "Country": "Mongolia",
+      "Abbreviation": "MNG",
+      "Capital": "Ulaanbaatar"
+    },
+    {
+      "Country": "Montenegro",
+      "Abbreviation": "MNE",
+      "Capital": "Podgorica"
+    },
+    {
+      "Country": "Morocco",
+      "Abbreviation": "MAR",
+      "Capital": "Rabat"
+    },
+    {
+      "Country": "Mozambique",
+      "Abbreviation": "MOZ",
+      "Capital": "Maputo"
+    },
+    {
+      "Country": "Myanmar",
+      "Abbreviation": "MMR",
+      "Capital": "Naypyidaw"
+    },
+    {
+      "Country": "Namibia",
+      "Abbreviation": "NAM",
+      "Capital": "Windhoek"
+    },
+    {
+      "Country": "Nauru",
+      "Abbreviation": "NRU",
+      "Capital": "Yaren"
+    },
+    {
+      "Country": "Nepal",
+      "Abbreviation": "NPL",
+      "Capital": "Kathmandu"
+    },
+    {
+      "Country": "Netherlands",
+      "Abbreviation": "NLD",
+      "Capital": "Amsterdam"
+    },
+    {
+      "Country": "New Zealand",
+      "Abbreviation": "NZL",
+      "Capital": "Wellington"
+    },
+    {
+      "Country": "Nicaragua",
+      "Abbreviation": "NIC",
+      "Capital": "Managua"
+    },
+    {
+      "Country": "Niger",
+      "Abbreviation": "NER",
+      "Capital": "Niamey"
+    },
+    {
+      "Country": "Nigeria",
+      "Abbreviation": "NGA",
+      "Capital": "Abuja"
+    },
+    {
+      "Country": "North Macedonia",
+      "Abbreviation": "MKD",
+      "Capital": "Skopje"
+    },
+    {
+      "Country": "Norway",
+      "Abbreviation": "NOR",
+      "Capital": "Oslo"
+    },
+    {
+      "Country": "Oman",
+      "Abbreviation": "OMN",
+      "Capital": "Muscat"
+    },
+    {
+      "Country": "Pakistan",
+      "Abbreviation": "PAK",
+      "Capital": "Islamabad"
+    },
+    {
+      "Country": "Palau",
+      "Abbreviation": "PLW",
+      "Capital": "Ngerulmud"
+    },
+    {
+      "Country": "Panama",
+      "Abbreviation": "PAN",
+      "Capital": "Panama City"
+    },
+    {
+      "Country": "Papua New Guinea",
+      "Abbreviation": "PNG",
+      "Capital": "Port Moresby"
+    },
+    {
+      "Country": "Paraguay",
+      "Abbreviation": "PRY",
+      "Capital": "Asunción"
+    },
+    {
+      "Country": "Peru",
+      "Abbreviation": "PER",
+      "Capital": "Lima"
+    },
+    {
+      "Country": "Philippines",
+      "Abbreviation": "PHL",
+      "Capital": "Manila"
+    },
+    {
+      "Country": "Poland",
+      "Abbreviation": "POL",
+      "Capital": "Warsaw"
+    },
+    {
+      "Country": "Portugal",
+      "Abbreviation": "PRT",
+      "Capital": "Lisbon"
+    },
+    {
+      "Country": "Qatar",
+      "Abbreviation": "QAT",
+      "Capital": "Doha"
+    },
+    {
+      "Country": "Romania",
+      "Abbreviation": "ROU",
+      "Capital": "Bucharest"
+    },
+    {
+      "Country": "Russia",
+      "Abbreviation": "RUS",
+      "Capital": "Moscow"
+    },
+    {
+      "Country": "Rwanda",
+      "Abbreviation": "RWA",
+      "Capital": "Kigali"
+    },
+    {
+      "Country": "Saint Kitts and Nevis",
+      "Abbreviation": "KNA",
+      "Capital": "Basseterre"
+    },
+    {
+      "Country": "Saint Lucia",
+      "Abbreviation": "LCA",
+      "Capital": "Castries"
+    },
+    {
+      "Country": "Saint Vincent and the Grenadines",
+      "Abbreviation": "VCT",
+      "Capital": "Kingstown"
+    },
+    {
+      "Country": "Samoa",
+      "Abbreviation": "WSM",
+      "Capital": "Apia"
+    },
+    {
+      "Country": "San Marino",
+      "Abbreviation": "SMR",
+      "Capital": "San Marino"
+    },
+    {
+      "Country": "Sao Tome and Principe",
+      "Abbreviation": "STP",
+      "Capital": "São Tomé"
+    },
+    {
+      "Country": "Saudi Arabia",
+      "Abbreviation": "SAU",
+      "Capital": "Riyadh"
+    },
+    {
+      "Country": "Senegal",
+      "Abbreviation": "SEN",
+      "Capital": "Dakar"
+    },
+    {
+      "Country": "Serbia",
+      "Abbreviation": "SRB",
+      "Capital": "Belgrade"
+    },
+    {
+      "Country": "Seychelles",
+      "Abbreviation": "SYC",
+      "Capital": "Victoria"
+    },
+    {
+      "Country": "Sierra Leone",
+      "Abbreviation": "SLE",
+      "Capital": "Freetown"
+    },
+    {
+      "Country": "Singapore",
+      "Abbreviation": "SGP",
+      "Capital": "Singapore"
+    },
+    {
+      "Country": "Slovakia",
+      "Abbreviation": "SVK",
+      "Capital": "Bratislava"
+    },
+    {
+      "Country": "Slovenia",
+      "Abbreviation": "SVN",
+      "Capital": "Ljubljana"
+    },
+    {
+      "Country": "Solomon Islands",
+      "Abbreviation": "SLB",
+      "Capital": "Honiara"
+    },
+    {
+      "Country": "Somalia",
+      "Abbreviation": "SOM",
+      "Capital": "Mogadishu"
+    },
+    {
+      "Country": "South Africa",
+      "Abbreviation": "ZAF",
+      "Capital": "Pretoria"
+    },
+    {
+      "Country": "South Sudan",
+      "Abbreviation": "SSD",
+      "Capital": "Juba"
+    },
+    {
+      "Country": "Spain",
+      "Abbreviation": "ESP",
+      "Capital": "Madrid"
+    },
+    {
+      "Country": "Sri Lanka",
+      "Abbreviation": "LKA",
+      "Capital": "Colombo"
+    },
+    {
+      "Country": "Sudan",
+      "Abbreviation": "SDN",
+      "Capital": "Khartoum"
+    },
+    {
+      "Country": "Suriname",
+      "Abbreviation": "SUR",
+      "Capital": "Paramaribo"
+    },
+    {
+      "Country": "Sweden",
+      "Abbreviation": "SWE",
+      "Capital": "Stockholm"
+    },
+    {
+      "Country": "Switzerland",
+      "Abbreviation": "CHE",
+      "Capital": "Bern"
+    },
+    {
+      "Country": "Syria",
+      "Abbreviation": "SYR",
+      "Capital": "Damascus"
+    },
+    {
+      "Country": "Taiwan",
+      "Abbreviation": "TWN",
+      "Capital": "Taipei"
+    },
+    {
+      "Country": "Tajikistan",
+      "Abbreviation": "TJK",
+      "Capital": "Dushanbe"
+    },
+    {
+      "Country": "Tanzania",
+      "Abbreviation": "TZA",
+      "Capital": "Dodoma"
+    },
+    {
+      "Country": "Thailand",
+      "Abbreviation": "THA",
+      "Capital": "Bangkok"
+    },
+    {
+      "Country": "Timor-Leste",
+      "Abbreviation": "TLS",
+      "Capital": "Dili"
+    },
+    {
+      "Country": "Togo",
+      "Abbreviation": "TGO",
+      "Capital": "Lomé"
+    },
+    {
+      "Country": "Tonga",
+      "Abbreviation": "TON",
+      "Capital": "Nukuʻalofa"
+    },
+    {
+      "Country": "Trinidad and Tobago",
+      "Abbreviation": "TTO",
+      "Capital": "Port of Spain"
+    },
+    {
+      "Country": "Tunisia",
+      "Abbreviation": "TUN",
+      "Capital": "Tunis"
+    },
+    {
+      "Country": "Turkey",
+      "Abbreviation": "TUR",
+      "Capital": "Ankara"
+    },
+    {
+      "Country": "Turkmenistan",
+      "Abbreviation": "TKM",
+      "Capital": "Ashgabat"
+    },
+    {
+      "Country": "Tuvalu",
+      "Abbreviation": "TUV",
+      "Capital": "Funafuti"
+    },
+    {
+      "Country": "Uganda",
+      "Abbreviation": "UGA",
+      "Capital": "Kampala"
+    },
+    {
+      "Country": "Ukraine",
+      "Abbreviation": "UKR",
+      "Capital": "Kyiv"
+    },
+    {
+      "Country": "United Arab Emirates",
+      "Abbreviation": "ARE",
+      "Capital": "Abu Dhabi"
+    },
+    {
+      "Country": "United Kingdom",
+      "Abbreviation": "GBR",
+      "Capital": "London"
+    },
+    {
+      "Country": "United States",
+      "Abbreviation": "USA",
+      "Capital": "Washington, D.C."
+    },
+    {
+      "Country": "Uruguay",
+      "Abbreviation": "URY",
+      "Capital": "Montevideo"
+    },
+    {
+      "Country": "Uzbekistan",
+      "Abbreviation": "UZB",
+      "Capital": "Tashkent"
+    },
+    {
+      "Country": "Vanuatu",
+      "Abbreviation": "VUT",
+      "Capital": "Port Vila"
+    },
+    {
+      "Country": "Venezuela",
+      "Abbreviation": "VEN",
+      "Capital": "Caracas"
+    },
+    {
+      "Country": "Vietnam",
+      "Abbreviation": "VNM",
+      "Capital": "Hanoi"
+    },
+    {
+      "Country": "Yemen",
+      "Abbreviation": "YEM",
+      "Capital": "Sana'a"
+    },
+    {
+      "Country": "Zambia",
+      "Abbreviation": "ZMB",
+      "Capital": "Lusaka"
+    },
+    {
+      "Country": "Zimbabwe",
+      "Abbreviation": "ZWE",
+      "Capital": "Harare"
+    }
+  ]
+  

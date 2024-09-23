@@ -1,0 +1,59 @@
+{
+    "tabs": [
+        {
+            "title": "Activities",
+            "items": [
+                { "name": "Hiking", "img": "https://picsum.photos/800/400?random=1" },
+                { "name": "Reading", "img": "https://picsum.photos/800/400?random=2" },
+                { "name": "Photography", "img": "https://picsum.photos/800/400?random=3" },
+                { "name": "Cycling", "img": "https://picsum.photos/800/400?random=15" },
+                { "name": "Swimming", "img": "https://picsum.photos/800/400?random=16" },
+                { "name": "Cooking", "img": "https://picsum.photos/800/400?random=17" }
+            ]
+        },
+        {
+            "title": "Hobbies",
+            "items": [
+                { "name": "Painting", "img": "https://picsum.photos/800/400?random=4" },
+                { "name": "Gardening", "img": "https://picsum.photos/800/400?random=5" },
+                { "name": "Knitting", "img": "https://picsum.photos/800/400?random=6" },
+                { "name": "Woodworking", "img": "https://picsum.photos/800/400?random=18" },
+                { "name": "Fishing", "img": "https://picsum.photos/800/400?random=19" },
+                { "name": "Baking", "img": "https://picsum.photos/800/400?random=20" }
+            ]
+        },
+        {
+            "title": "Volunteering",
+            "items": [
+                { "name": "Animal Shelter", "img": "https://picsum.photos/800/400?random=7" },
+                { "name": "Food Bank", "img": "https://picsum.photos/800/400?random=8" },
+                { "name": "Community Clean-Up", "img": "https://picsum.photos/800/400?random=21" },
+                { "name": "Homeless Shelter", "img": "https://picsum.photos/800/400?random=22" },
+                { "name": "Tutoring Kids", "img": "https://picsum.photos/800/400?random=23" },
+                { "name": "Disaster Relief", "img": "https://picsum.photos/800/400?random=24" }
+            ]
+        },
+        {
+            "title": "Music",
+            "items": [
+                { "name": "Rock", "img": "https://picsum.photos/800/400?random=9" },
+                { "name": "Jazz", "img": "https://picsum.photos/800/400?random=10" },
+                { "name": "Classical", "img": "https://picsum.photos/800/400?random=11" },
+                { "name": "Hip-Hop", "img": "https://picsum.photos/800/400?random=25" },
+                { "name": "Electronic", "img": "https://picsum.photos/800/400?random=26" },
+                { "name": "Blues", "img": "https://picsum.photos/800/400?random=27" }
+            ]
+        },
+        {
+            "title": "Food",
+            "items": [
+                { "name": "Italian", "img": "https://picsum.photos/800/400?random=12" },
+                { "name": "Sushi", "img": "https://picsum.photos/800/400?random=13" },
+                { "name": "Tacos", "img": "https://picsum.photos/800/400?random=14" },
+                { "name": "Indian", "img": "https://picsum.photos/800/400?random=28" },
+                { "name": "Greek", "img": "https://picsum.photos/800/400?random=29" },
+                { "name": "Thai", "img": "https://picsum.photos/800/400?random=30" }
+            ]
+        }
+    ]
+}
