@@ -109,119 +109,119 @@
         "description": "A dynamic web component that helps users create and customize their resumes. Features include various templates and export options.",
         "image": "https://picsum.photos/seed/resumegenerator/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "Hourly Salary Calculator",
         "description": "An application that calculates hourly salaries based on annual income and work hours. It provides a user-friendly interface for input and results.",
         "image": "https://picsum.photos/seed/hourlysalary/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "LinkedIn Message Generator",
         "description": "A tool designed to generate professional LinkedIn messages. It helps users craft personalized messages for networking and job searching.",
         "image": "https://picsum.photos/seed/linkedinmsg/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "SQL Game",
         "description": "An educational game focused on teaching SQL queries through interactive challenges and puzzles.",
         "image": "https://picsum.photos/seed/sqlgame/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "Coin Flip Simulator",
         "description": "A simple web application that simulates a coin flip. Users can flip a virtual coin and see the results instantly.",
         "image": "https://picsum.photos/seed/coinflip/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "Checkers Game",
         "description": "A web-based version of the classic checkers game. Play against the computer or other players with various difficulty levels.",
         "image": "https://picsum.photos/seed/checkers/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "Sticky Note App",
         "description": "A digital sticky note application that allows users to create, edit, and organize notes in a user-friendly interface.",
         "image": "https://picsum.photos/seed/stickynote/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "JS Code Editor",
         "description": "An in-browser JavaScript code editor that supports syntax highlighting, code suggestions, and execution of code snippets.",
         "image": "https://picsum.photos/seed/jseditor/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "Birthday Countdown",
         "description": "A countdown timer for upcoming birthdays. Users can input dates and track the remaining time until each birthday.",
         "image": "https://picsum.photos/seed/birthdaycountdown/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "Custom Lorem Ipsum Generator",
         "description": "A tool for generating custom Lorem Ipsum text with adjustable parameters. Ideal for designers and developers needing placeholder text.",
         "image": "https://picsum.photos/seed/loremipsum/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "Grocery List App",
         "description": "A web application for managing grocery lists. Users can add, remove, and organize items on their shopping list.",
         "image": "https://picsum.photos/seed/grocerylist/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "Platformer Game",
         "description": "A 2D platformer game where players navigate through levels, collect items, and overcome obstacles.",
         "image": "https://picsum.photos/seed/platformer/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "Color Tools",
         "description": "A set of tools for color manipulation and palette creation. Features include color picking, blending, and generating color schemes.",
         "image": "https://picsum.photos/seed/colortools/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "Age Calculator",
         "description": "An application that calculates age based on the provided birth date. It also includes additional features like days until next birthday.",
         "image": "https://picsum.photos/seed/agecalculator/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "Calculator",
         "description": "A basic calculator application with standard arithmetic operations and additional features like percentage calculations.",
         "image": "https://picsum.photos/seed/calculator/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "Birthday App",
         "description": "An app for storing and managing birthday dates. It can send reminders and display upcoming birthdays.",
         "image": "https://picsum.photos/seed/birthdayapp/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "Crabby Patty Recipe",
         "description": "A fun web app that provides a recipe for making Crabby Patties, inspired by the popular animated series.",
         "image": "https://picsum.photos/seed/crabbypatty/400/300",
         "tools": "React, Next.js",
-        "category": "Other"
+        "category": "Software Development"
       },
       {
         "title": "3D Data and Development Project",
