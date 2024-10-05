@@ -107,14 +107,25 @@ const ProjectsSection = () => {
                 <div className="relative z-10 flex flex-col h-full overflow-y-auto overflow-x-auto">
                   <div className="flex-grow">
                     <div className="overflow-hidden rounded-lg mb-4">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        width={500}
-                        height={300}
-                        layout="responsive"
-                        className="rounded-lg"
-                      />
+                      {project.liveLink ? (
+                        <iframe
+                          src={project.liveLink}
+                          width="100%"
+                          height="300"
+                          frameBorder="0"
+                          allowFullScreen
+                          className="rounded-lg"
+                        />
+                      ) : (
+                        <Image
+                          src={`https://picsum.photos/500/300?random=${Math.random()}`}
+                          alt={project.title}
+                          width={500}
+                          height={300}
+                          layout="responsive"
+                          className="rounded-lg"
+                        />
+                      )}
                     </div>
                     <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-gray-500">{project.title}</h3>
                     <p className="text-sm sm:text-base text-gray-600 mb-4">{project.description}</p>

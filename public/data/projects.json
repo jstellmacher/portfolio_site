@@ -1,234 +1,202 @@
 [
-    {
-      "title": "Full Stack Software Engineering Bootcamp",
-      "description": "Completed an intensive 520-hour live bootcamp, mastering full-stack development, RESTful APIs, authentication, responsive design, and agile methodologies.",
-      "image": "https://picsum.photos/seed/bootcamp/400/300",
-      "tools": "React,Node.js,Express,PostgreSQL,TailwindCSS,Git,Docker",
-      "category": "Software Development"
-    },
-    {
-      "title": "Cisco Collaboration Upgrade and Migration",
-      "description": "Served as a Cloud & Data Associate Consultant at Insight Enterprises. Contributed to cloud solutions implementation using Azure, designed robust data governance frameworks.",
-      "image": "https://picsum.photos/seed/cloud/400/300",
-      "tools": "Cisco",
-      "category": "Project Management"
-    },
-    {
-      "title": "Cybersecurity Cloud Migration",
-      "description": "Led the migration of critical Office 365 and Azure security components for a firearms manufacturer, reinforcing cybersecurity infrastructure.",
-      "image": "https://picsum.photos/seed/cybersecurity/400/300",
-      "tools": "Azure,AWS,Security Hub,Active Directory,Database",
-      "category": "Software Development"
-    },
-    {
-      "title": "Unfinished Project Completion",
-      "description": "Rescued an unfinished project, finalized KPIs, streamlined financial reports, and collaborated with third-party resources.",
-      "image": "https://picsum.photos/seed/projectcompletion/400/300",
-      "tools": "React,Node.js,Python,Power BI",
-      "category": "Project Management"
-    },
-    {
-      "title": "Full Stack Food Truck Client Website",
-      "description": "Designed and developed a full-stack web app as a freelance engineer, integrating modern web technologies to meet business needs. It allowed my client's clients to make events with him.",
-      "image": "https://picsum.photos/seed/webdev/400/300",
-      "tools": "React,Next.js,TailwindCSS,Git,PostgreSQL,MongoDB,Docker",
-      "category": "Software Development"
-    },
-    {
-      "title": "Machine Learning Workout App",
-      "description": "Co-developing a machine learning-driven workout app for personalized exercise regimens, utilizing ML algorithms and React/Next.js.",
-      "image": "https://picsum.photos/seed/mlapp/400/300",
-      "tools": "React,Next.js,Python,Pandas,Scikit-learn,TensorFlow,PyTorch",
-      "category": "Other"
-    },
-    {
-      "title": "E-commerce Platform",
-      "description": "Created a scalable e-commerce platform with secure payment integration and a responsive design for an enhanced user experience.",
-      "image": "https://picsum.photos/seed/ecommerce/400/300",
-      "tools": "React,Node.js,Express,Stripe API,MongoDB,TailwindCSS",
-      "category": "Software Development"
-    },
-    {
-      "title": "AWS EC2 Hosted Website",
-      "description": "Deployed a fully functional web application using an AWS EC2 instance, ensuring security, scalability, and uptime monitoring for production-level performance.",
-      "image": "https://picsum.photos/seed/ec2/400/300",
-      "tools": "AWS,EC2,Nginx,React,Node.js,MongoDB,Docker",
-      "category": "Software Development"
-    },
-    {
-      "title": "SQL Database Management Project",
-      "description": "Built an advanced SQL database management system during MIS coursework, creating complex queries to handle customer data and business metrics.",
-      "image": "https://picsum.photos/seed/sql/400/300",
-      "tools": "MySQL,PostgreSQL,Draw.io",
-      "category": "Management Information Systems"
-    },
-    {
-      "title": "Marketing Analytics and A/B Testing",
-      "description": "Executed A/B testing for a digital marketing campaign, optimizing email click-through rates and conversion rates. Performed statistical analysis using marketing analytics techniques.",
-      "image": "https://picsum.photos/seed/abtesting/400/300",
-      "tools": "Google Analytics,Python,Pandas,Excel",
-      "category": "Marketing"
-    },
-    {
-      "title": "Chase Sapphire Rewards Case Study",
-      "description": "Performed an in-depth case study analyzing the Chase Sapphire Rewards Card, its customer segmentation, value proposition, and market impact.",
-      "image": "https://picsum.photos/seed/chase/400/300",
-      "tools": "Qualtrics,PowerPoint,Excel",
-      "category": "Marketing"
-    },
-    {
-      "title": "Monster Energy HR Consulting Project",
-      "description": "Developed a human resources consulting plan for Monster Energy, focusing on workforce revitalization and strategies for employee retention.",
-      "image": "https://picsum.photos/seed/monster/400/300",
-      "tools": "PowerPoint,Excel,Qualtrics",
-      "category": "Marketing"
-    },
-    {
-      "title": "ERP System Analysis",
-      "description": "Walked through ERP system analysis for a theoretical business, evaluating business processes and designing workflows for system integration.",
-      "image": "https://picsum.photos/seed/erp/400/300",
-      "tools": "PowerPoint,Visio",
-      "category": "Management Information Systems"
-    },
-    {
-      "title": "Big Data Health Watch Analysis",
-      "description": "Used Kaggle health fitness watch data to perform big data analysis using machine learning models. Conducted feature extraction and provided insights using Jupyter Notebook.",
-      "image": "https://picsum.photos/seed/bigdata/400/300",
-      "tools": "Python,Pandas,Jupyter Notebook,Kaggle,TensorFlow",
-      "category": "Management Information Systems"
-    },
-    {
-      "title": "UX/UI Design Study",
-      "description": "Studied advanced UX/UI principles, conducting user testing and designing wireframes to optimize user experience on web and mobile platforms.",
-      "image": "https://picsum.photos/seed/uxui/400/300",
-      "tools": "Figma,Draw.io,TheUXCookbook",
-      "category": "Management Information Systems"
-    },
-      {
-        "title": "Resume Generator",
-        "description": "A dynamic web component that helps users create and customize their resumes. Features include various templates and export options.",
-        "image": "https://picsum.photos/seed/resumegenerator/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "Hourly Salary Calculator",
-        "description": "An application that calculates hourly salaries based on annual income and work hours. It provides a user-friendly interface for input and results.",
-        "image": "https://picsum.photos/seed/hourlysalary/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "LinkedIn Message Generator",
-        "description": "A tool designed to generate professional LinkedIn messages. It helps users craft personalized messages for networking and job searching.",
-        "image": "https://picsum.photos/seed/linkedinmsg/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "SQL Game",
-        "description": "An educational game focused on teaching SQL queries through interactive challenges and puzzles.",
-        "image": "https://picsum.photos/seed/sqlgame/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "Coin Flip Simulator",
-        "description": "A simple web application that simulates a coin flip. Users can flip a virtual coin and see the results instantly.",
-        "image": "https://picsum.photos/seed/coinflip/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "Checkers Game",
-        "description": "A web-based version of the classic checkers game. Play against the computer or other players with various difficulty levels.",
-        "image": "https://picsum.photos/seed/checkers/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "Sticky Note App",
-        "description": "A digital sticky note application that allows users to create, edit, and organize notes in a user-friendly interface.",
-        "image": "https://picsum.photos/seed/stickynote/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "JS Code Editor",
-        "description": "An in-browser JavaScript code editor that supports syntax highlighting, code suggestions, and execution of code snippets.",
-        "image": "https://picsum.photos/seed/jseditor/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "Birthday Countdown",
-        "description": "A countdown timer for upcoming birthdays. Users can input dates and track the remaining time until each birthday.",
-        "image": "https://picsum.photos/seed/birthdaycountdown/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "Custom Lorem Ipsum Generator",
-        "description": "A tool for generating custom Lorem Ipsum text with adjustable parameters. Ideal for designers and developers needing placeholder text.",
-        "image": "https://picsum.photos/seed/loremipsum/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "Grocery List App",
-        "description": "A web application for managing grocery lists. Users can add, remove, and organize items on their shopping list.",
-        "image": "https://picsum.photos/seed/grocerylist/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "Platformer Game",
-        "description": "A 2D platformer game where players navigate through levels, collect items, and overcome obstacles.",
-        "image": "https://picsum.photos/seed/platformer/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "Color Tools",
-        "description": "A set of tools for color manipulation and palette creation. Features include color picking, blending, and generating color schemes.",
-        "image": "https://picsum.photos/seed/colortools/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "Age Calculator",
-        "description": "An application that calculates age based on the provided birth date. It also includes additional features like days until next birthday.",
-        "image": "https://picsum.photos/seed/agecalculator/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "Calculator",
-        "description": "A basic calculator application with standard arithmetic operations and additional features like percentage calculations.",
-        "image": "https://picsum.photos/seed/calculator/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "Birthday App",
-        "description": "An app for storing and managing birthday dates. It can send reminders and display upcoming birthdays.",
-        "image": "https://picsum.photos/seed/birthdayapp/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "Crabby Patty Recipe",
-        "description": "A fun web app that provides a recipe for making Crabby Patties, inspired by the popular animated series.",
-        "image": "https://picsum.photos/seed/crabbypatty/400/300",
-        "tools": "React, Next.js",
-        "category": "Software Development"
-      },
-      {
-        "title": "3D Data and Development Project",
-        "description": "During an internship with TechCore, I played a part in an immersive 3D project where we developed a virtual Biosphere 2. A combination of photogrammetry, Python, and Unity were used in order to recreate the entire Biosphere 2's jungle section. I specifically worked on the 3D data cleaning post-photogrammetry, and also other preparation before sending it off to the Unity Team.",
-        "image":"https://picsum.photos/seed/abtesting/400/302",
-        "tools": "Python",
-        "category":"Software Development"
-      }
-    
-  ]
+  {
+    "title": "Full Stack Software Engineering Bootcamp",
+    "description": "Completed an intensive 520-hour live bootcamp, mastering full-stack development, RESTful APIs, authentication, responsive design, and agile methodologies.",
+    "image": "https://picsum.photos/seed/bootcamp/400/300",
+    "tools": "React,Node.js,Express,PostgreSQL,TailwindCSS,Git,Docker",
+    "category": "Software Development",
+    "link": "https://github.com/jstellmacher"
+  },
+  {
+    "title": "Cisco Collaboration Upgrade and Migration",
+    "description": "Served as a Cloud & Data Associate Consultant at Insight Enterprises. Contributed to cloud solutions implementation using Azure, designed robust data governance frameworks.",
+    "image": "https://picsum.photos/seed/cloud/400/300",
+    "tools": "Cisco",
+    "category": "Project Management",
+    "link": "https://your-cisco-project-link.com"
+  },
+  {
+    "title": "Cybersecurity Cloud Migration",
+    "description": "Led the migration of critical Office 365 and Azure security components for a firearms manufacturer, reinforcing cybersecurity infrastructure.",
+    "image": "https://picsum.photos/seed/cybersecurity/400/300",
+    "tools": "Azure,AWS,Security Hub,Active Directory,Database",
+    "category": "Software Development",
+    "link": "https://your-cybersecurity-project-link.com"
+  },
+  {
+    "title": "Unfinished Project Completion",
+    "description": "Rescued an unfinished project, finalized KPIs, streamlined financial reports, and collaborated with third-party resources.",
+    "image": "https://picsum.photos/seed/projectcompletion/400/300",
+    "tools": "React,Node.js,Python,Power BI",
+    "category": "Project Management",
+    "link": "https://your-unfinished-project-link.com"
+  },
+  {
+    "title": "Full Stack Food Truck Client Website",
+    "description": "Designed and developed a full-stack web app as a freelance engineer, integrating modern web technologies to meet business needs. It allowed my client's clients to make events with him.",
+    "image": "https://picsum.photos/seed/webdev/400/300",
+    "tools": "React,Next.js,TailwindCSS,Git,PostgreSQL,MongoDB,Docker",
+    "category": "Software Development",
+    "link": "https://your-food-truck-website-link.com"
+  },
+  {
+    "title": "Machine Learning Workout App",
+    "description": "Co-developing a machine learning-driven workout app for personalized exercise regimens, utilizing ML algorithms and React/Next.js.",
+    "image": "https://picsum.photos/seed/mlapp/400/300",
+    "tools": "React,Next.js,Python,Pandas,Scikit-learn,TensorFlow,PyTorch",
+    "category": "Other",
+    "link": "https://your-ml-workout-app-link.com"
+  },
+  {
+    "title": "E-commerce Platform",
+    "description": "Created a scalable e-commerce platform with secure payment integration and a responsive design for an enhanced user experience.",
+    "image": "https://picsum.photos/seed/ecommerce/400/300",
+    "tools": "React,Node.js,Express,Stripe API,MongoDB,TailwindCSS",
+    "category": "Software Development",
+    "link": "https://your-ecommerce-platform-link.com"
+  },
+  {
+    "title": "AWS EC2 Hosted Website",
+    "description": "Deployed a fully functional web application using an AWS EC2 instance, ensuring security, scalability, and uptime monitoring for production-level performance.",
+    "image": "https://picsum.photos/seed/ec2/400/300",
+    "tools": "AWS,EC2,Nginx,React,Node.js,MongoDB,Docker",
+    "category": "Software Development",
+    "link": "https://your-aws-ec2-website-link.com"
+  },
+  {
+    "title": "SQL Database Management Project",
+    "description": "Built an advanced SQL database management system during MIS coursework, creating complex queries to handle customer data and business metrics.",
+    "image": "https://picsum.photos/seed/sql/400/300",
+    "tools": "MySQL,PostgreSQL,Draw.io",
+    "category": "Management Information Systems",
+    "link": "https://your-sql-database-management-project-link.com"
+  },
+  {
+    "title": "Marketing Analytics and A/B Testing",
+    "description": "Executed A/B testing for a digital marketing campaign, optimizing email click-through rates and conversion rates. Performed statistical analysis using marketing analytics techniques.",
+    "image": "https://picsum.photos/seed/abtesting/400/300",
+    "tools": "Google Analytics,Python,Pandas,Excel",
+    "category": "Marketing",
+    "link": "https://your-marketing-analytics-project-link.com"
+  },
+  {
+    "title": "Chase Sapphire Rewards Case Study",
+    "description": "Performed an in-depth case study analyzing the Chase Sapphire Rewards Card, its customer segmentation, value proposition, and market impact.",
+    "image": "https://picsum.photos/seed/chase/400/300",
+    "tools": "Qualtrics,PowerPoint,Excel",
+    "category": "Marketing",
+    "link": "https://your-chase-case-study-link.com"
+  },
+  {
+    "title": "Monster Energy HR Consulting Project",
+    "description": "Developed a human resources consulting plan for Monster Energy, focusing on workforce revitalization and strategies for employee retention.",
+    "image": "https://picsum.photos/seed/monster/400/300",
+    "tools": "PowerPoint,Excel,Qualtrics",
+    "category": "Marketing",
+    "link": "https://your-monster-energy-project-link.com"
+  },
+  {
+    "title": "ERP System Analysis",
+    "description": "Walked through ERP system analysis for a theoretical business, evaluating business processes and designing workflows for system integration.",
+    "image": "https://picsum.photos/seed/erp/400/300",
+    "tools": "PowerPoint,Visio",
+    "category": "Management Information Systems",
+    "link": "https://your-erp-analysis-link.com"
+  },
+  {
+    "title": "Big Data Health Watch Analysis",
+    "description": "Used Kaggle health fitness watch data to perform big data analysis using machine learning models. Conducted feature extraction and provided insights using Jupyter Notebook.",
+    "image": "https://picsum.photos/seed/bigdata/400/300",
+    "tools": "Python,Pandas,Jupyter Notebook,Kaggle,TensorFlow",
+    "category": "Management Information Systems",
+    "link": "https://your-big-data-analysis-link.com"
+  },
+  {
+    "title": "UX/UI Design Study",
+    "description": "Studied advanced UX/UI principles, conducting user testing and designing wireframes to optimize user experience on web and mobile platforms.",
+    "image": "https://picsum.photos/seed/uxui/400/300",
+    "tools": "Figma,Draw.io,TheUXCookbook",
+    "category": "Management Information Systems",
+    "link": "https://your-ux-ui-design-study-link.com"
+  },
+  {
+    "title": "Resume Generator",
+    "description": "A dynamic web component that helps users create and customize their resumes. Features include various templates and export options.",
+    "image": "https://picsum.photos/seed/resumegenerator/400/300",
+    "tools": "React, Next.js",
+    "category": "Software Development",
+    "link": "https://your-resume-generator-link.com"
+  },
+  {
+    "title": "Hourly Salary Calculator",
+    "description": "An application that calculates hourly salaries based on annual income and work hours. It provides a user-friendly interface for input and results.",
+    "image": "https://picsum.photos/seed/hourlysalary/400/300",
+    "tools": "React, Next.js",
+    "category": "Software Development",
+    "link": "https://your-hourly-salary-calculator-link.com"
+  },
+  {
+    "title": "LinkedIn Message Generator",
+    "description": "A tool designed to generate professional LinkedIn messages. It helps users craft personalized messages for networking and job searching.",
+    "image": "https://picsum.photos/seed/linkedinmsg/400/300",
+    "tools": "React, Next.js",
+    "category": "Software Development",
+    "link": "https://your-linkedin-message-generator-link.com"
+  },
+  {
+    "title": "SQL Game",
+    "description": "An educational game focused on teaching SQL queries through interactive challenges and puzzles.",
+    "image": "https://picsum.photos/seed/sqlgame/400/300",
+    "tools": "React, Next.js",
+    "category": "Software Development",
+    "link": "https://your-sql-game-link.com"
+  },
+  {
+    "title": "Coin Flip Simulator",
+    "description": "A simple web application that simulates a coin flip. Users can flip a virtual coin and see the results instantly.",
+    "image": "https://picsum.photos/seed/coinflip/400/300",
+    "tools": "React, Next.js",
+    "category": "Software Development",
+    "link": "https://your-coin-flip-simulator-link.com"
+  },
+  {
+    "title": "Job Search Tracker",
+    "description": "An application designed to track job applications, interviews, and follow-ups. It helps users stay organized during their job search.",
+    "image": "https://picsum.photos/seed/jobtracker/400/300",
+    "tools": "React, Next.js",
+    "category": "Software Development",
+    "link": "https://your-job-search-tracker-link.com"
+  },
+  {
+    "title": "Simple Budget Tracker",
+    "description": "A budgeting tool that helps users manage their finances. It provides insights into spending and saving habits.",
+    "image": "https://picsum.photos/seed/budgettracker/400/300",
+    "tools": "React, Next.js",
+    "category": "Software Development",
+    "link": "https://your-budget-tracker-link.com"
+  },
+  {
+    "title": "Event Countdown Timer",
+    "description": "A web app that counts down to specific events. Users can set events and track the time remaining.",
+    "image": "https://picsum.photos/seed/countdown/400/300",
+    "tools": "React, Next.js",
+    "category": "Software Development",
+    "link": "https://your-event-countdown-timer-link.com"
+  },
+  {
+    "title": "Personal Portfolio Website",
+    "description": "A personal portfolio website showcasing projects, skills, and contact information. Built with modern web technologies.",
+    "image": "https://picsum.photos/seed/portfolio/400/300",
+    "tools": "React, Next.js,TailwindCSS",
+    "category": "Software Development",
+    "link": "https://your-portfolio-website-link.com"
+  },
+  {
+    "title": "Recipe Finder App",
+    "description": "A web app that allows users to search for recipes based on ingredients. Users can input ingredients they have and get recipe suggestions.",
+    "image": "https://picsum.photos/seed/recipefinder/400/300",
+    "tools": "React, Next.js,API",
+    "category": "Software Development",
+    "link": "https://your-recipe-finder-app-link.com"
+  }
+]
