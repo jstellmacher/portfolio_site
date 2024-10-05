@@ -18,7 +18,11 @@ module.exports = {
         serif: ['var(--font-playfair)', ...fontFamily.serif],
       },
       boxShadow: {
-        'custom-inset': 'inset 0 0 10px 5px rgba(255, 255, 255, 0.8)',
+        // Merge all shadow values into a single 'boxShadow' object
+        'inner-extreme': 'inset 0 0 20px rgba(0, 0, 0, 0.5)', // Custom intense inner shadow
+        'custom-inset': 'inset 0 0 10px 5px rgba(255, 255, 255, 0.8)', // Light custom inner shadow
+        'deep-dark': '0 4px 10px rgba(0, 0, 0, 0.8)', // Deeper outer shadow for depth
+        'dark-lg': '0 10px 30px rgba(0, 0, 0, 0.6)', // Larger, darker shadow for more depth
       },
     },
   },

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { FaGithub } from 'react-icons/fa'; // Import GitHub icon
+import { SiReact } from 'react-icons/si'; // Import React icon
 
 const ProjectsSection = () => {
   const [projects, setProjects] = useState([]);
@@ -23,32 +25,29 @@ const ProjectsSection = () => {
     loadProjects();
   }, []);
 
-  // Get unique categories from projects data
   const categories = ['All', ...new Set(projects.map(project => project.category))];
 
-  const filteredProjects = filter === 'All' 
-    ? projects 
+  const filteredProjects = filter === 'All'
+    ? projects
     : projects.filter(project => project.category === filter);
 
-  // Updated function to match your JSON categories
   const getCategoryGradient = (category) => {
     switch (category) {
       case 'Software Development':
-        return 'from-blue-100 to-blue-300';
+        return 'from-blue-200 to-blue-400';
       case 'Project Management':
-        return 'from-green-100 to-green-300';
+        return 'from-green-200 to-green-400';
       case 'Other':
-        return 'from-purple-100 to-purple-300';
+        return 'from-purple-200 to-purple-400';
       case 'MIS Projects':
-        return 'from-yellow-100 to-yellow-300';
+        return 'from-yellow-200 to-yellow-400';
       case 'Marketing':
-        return 'from-red-100 to-red-300';
+        return 'from-red-200 to-red-400';
       default:
-        return 'from-gray-100 to-gray-300';
+        return 'from-gray-200 to-gray-400';
     }
   };
 
-  // New function to get button colors
   const getButtonColors = (category) => {
     switch (category) {
       case 'Software Development':
@@ -69,9 +68,8 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-12 sm:py-16 md:py-20 text-center bg-gray-900">
-      <div className="w-full sm:w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] mx-auto px-4 sm:px-6">
-        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 sm:mb-12">Projects</h2>
+    <section id="projects" className="py-12 sm:py-16 md:py-20 text-center ">
+<div className="w-full sm:w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] mx-auto px-4 sm:px-6 pt-2 shadow-inner-extreme shadow-dark-lg bg-[#e8e8e8] rounded-xl">        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 sm:mb-12">Projects</h2>
         
         {/* Category filter buttons */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
@@ -90,15 +88,15 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        <div className="w-full mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
-        {filteredProjects.map((project) => (
+        <div className="w-full mx-auto max-h-[80vh] overflow-y-auto"> 
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 "> {/* Added custom intense inner box shadow */}
+            {filteredProjects.map((project) => (
               <div
                 key={project.title}
-                className={`relative p-4 sm:p-6 rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex flex-col h-full bg-gradient-to-br ${getCategoryGradient(project.category)}`}
+                className={`relative p-4 sm:p-6 rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:-translate-y-4 hover:shadow-3xl flex flex-col h-full bg-gradient-to-br ${getCategoryGradient(project.category)} backdrop-blur-lg bg-opacity-30 border border-gray-700 shadow-3xl`} // Increased shadow and translation for a more extreme floating effect
               >
                 {/* Card Overlay */}
-                <div className="absolute inset-0 bg-black opacity-0 hover:opacity-30 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition-opacity duration-300"></div>
 
                 {/* Category badge */}
                 <div className="absolute top-2 right-2 z-20 bg-gray-900 text-white px-3 py-1 rounded-full text-sm animate-pulse">
@@ -107,17 +105,18 @@ const ProjectsSection = () => {
 
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="flex-grow">
-                    <div className="overflow-hidden rounded-lg mb-4">
+                    <div className="overflow-hidden rounded-lg mb-4 shadow-md">
                       <Image
                         src={project.image}
                         alt={project.title}
                         width={500}
                         height={300}
                         layout="responsive"
+                        className="rounded-lg"
                       />
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-gray-800">{project.title}</h3>
-                    <p className="text-sm sm:text-base text-gray-600 mb-4">{project.description}</p>
+                    <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-gray-100">{project.title}</h3>
+                    <p className="text-sm sm:text-base text-gray-300 mb-4">{project.description}</p>
                   </div>
 
                   {/* Container for icons */}
@@ -145,19 +144,32 @@ const ProjectsSection = () => {
 
                     {/* Display selected tool name */}
                     {selectedTool && (
-                      <div className="mt-2 text-sm font-semibold text-gray-700 text-center">
+                      <div className="mt-2 text-sm font-semibold text-gray-300 text-center">
                         Selected: {selectedTool}
                       </div>
                     )}
                   </div>
 
-                  {/* View Project Button */}
-                  <a
-                    href={`/projects/${project.title.replace(/\s+/g, '-').toLowerCase()}`}
-                    className="block text-center text-white bg-gradient-to-r from-indigo-500 to-purple-600 px-4 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg transform transition-transform hover:scale-105 text-sm sm:text-base"
-                  >
-                    View Project
-                  </a>
+                  {/* Container for icons and buttons */}
+                  <div className="flex-grow"></div> {/* This will push the buttons to the bottom */}
+                  
+                  {/* Buttons for GitHub and Link */}
+                  <div className="mt-2 flex justify-between mb-2"> {/* Reduced margin-top */}
+                    <a
+                      href={project.github} // Assuming project.github contains the GitHub link
+                      className="flex items-center text-white bg-gray-800 px-4 py-2 rounded-full shadow-lg transition-transform hover:scale-105"
+                    >
+                      <FaGithub className="mr-2" size={20} /> {/* GitHub icon */}
+                      Code
+                    </a>
+                    <a
+                      href={project.link} // Assuming project.link contains the link to the project
+                      className="flex items-center text-white bg-gray-800 px-4 py-2 rounded-full shadow-lg transition-transform hover:scale-105"
+                    >
+                      <SiReact className="mr-2" size={20} /> {/* React icon */}
+                      Link
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
