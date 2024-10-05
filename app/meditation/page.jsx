@@ -1,9 +1,9 @@
 'use client';
 import { useState } from 'react';
-import GrowingCircle from '../../components/GrowingCircle';
-import PomodoroTimer from '../../components/PomodoroTimer';
-import VideoPlayer from '../../components/VideoPlayer';
-import MeditationNav from '../../components/MeditationNav'; // Add this import
+import GrowingCircle from '../../components/Meditation/GrowingCircle';
+import PomodoroTimer from '../../components/Meditation/PomodoroTimer';
+import VideoPlayer from '../../components/Meditation/VideoPlayer';
+import MeditationNav from '../../components/Meditation/MeditationNav'; // Add this import
 
 const MeditationPage = () => {
     const [showGrowingCircle, setShowGrowingCircle] = useState(false);

@@ -4,55 +4,55 @@ import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import { FaFileAlt, FaMoneyBillWave, FaLinkedin, FaDatabase, FaCoins, FaChessBoard, FaStickyNote, FaCode, FaBirthdayCake, FaAlignLeft, FaShoppingCart, FaGamepad, FaPalette, FaCalculator, FaCalendarAlt, FaHamburger } from 'react-icons/fa';
 
-const ResumeGenerator = dynamic(() => import('../../components/ResumeGenerator'), {
+const ResumeGenerator = dynamic(() => import('../../components/MiniApps/ResumeGenerator'), {
   ssr: false,
 });
-const HourlySalary = dynamic(() => import('../../components/HourlySalary'), {
+const HourlySalary = dynamic(() => import('../../components/MiniApps/HourlySalary'), {
   ssr: false,
 });
-const LinkedinMsg = dynamic(() => import('../../components/LinkedinMsg'), {
+const LinkedinMsg = dynamic(() => import('../../components/MiniApps/LinkedinMsg'), {
   ssr: false,
 });
-const SQLGame = dynamic(() => import('../../components/SQLGame'), {
+const SQLGame = dynamic(() => import('../../components/MiniApps/SQLGame'), {
   ssr: false,
 });
-const CoinFlip = dynamic(() => import('../../components/CoinFlip'), {
+const CoinFlip = dynamic(() => import('../../components/MiniApps/CoinFlip'), {
   ssr: false,
 });
-const Checkers = dynamic(() => import('../../components/Checkers'), {
+const Checkers = dynamic(() => import('../../components/MiniApps/Checkers'), {
   ssr: false,
 });
-const StickyNote = dynamic(() => import('../../components/StickyNote'), {
+const StickyNote = dynamic(() => import('../../components/MiniApps/StickyNote'), {
   ssr: false,
 });
-const JSCodeEditor = dynamic(() => import('../../components/JSCodeEditor'), {
+const JSCodeEditor = dynamic(() => import('../../components/MiniApps/JSCodeEditor'), {
   ssr: false,
 });
-const BirthdayCountdown = dynamic(() => import('../../components/BdayCountdown'), {
+const BirthdayCountdown = dynamic(() => import('../../components/MiniApps/BdayCountdown'), {
   ssr: false,
 });
-const CustomLoremIpsum = dynamic(() => import('../../components/LoremIpsum'), {
+const CustomLoremIpsum = dynamic(() => import('../../components/MiniApps/LoremIpsum'), {
   ssr: false,
 });
-const GroceryList = dynamic(() => import('../../components/GroceryList'), {
+const GroceryList = dynamic(() => import('../../components/MiniApps/GroceryList'), {
   ssr: false,
 });
-const PlatformerGame = dynamic(() => import('../../components/PlatformerGame'), {
+const PlatformerGame = dynamic(() => import('../../components/MiniApps/PlatformerGame'), {
   ssr: false,
 });
-const ColorTools = dynamic(() => import('../../components/ColorTools'), {
+const ColorTools = dynamic(() => import('../../components/MiniApps/ColorTools'), {
   ssr: false,
 });
-const AgeCalculator = dynamic(() => import('../../components/Age'), {
+const AgeCalculator = dynamic(() => import('../../components/MiniApps/Age'), {
   ssr: false,
 });
-const Calculator = dynamic(() => import('../../components/Calculator'), {
+const Calculator = dynamic(() => import('../../components/MiniApps/Calculator'), {
   ssr: false,
 });
-const Birthday = dynamic(() => import('../../components/Birthday'), {
+const Birthday = dynamic(() => import('../../components/MiniApps/Birthday'), {
   ssr: false,
 });
-const CrabbyPatty = dynamic(() => import('../../components/CrabbyPatty'), {
+const CrabbyPatty = dynamic(() => import('../../components/MiniApps/CrabbyPatty'), {
   ssr: false,
 });
 

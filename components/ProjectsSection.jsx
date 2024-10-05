@@ -54,8 +54,8 @@ const ProjectsSection = () => {
         return 'bg-blue-500 hover:bg-blue-600';
       case 'Project Management':
         return 'bg-green-500 hover:bg-green-600';
-      case 'Other Projects':
-        return 'bg-purple-500 hover:bg-purple-600';
+      case 'Other':
+        return 'bg-purple-400 hover:bg-purple-600';
       case 'MIS Projects':
         return 'bg-yellow-500 hover:bg-yellow-600';
       case 'Marketing':
@@ -68,9 +68,10 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-12 sm:py-16 md:py-20 text-center ">
-<div className="w-full sm:w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] mx-auto px-4 sm:px-6 pt-2 shadow-inner-extreme shadow-dark-lg bg-[#e8e8e8] rounded-xl">        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 sm:mb-12">Projects</h2>
-        
+    <section id="projects" className="py-12 sm:py-16 md:py-20 text-center">
+      <div className="w-full sm:w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] mx-auto px-4 pt-2 sm:px-6 bg-[#e8e8e8] rounded-xl">
+        <h2 className="pt-2 text-4xl sm:text-5xl font-bold text-white mb-8 sm:mb-12">Projects</h2>
+
         {/* Category filter buttons */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
           {categories.map(category => (
@@ -88,12 +89,12 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        <div className="w-full mx-auto max-h-[80vh] overflow-y-auto"> 
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 "> {/* Added custom intense inner box shadow */}
+        <div className="w-full mx-auto max-h-[80vh] overflow-y-auto p-2"> 
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 p-2">
             {filteredProjects.map((project) => (
               <div
                 key={project.title}
-                className={`relative p-4 sm:p-6 rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:-translate-y-4 hover:shadow-3xl flex flex-col h-full bg-gradient-to-br ${getCategoryGradient(project.category)} backdrop-blur-lg bg-opacity-30 border border-gray-700 shadow-3xl`} // Increased shadow and translation for a more extreme floating effect
+                className={`relative p-4 sm:p-6 rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 shadow-md flex flex-col h-full bg-gradient-to-br ${getCategoryGradient(project.category)}`}
               >
                 {/* Card Overlay */}
                 <div className="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition-opacity duration-300"></div>
@@ -103,9 +104,9 @@ const ProjectsSection = () => {
                   {project.category}
                 </div>
 
-                <div className="relative z-10 flex flex-col h-full">
+                <div className="relative z-10 flex flex-col h-full overflow-y-auto overflow-x-auto">
                   <div className="flex-grow">
-                    <div className="overflow-hidden rounded-lg mb-4 shadow-md">
+                    <div className="overflow-hidden rounded-lg mb-4">
                       <Image
                         src={project.image}
                         alt={project.title}
@@ -115,8 +116,8 @@ const ProjectsSection = () => {
                         className="rounded-lg"
                       />
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-gray-100">{project.title}</h3>
-                    <p className="text-sm sm:text-base text-gray-300 mb-4">{project.description}</p>
+                    <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-gray-500">{project.title}</h3>
+                    <p className="text-sm sm:text-base text-gray-600 mb-4">{project.description}</p>
                   </div>
 
                   {/* Container for icons */}
@@ -129,8 +130,8 @@ const ProjectsSection = () => {
                             <Image
                               src={`https://skillicons.dev/icons?i=${iconName}`}
                               alt={tool}
-                              width={32} // adjust width as needed
-                              height={32} // adjust height as needed
+                              width={32}
+                              height={32}
                               className="cursor-pointer"
                               onClick={() => setSelectedTool(selectedTool === tool ? null : tool)}
                             />
@@ -154,17 +155,17 @@ const ProjectsSection = () => {
                   <div className="flex-grow"></div> {/* This will push the buttons to the bottom */}
                   
                   {/* Buttons for GitHub and Link */}
-                  <div className="mt-2 flex justify-between mb-2"> {/* Reduced margin-top */}
+                  <div className="mt-2 flex justify-between mb-2">
                     <a
                       href={project.github} // Assuming project.github contains the GitHub link
-                      className="flex items-center text-white bg-gray-800 px-4 py-2 rounded-full shadow-lg transition-transform hover:scale-105"
+                      className="flex items-center text-white bg-gray-800 px-4 py-2 rounded-full transition-transform hover:scale-105"
                     >
                       <FaGithub className="mr-2" size={20} /> {/* GitHub icon */}
                       Code
                     </a>
                     <a
                       href={project.link} // Assuming project.link contains the link to the project
-                      className="flex items-center text-white bg-gray-800 px-4 py-2 rounded-full shadow-lg transition-transform hover:scale-105"
+                      className="flex items-center text-white bg-gray-800 px-4 py-2 rounded-full transition-transform hover:scale-105"
                     >
                       <SiReact className="mr-2" size={20} /> {/* React icon */}
                       Link

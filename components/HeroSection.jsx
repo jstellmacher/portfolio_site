@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Image from "next/legacy/image";
 import SocialIcons from './SocialIcons';
 import BraveHeroSection from './BraveHeroSection';
-import ReCenterButton from './ReCenter';
+import ReCenterButton from './Meditation/ReCenter';
 import { FaStar } from 'react-icons/fa';
 
 const HeroSection = () => {
