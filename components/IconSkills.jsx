@@ -10,7 +10,6 @@ const skills = [
   { name: 'JavaScript', icon: <DiJavascript className="text-3xl text-yellow-600" />, url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
   { name: 'HTML', icon: <DiHtml5 className="text-3xl text-red-600" />, url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
   { name: 'CSS', icon: <DiCss3 className="text-3xl text-blue-500" />, url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
-  { name: 'Java', icon: <FaJava className="text-3xl text-red-500" />, url: 'https://docs.oracle.com/en/java/' },
   { name: 'React.js', icon: <FaReact className="text-3xl text-blue-400" />, url: 'https://react.dev/blog/2023/03/16/introducing-react-dev' },
   { name: 'Node.js', icon: <DiNodejs className="text-3xl text-green-600" />, url: 'https://nodejs.org/en/docs/' },
   { name: 'Microsoft Azure', icon: <SiMicrosoftazure className="text-3xl text-blue-500" />, url: 'https://learn.microsoft.com/en-us/azure/' },
@@ -34,6 +33,7 @@ const learningSkills = [
   { name: 'Kubernetes', icon: <SiKubernetes className="text-3xl text-blue-600" />, url: 'https://kubernetes.io/docs/' },
   { name: 'TensorFlow', icon: <SiTensorflow className="text-3xl text-orange-600" />, url: 'https://www.tensorflow.org/learn' },
   { name: 'Scikit-learn', icon: <SiScikitlearn className="text-3xl text-blue-600" />, url: 'https://scikit-learn.org/stable/' },
+  { name: 'Java', icon: <FaJava className="text-3xl text-red-500" />, url: 'https://docs.oracle.com/en/java/' }
 ];
 
 const SkillSection = ({ title, skillsArray }) => (

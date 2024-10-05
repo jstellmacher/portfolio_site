@@ -33,8 +33,8 @@ export const experiences = [
         ),
         category: 'technical',
         description: [
-          'Led data governance initiatives to support data-driven decision-making using Azure tools.',
-          'Applied Agile Scrum methodologies to streamline cloud migration projects.',
+          'Participated in data governance initiatives to support data-driven decision-making using Azure tools.',
+          'Applied Agile Scrum methodologies to streamline data and cloud migration projects.',
           'Conducted regular meetings to ensure project alignment and maintain client relationships with four clients.'
         ],
         additionalInfo: [

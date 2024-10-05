@@ -69,8 +69,8 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-12 sm:py-16 md:py-20 text-center">
-      <div className="w-full sm:w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] mx-auto px-4 pt-2 sm:px-6 bg-[#e8e8e8] rounded-xl">
-        <h2 className="pt-2 text-4xl sm:text-5xl font-bold text-white mb-8 sm:mb-12">Projects</h2>
+      <div className="w-full sm:w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] mx-auto px-4 pt-2 sm:px-6 bg-gray-100 rounded-xl">
+        <h2 className="pt-2 text-4xl sm:text-5xl font-bold text-gray-600 mb-8 sm:mb-12">Projects</h2>
 
         {/* Category filter buttons */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
@@ -94,7 +94,7 @@ const ProjectsSection = () => {
             {filteredProjects.map((project) => (
               <div
                 key={project.title}
-                className={`relative p-4 sm:p-6 rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 shadow-md flex flex-col h-full bg-gradient-to-br ${getCategoryGradient(project.category)}`}
+                className={`relative p-4 shadow-2xl sm:p-6 rounded-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 shadow-md flex flex-col h-full bg-gradient-to-br ${getCategoryGradient(project.category)}`}
               >
                 {/* Card Overlay */}
                 <div className="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition-opacity duration-300"></div>
