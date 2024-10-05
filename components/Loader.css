@@ -1,0 +1,70 @@
+.loader-container {
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack the loader and text vertically */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    position: fixed; /* Fix the position to cover the whole screen */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    z-index: 1000; /* Ensure it stays on top */
+  }
+  
+  .ecg-loader {
+    --uib-color: #ff4081; /* Vibrant pink color */
+    --uib-speed: 2s; /* Speed of the animation */
+    height: 125px; /* Increased height */
+    width: 200px; /* Increased width */
+    transform-origin: center;
+    overflow: visible;
+  }
+  
+  .ecg-car {
+    stroke: var(--uib-color);
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation:
+      travel var(--uib-speed) ease-in-out infinite,
+      fade var(--uib-speed) ease-out infinite;
+    will-change: stroke-dasharray, stroke-dashoffset;
+    transition: stroke 0.5s ease;
+  }
+  
+  .ecg-track {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: rgba(255, 64, 129, 0.3); /* Light pink with some opacity */
+  }
+  
+  .loading-text {
+    margin-top: 15px; /* Space between loader and text */
+    font-size: 18px; /* Adjust font size */
+    color: white; /* Text color */
+    text-align: center; /* Center the text */
+  }
+  
+  @keyframes travel {
+    0% {
+      stroke-dashoffset: 100;
+    }
+    75% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    20%,
+    55% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
