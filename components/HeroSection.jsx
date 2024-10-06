@@ -107,7 +107,7 @@ const HeroSection = () => {
           X
         </button>
         <iframe
-          src="/assets/Public_Resume.pdf"
+          src="/assets/JaichuangStellmacher_Template.pdf"
           className="w-full flex-grow border-2 border-gray-300 rounded"
           title="Resume PDF"
         />

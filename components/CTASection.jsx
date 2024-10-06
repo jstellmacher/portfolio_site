@@ -16,7 +16,7 @@ const skills = [
   },
   {
     title: 'Full Stack Development',
-    description: 'Proficient in building and maintaining end-to-end solutions with expertise in Python, JavaScript, React, and frameworks such as Django and Flask.',
+    description: 'Proficient in building and maintaining end-to-end solutions with proficiency in Python, JavaScript, React, and frameworks such as Django and Flask.',
     color: 'skill-card-green',
     icon: <FaReact size={40} />,
     key: 'full-stack',
