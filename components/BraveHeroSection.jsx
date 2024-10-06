@@ -104,7 +104,7 @@ const BraveHeroSection = () => {
               X
             </button>
             <iframe
-              src="/assets/Public_Resume.pdf" // Make sure this PDF is in the correct path
+              src="/assets/JaichuangStellmacher_Template.pdf" // Make sure this PDF is in the correct path
               className="w-full flex-grow border-2 border-gray-300 rounded"
               title="Resume PDF"
             />
