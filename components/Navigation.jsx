@@ -5,12 +5,9 @@ import Link from 'next/link';
 import { FaUser, FaBars, FaTimes, FaHome, FaRocket } from 'react-icons/fa';
 import { GoSmiley } from "react-icons/go";
 import { PiFinnTheHumanLight } from "react-icons/pi";
-import { GiPaperCrane } from "react-icons/gi";
+import { GiPaperCrane, GiCandlestickPhone } from "react-icons/gi";
 import { FaComputer } from "react-icons/fa6";
-import { GiCandlestickPhone } from "react-icons/gi";
-
 import LoginForm from './LoginForm';
-// import { classNames } from '@react-pdf-viewer/core';
 
 const Navigation = ({ pathname }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -106,10 +103,10 @@ const Navigation = ({ pathname }) => {
           {isMenuOpen && (
             <div className="absolute top-full left-0 right-0 bg-gray-900 py-2 z-50 overflow-x-auto">
               <div className="flex space-x-2 sm:space-x-4 flex-nowrap">
-                <NavLink href="#about" label="About" color="green" mobile onClick={handleNavigation} smoothScroll={smoothScroll} />
-                <NavLink href="#projects" label="Projects" color="blue" mobile onClick={handleNavigation} smoothScroll={smoothScroll} />
-                <NavLink href="#experience" label="Work" color="yellow" mobile onClick={handleNavigation} smoothScroll={smoothScroll} />
-                <NavLink href="#contact" label="Contact" color="purple" mobile onClick={handleNavigation} smoothScroll={smoothScroll} />
+                <NavLink href="#about" label="About" color="green" mobile onClick={handleNavigation} />
+                <NavLink href="#projects" label="Projects" color="blue" mobile onClick={handleNavigation} />
+                <NavLink href="#experience" label="Work" color="yellow" mobile onClick={handleNavigation} />
+                <NavLink href="#contact" label="Contact" color="purple" mobile onClick={handleNavigation} />
                 <NavLink href="/miniApps" label="Mini Apps" color="red" mobile onClick={handleNavigation} />
                 <NavLink href="/interests" label="Interests" color="indigo" mobile onClick={handleNavigation} />
                 <LoginButton isLoggedIn={isLoggedIn} onClick={isLoggedIn ? handleLogout : handleLoginClick} mobile />
@@ -119,10 +116,10 @@ const Navigation = ({ pathname }) => {
         </>
       ) : (
         <div className="flex items-center space-x-2 sm:space-x-4 flex-nowrap overflow-x-auto whitespace-nowrap">
-          <NavLink href="#about" label="About" color="green" icon={<PiFinnTheHumanLight className="mr-2" />} onClick={handleNavigation} smoothScroll={smoothScroll} />
-          <NavLink href="#projects" label="Projects" color="blue" icon={<GiPaperCrane className="mr-2" />} onClick={handleNavigation} smoothScroll={smoothScroll} />
-          <NavLink href="#experience" label="Work" color="yellow" icon={<FaComputer className="mr-2"/>} onClick={handleNavigation} smoothScroll={smoothScroll} />
-          <NavLink href="#contact" label="Contact" color="purple" icon={<GiCandlestickPhone className="mr-2" />} onClick={handleNavigation} smoothScroll={smoothScroll} />
+          <NavLink href="#about" label="About" color="green" icon={<PiFinnTheHumanLight className="mr-2" />} onClick={handleNavigation} />
+          <NavLink href="#projects" label="Projects" color="blue" icon={<GiPaperCrane className="mr-2" />} onClick={handleNavigation} />
+          <NavLink href="#experience" label="Work" color="yellow" icon={<FaComputer className="mr-2"/>} onClick={handleNavigation} />
+          <NavLink href="#contact" label="Contact" color="purple" icon={<GiCandlestickPhone className="mr-2" />} onClick={handleNavigation} />
           <NavLink href="/miniApps" label="Mini Apps" color="red" icon={<FaRocket className="mr-2" />} onClick={handleNavigation} />
           <NavLink href="/interests" label="Interests" color="indigo" icon={<GoSmiley className="mr-2" />} onClick={handleNavigation} />
           <LoginButton isLoggedIn={isLoggedIn} onClick={isLoggedIn ? handleLogout : handleLoginClick} />
@@ -134,33 +131,31 @@ const Navigation = ({ pathname }) => {
       )}
     </nav>
   );
-  
-  
 };
 
-const NavLink = ({ href, label, color, mobile, onClick, smoothScroll, icon }) => (
-  <a 
-    href={href} 
-    onClick={(e) => {
-      if (href.startsWith('#') && smoothScroll) {
-        smoothScroll(e, href);
-      }
-      if (onClick) onClick(e, href);
-    }}
-    className={`flex items-center px-3 py-1 sm:px-4 sm:py-2 bg-${color}-500 text-white text-sm sm:text-base rounded-lg shadow-md hover:bg-${color}-600 active:bg-${color}-700 transition duration-300 whitespace-nowrap`}
-    aria-label={`${label} ${href.startsWith('#') ? 'section' : 'page'}`}
-  >
-    {icon}
-    {label}
-  </a>
-);
+const NavLink = ({ href, label, color, mobile, onClick, icon }) => {
+  const bgColorClass = `bg-${color}-500`;
+  const hoverBgColorClass = `hover:bg-${color}-600`;
+  const activeBgColorClass = `active:bg-${color}-700`;
 
+  return (
+    <a 
+      href={href} 
+      onClick={(e) => onClick(e, href)}
+      className={`flex items-center px-3 py-1 sm:px-4 sm:py-2 ${bgColorClass} text-white text-sm sm:text-base rounded-lg shadow-md ${hoverBgColorClass} ${activeBgColorClass} transform hover:scale-105 transition-all duration-300 whitespace-nowrap`} 
+      aria-label={`${label} ${href.startsWith('#') ? 'section' : 'page'}`}
+    >
+      {icon}
+      {label}
+    </a>
+  );
+};
 
 const LoginButton = ({ isLoggedIn, onClick, mobile }) => (
   <button
     onClick={onClick}
     className={`
-      ${mobile ? 'w-full text-left py-2 text-white' : 'p-1 sm:p-2 bg-orange-500 text-white rounded-lg shadow-md hover:bg-orange-600 active:bg-orange-700 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10'}
+      ${mobile ? 'w-full text-left py-2 text-white' : 'p-1 sm:p-2 bg-orange-500 text-white rounded-lg shadow-md hover:bg-orange-600 active:bg-orange-700 flex items-center justify-center active:scale-95 w-8 h-8 sm:w-10 sm:h-10'}
       transition duration-300
     `}
     aria-label={isLoggedIn ? "Logout" : "Login"}

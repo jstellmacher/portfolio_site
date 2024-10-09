@@ -8,7 +8,7 @@ import { FaLaptopCode } from 'react-icons/fa';
 const ReCenterButton = () => {
     return (
         <div className="flex flex-col items-center">
-            <Link href="/meditation">
+            <Link href="/meditation"> 
                 <button className="flex items-center bg-red-400 text-white p-3 md:p-4 rounded-lg shadow-lg hover:bg-purple-600 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300 ease-in-out text-base md:text-lg font-semibold">
                     <GiMeditation className="text-xl md:text-2xl mr-2" />
                     Re-Center With Me

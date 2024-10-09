@@ -65,12 +65,15 @@ const VideoPlayer = () => {
 
     return (
         <div className="flex flex-col h-full">
+        
             {showMessage && (
                 <div className="absolute top-16 left-0 right-0 bg-white text-red-500 px-4 py-2 text-center animate-fade-out z-20">
                     Try choosing a video to play instead
                 </div>
             )}
             <div className="flex justify-center items-center gap-4 p-2 mt-16 z-10">
+         
+            <div className="flex justify-center mt-4">
                 <select
                     onChange={(e) => handleVideoChange(e.target.value)}
                     value={videoUrl}
@@ -83,6 +86,7 @@ const VideoPlayer = () => {
                         </option>
                     ))}
                 </select>
+            </div>
                 <button
                     onClick={handleVideoPlay}
                     className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 flex items-center"
@@ -109,6 +113,9 @@ const VideoPlayer = () => {
                             <div className="bg-red-600 rounded-full p-6 mb-6 shadow-lg hover:bg-red-700 transition duration-300">
                                 <FaHeadphones className="text-6xl text-white" />
                             </div>
+                            <div className="text-center text-gray-600 mb-4">
+                Note: I will add the names of all the YouTube videos eventually, but it takes a while since YouTube policy says I cannot web scrape them.
+            </div>
                             <h2 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center justify-center">
                                 Choose some background music to start
                                 <GiMusicalNotes className="ml-2" />
