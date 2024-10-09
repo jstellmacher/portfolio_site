@@ -51,14 +51,16 @@ const VideoPlayer = () => {
             setTimeout(() => setShowMessage(false), 3000); // Hide message after 3 seconds
             return;
         }
-        setIsVideoPlaying(!isVideoPlaying);
+        const newPlayingState = !isVideoPlaying; // Determine the new playing state
+        setIsVideoPlaying(newPlayingState); // Update the state
+
         if (videoUrl) {
             const iframe = document.querySelector('iframe');
             if (iframe) {
                 const iframeSrc = iframe.src;
-                iframe.src = isVideoPlaying 
-                    ? iframeSrc.replace('autoplay=1', 'autoplay=0') 
-                    : iframeSrc.replace('autoplay=0', 'autoplay=1');
+                iframe.src = newPlayingState 
+                    ? iframeSrc.replace('autoplay=0', 'autoplay=1') 
+                    : iframeSrc.replace('autoplay=1', 'autoplay=0');
             }
         }
     };
