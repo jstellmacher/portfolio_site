@@ -89,7 +89,7 @@ const HeroSection = () => {
             {/* Adjust View Resume button for dark/light mode */}
             <button 
               onClick={handleOpenPDF} 
-              className="bg-black text-white py-2 px-4 md:py-3 md:px-5 rounded-lg font-sans font-semibold tracking-wide transition-all duration-300 hover:bg-gray-800 hover:text-white text-sm md:text-base dark:bg-white dark:text-black dark:hover:bg-green-400 dark:hover:text-black"
+              className="bg-black text-white py-2 px-4 md:py-3 md:px-5 rounded-lg font-sans font-semibold tracking-wide transition-all duration-300 hover:bg-green-400 hover:text-white text-sm md:text-base dark:bg-white dark:text-black dark:hover:bg-green-400 dark:hover:text-black"
               aria-label="View Resume"
             >
               View Resume

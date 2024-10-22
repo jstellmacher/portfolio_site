@@ -6,7 +6,7 @@ const SocialIcons = () => {
     <div className="flex space-x-4">
       <a 
         href="https://www.linkedin.com/in/jaichuang-stellmacher/" 
-        className="text-gray-800 hover:text-blue-500 transition-colors duration-300 dark:text-white" // Change text color
+        className="text-gray-800 hover:text-blue-500 transition-colors duration-300 dark:text-white dark:hover:text-blue-500" // Change text color
         aria-label="LinkedIn" 
         title="LinkedIn" 
         target="_blank" 
@@ -16,7 +16,7 @@ const SocialIcons = () => {
       </a>
       <a 
         href="https://github.com/jstellmacher" 
-        className="text-gray-800 hover:text-purple-500 transition-colors duration-300 dark:text-white" // Change text color
+        className="text-gray-800 hover:text-purple-500 transition-colors duration-300 dark:text-white dark:hover:text-purple-500" // Change text color
         aria-label="GitHub" 
         title="GitHub" 
         target="_blank" 
@@ -26,7 +26,7 @@ const SocialIcons = () => {
       </a>
       <a 
         href="https://docs.google.com/document/d/1VLkC0Zy2qz4mmUR__-OPIQ1Gn7AhhFv5b41P0xn1PIc/edit?usp=sharing" 
-        className="text-gray-800 hover:text-red-500 transition-colors duration-300 dark:text-white" // Change text color
+        className="text-gray-800 hover:text-red-500 transition-colors duration-300 dark:text-white dark:hover:text-red-500" // Change text color
         aria-label="Google Docs" 
         title="Google Docs" 
         target="_blank" 
@@ -36,7 +36,7 @@ const SocialIcons = () => {
       </a>
       <a 
         href="https://dev.to/jstellmacher" 
-        className="text-gray-800 hover:text-gray-600 transition-colors duration-300 dark:text-white" // Change text color
+        className="text-gray-800 hover:text-gray-600 transition-colors duration-300 dark:text-white dark:hover:text-gray-600" // Change text color
         aria-label="Dev.to" 
         title="Dev.to" 
         target="_blank" 

@@ -3,6 +3,9 @@
 import './global.css';
 import { Montserrat, Playfair_Display } from 'next/font/google';
 import { useEffect, useState } from 'react';
+import { BsEmojiSunglasses } from 'react-icons/bs';
+import { GiNightSleep } from 'react-icons/gi';
+import Navigation from '../components/Navigation'; // Adjusted import path
 
 // Load Montserrat font
 const montserrat = Montserrat({
@@ -17,7 +20,7 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
-const Layout = ({ children }) => {
+const Layout = ({ children, pathname }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Toggle theme function
@@ -44,12 +47,27 @@ const Layout = ({ children }) => {
   return (
     <html lang="en" className={`${montserrat.variable} ${playfair.variable}`}>
       <body className={`transition-colors duration-300 bg-gradient-to-r ${isDarkMode ? 'from-blue-900 to-purple-800' : 'from-white to-gray-200'} font-sans`}>
-        {/* Theme Toggle Button */}
-        <button onClick={toggleTheme} className="p-2 m-4 text-white bg-blue-700 rounded">
-          {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-        </button>
-        {children}
-      </body>
+  {/* Include the Navigation component here */}
+  <Navigation pathname={pathname} />
+
+  {/* Theme Toggle Button */}
+  <div className="flex items-center justify-center my-4">
+    <button
+      onClick={toggleTheme}
+      className={`p-3 rounded-full transition-all duration-300 focus:outline-none ${
+        isDarkMode ? 'bg-gray-800 text-yellow-300' : 'bg-yellow-300 text-gray-800'
+      }`}
+    >
+      {isDarkMode ? (
+        <GiNightSleep className="w-8 h-8" />
+      ) : (
+        <BsEmojiSunglasses className="w-8 h-8" />
+      )}
+    </button>
+  </div>
+
+  {children}
+</body>
     </html>
   );
 };

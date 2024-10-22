@@ -72,7 +72,7 @@ const Navigation = ({ pathname }) => {
   };
 
   return (
-    <nav aria-label="Main navigation" className="flex items-center justify-between relative px-4 py-3 sm:py-2 sm:px-6">
+    <nav aria-label="Main navigation" className="flex items-center justify-between relative px-4 py-3 sm:py-2 sm:px-6 sticky top-0 bg-opacity-80 bg-gray-800 dark:bg-opacity-10 z-50 shadow-lg">
       <div className="flex items-center overflow-x-auto mr-4 sm:rounded-lg"> 
         <Link href="/"
           className="flex items-center px-3 py-1 sm:px-4 sm:py-2 bg-gray-800 text-white text-sm sm:text-base rounded-lg shadow-lg hover:bg-gray-700 hover:scale-105 active:bg-gray-900 transition-all duration-300 ease-in-out whitespace-nowrap"
