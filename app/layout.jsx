@@ -2,7 +2,6 @@
 
 import './global.css';
 import { Montserrat, Playfair_Display } from 'next/font/google';
-import ClientWrapper from '../components/ClientWrapper';
 
 // Load Montserrat font
 const montserrat = Montserrat({
@@ -20,10 +19,8 @@ const playfair = Playfair_Display({
 const Layout = ({ children }) => {
   return (
     <html lang="en" className={`${montserrat.variable} ${playfair.variable}`}>
-      <body className='bg-gradient-to-r from-green-400 to-blue-500 font-sans'>
-        <ClientWrapper>
-          {children}
-        </ClientWrapper>
+<body className='bg-gradient-to-r from-blue-900 to-purple-800 font-sans'>
+{children}
       </body>
     </html>
   );

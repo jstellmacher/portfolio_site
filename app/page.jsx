@@ -11,7 +11,6 @@ import ExperienceSection from '../components/Experience';
 import SoftSkills from '../components/SoftSkills';
 import ConditionalFloatingSquid from '../components/ConditionalFloatingSquid';
 import FeedbackForm from '@/components/FeedbackForm';
-import Dashboard from '../components/Dashboard'
 
 const Page = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -27,8 +26,7 @@ const Page = () => {
 
   return (
     <>
-    <Dashboard />
-      {/* <HeroSection /> */}
+      <HeroSection />
       <CTASection />
       <IconSkills />
       <SoftSkills />
