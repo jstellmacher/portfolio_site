@@ -1,3 +1,5 @@
+/* global.css or styles.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,7 +8,6 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
-/* Base Layer */
 @layer base {
   body {
     @apply font-sans;
@@ -18,15 +19,13 @@
 
 /* Root Variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff; /* Light background */
+  --foreground: #171717; /* Dark text color for light mode */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme='dark'] {
+  --background: #0a0a0a; /* Dark background */
+  --foreground: #ededed; /* Light text color for dark mode */
 }
 
 /* Global Styles */
@@ -37,6 +36,7 @@ html {
 
 body {
   min-height: 100vh; /* Ensures body is tall enough to be scrollable */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 
 section {
@@ -48,7 +48,6 @@ section {
     flex-direction: column;
   }
 }
-
 /* Utilities */
 @layer utilities {
   .text-balance {

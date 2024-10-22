@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const { fontFamily } = require('tailwindcss/defaultTheme')
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: [
@@ -7,6 +7,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class', // Enables dark mode via class strategy
   theme: {
     extend: {
       colors: {
@@ -18,11 +19,10 @@ module.exports = {
         serif: ['var(--font-playfair)', ...fontFamily.serif],
       },
       boxShadow: {
-        // Merge all shadow values into a single 'boxShadow' object
-        'inner-extreme': 'inset 0 0 20px rgba(0, 0, 0, 0.5)', // Custom intense inner shadow
-        'custom-inset': 'inset 0 0 10px 5px rgba(255, 255, 255, 0.8)', // Light custom inner shadow
-        'deep-dark': '0 4px 10px rgba(0, 0, 0, 0.8)', // Deeper outer shadow for depth
-        'dark-lg': '0 10px 30px rgba(0, 0, 0, 0.6)', // Larger, darker shadow for more depth
+        'inner-extreme': 'inset 0 0 20px rgba(0, 0, 0, 0.5)',
+        'custom-inset': 'inset 0 0 10px 5px rgba(255, 255, 255, 0.8)',
+        'deep-dark': '0 4px 10px rgba(0, 0, 0, 0.8)',
+        'dark-lg': '0 10px 30px rgba(0, 0, 0, 0.6)',
       },
     },
   },

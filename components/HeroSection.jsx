@@ -46,7 +46,7 @@ const HeroSection = () => {
   }
 
   return (
-    <div className="relative bg-transparent text-white min-h-screen">
+    <div className="relative bg-transparent text-[var(--foreground)] min-h-screen">
       <div className="absolute top-1/4 left-24 lg:left-32">
         <div className="flex flex-col items-start space-y-6">
           <div 
@@ -71,24 +71,32 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold font-serif">Jaichuang Stellmacher</h1>
-          <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-light font-sans tracking-wide">
+          
+          {/* Adjust headline text based on theme */}
+          <h1 className="text-4xl md:text-5xl font-bold font-serif text-black dark:text-white">
+            Jaichuang Stellmacher
+          </h1>
+
+          <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-light font-sans tracking-wide dark:text-gray-300 text-gray-700">
             <span className="inline-block">Full-Stack Developer</span>
             <span className="mx-1 sm:mx-2">|</span>
             <span className="inline-block">IT Cloud & Data Consultant</span>
             <span className="mx-1 sm:mx-2">|</span>
             <span className="inline-block">Project Manager</span>
           </h2>
+          
           <div className="flex items-center space-x-4">
+            {/* Adjust View Resume button for dark/light mode */}
             <button 
               onClick={handleOpenPDF} 
-              className="bg-white text-green-400 py-2 px-4 md:py-3 md:px-5 rounded-lg font-sans font-semibold tracking-wide transition-all duration-300 hover:bg-green-400 hover:text-white text-sm md:text-base"
+              className="bg-black text-white py-2 px-4 md:py-3 md:px-5 rounded-lg font-sans font-semibold tracking-wide transition-all duration-300 hover:bg-gray-800 hover:text-white text-sm md:text-base dark:bg-white dark:text-black dark:hover:bg-green-400 dark:hover:text-black"
               aria-label="View Resume"
             >
               View Resume
             </button>
             <SocialIcons />
           </div>
+          
           {/* Audio Player for Pronunciation */}
           <div>
             <audio 

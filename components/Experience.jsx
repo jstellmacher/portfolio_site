@@ -17,11 +17,12 @@ const ExperienceSection = () => {
 
   return (
     <section id="experience" className="py-16 bg-transparent mx-auto max-w-6xl mt-10 text-center rounded-lg">
-      <h2 className="text-4xl font-extrabold mb-4 text-gray-50">Work Experience</h2>
+      {/* Headline text color changes dynamically based on the theme */}
+      <h2 className="text-4xl font-extrabold mb-4 text-gray-800 dark:text-white">Work Experience</h2>
       <select
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
-        className="mb-8 bg-white text-gray-800 rounded-md px-4 py-2"
+        className="mb-8 bg-white text-gray-800 dark:bg-gray-100 dark:text-gray-800 rounded-md px-4 py-2"
       >
         <option value="all">All Experiences</option>
         <option value="technical">Technical Experience</option>
@@ -38,13 +39,13 @@ const ExperienceSection = () => {
               transition={{ duration: 0.5 }}
               className="mb-16"
             >
-              <h3 className="text-3xl font-bold mb-8 text-gray-800 flex items-center justify-center space-x-4 bg-gray-200 p-4 rounded-lg shadow-lg">
+              <h3 className="text-3xl font-bold mb-8 text-gray-800 dark:bg-gray-100 dark:text-gray-800 flex items-center justify-center space-x-4 bg-gray-200 p-4 rounded-lg shadow-lg">
                 <motion.span
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {expSection.icon()}  {/* Make sure the icon function handles colors correctly */}
+                  {expSection.icon()}  {/* Ensure icon color adapts based on mode */}
                 </motion.span>
                 <span>{expSection.section}</span>
               </h3>
