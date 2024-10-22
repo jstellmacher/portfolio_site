@@ -26,17 +26,18 @@ const Page = () => {
 
   return (
     <>
-      <HeroSection />
-      <CTASection />
-      <IconSkills />
-      <SoftSkills />
-      <ExperienceSection />
-      <ProjectsSection />
-      <ContactSection />
-      <FeedbackForm />
+      <HeroSection className="mb-8" />
+      <CTASection className="mb-8" />
+      <IconSkills className="mb-8" />
+      <SoftSkills className="mb-8" />
+      <ExperienceSection className="mb-8" />
+      <ProjectsSection className="mb-8" />
+      <ContactSection className="mb-8" />
+      <FeedbackForm className="mb-8" />
       <ConditionalFloatingSquid scrollY={scrollY} />
     </>
   );
 };
+
 
 export default Page;

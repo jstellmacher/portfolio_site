@@ -10,7 +10,6 @@ const HeroSection = () => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isBraveBrowser, setIsBraveBrowser] = useState(false);
   
-  // Create a ref for the audio element
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -34,10 +33,9 @@ const HeroSection = () => {
     setIsFlipped(prev => !prev);
   };
 
-  // Function to reset audio playback when it ends
   const handleAudioEnded = () => {
     if (audioRef.current) {
-      audioRef.current.currentTime = 0; // Reset the playback to the beginning
+      audioRef.current.currentTime = 0;
     }
   };
 
@@ -46,11 +44,11 @@ const HeroSection = () => {
   }
 
   return (
-    <div className="relative bg-transparent text-[var(--foreground)] min-h-screen">
+    <div className="relative bg-transparent text-[var(--foreground)] min-h-screen py-10">
       <div className="absolute top-1/4 left-24 lg:left-32">
         <div className="flex flex-col items-start space-y-6">
           <div 
-            className={`w-80 h-80 rounded-full overflow-hidden mb-2 cursor-pointer transition-all duration-300 ${isFlipped ? 'rotate-y-180' : ''} hover:shadow-lg`}
+            className={`w-80 h-80 rounded-full overflow-hidden mb-4 cursor-pointer transition-all duration-300 ${isFlipped ? 'rotate-y-180' : ''} hover:shadow-lg`}
             onClick={handleImageClick}
             role="button"
             aria-label="Click to flip image"
@@ -58,12 +56,12 @@ const HeroSection = () => {
             <div className="relative w-full h-full transition-transform duration-500 transform-style-3d">
               <div className="absolute w-full h-full backface-hidden">
                 <Image
-                  src="/assets/jaihead_highqual.png" // Your profile image
+                  src="/assets/jaihead_highqual.png"
                   alt="Jaichuang Stellmacher"
-                  width={1200} // Use the actual width of your image
-                  height={1200} // Use the actual height of your image
-                  objectFit="cover" // This maintains the aspect ratio and covers the space
-                  className="rounded-full" // Use classes for styling
+                  width={1200}
+                  height={1200}
+                  objectFit="cover"
+                  className="rounded-full"
                 />
               </div>
               <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-green-400 flex items-center justify-center text-black font-bold text-2xl p-4 text-center">
@@ -72,12 +70,11 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Adjust headline text based on theme */}
-          <h1 className="text-4xl md:text-5xl font-bold font-serif text-black dark:text-white">
+          <h1 className="text-4xl md:text-5xl font-bold font-serif text-black dark:text-white mb-2">
             Jaichuang Stellmacher
           </h1>
 
-          <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-light font-sans tracking-wide dark:text-gray-300 text-gray-700">
+          <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-light font-sans tracking-wide dark:text-gray-300 text-gray-700 mb-4">
             <span className="inline-block">Full-Stack Developer</span>
             <span className="mx-1 sm:mx-2">|</span>
             <span className="inline-block">IT Cloud & Data Consultant</span>
@@ -85,8 +82,7 @@ const HeroSection = () => {
             <span className="inline-block">Project Manager</span>
           </h2>
           
-          <div className="flex items-center space-x-4">
-            {/* Adjust View Resume button for dark/light mode */}
+          <div className="flex items-center space-x-4 mb-4">
             <button 
               onClick={handleOpenPDF} 
               className="bg-black text-white py-2 px-4 md:py-3 md:px-5 rounded-lg font-sans font-semibold tracking-wide transition-all duration-300 hover:bg-green-400 hover:text-white text-sm md:text-base dark:bg-white dark:text-black dark:hover:bg-green-400 dark:hover:text-black"
@@ -97,18 +93,16 @@ const HeroSection = () => {
             <SocialIcons />
           </div>
           
-          {/* Audio Player for Pronunciation */}
-          <div>
-            <audio 
-              controls 
-              aria-label="Audio pronunciation of Jaichuang Stellmacher" 
-              ref={audioRef}
-              onEnded={handleAudioEnded} // Add event listener for audio end
-            >
-              <source src="/assets/Jai_pronounce.m4a" type="audio/mp4" />
-              Your browser does not support the audio element.
-            </audio>
-          </div>
+          <audio 
+            controls 
+            aria-label="Audio pronunciation of Jaichuang Stellmacher" 
+            ref={audioRef}
+            onEnded={handleAudioEnded}
+            className="mb-4"
+          >
+            <source src="/assets/Jai_pronounce.m4a" type="audio/mp4" />
+            Your browser does not support the audio element.
+          </audio>
 
         </div>
       </div>
