@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import HeroSection from '../components/HeroSection';
 import CTASection from '../components/CTASection';
 import IconSkills from '../components/IconSkills';
@@ -10,7 +9,7 @@ import ContactSection from '../components/ContactSection';
 import ExperienceSection from '../components/Experience';
 import SoftSkills from '../components/SoftSkills';
 import ConditionalFloatingSquid from '../components/ConditionalFloatingSquid';
-import FeedbackForm from '@/components/FeedbackForm';
+import Footer from '../components/Footer';
 
 const Page = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -33,11 +32,10 @@ const Page = () => {
       <ExperienceSection className="mb-8" />
       <ProjectsSection className="mb-8" />
       <ContactSection className="mb-8" />
-      <FeedbackForm className="mb-8" />
       <ConditionalFloatingSquid scrollY={scrollY} />
+      <Footer /> {/* Add Footer component */}
     </>
   );
 };
-
 
 export default Page;

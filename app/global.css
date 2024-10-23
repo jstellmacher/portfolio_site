@@ -206,3 +206,11 @@ canvas {
 .resume-preview p {
   margin: 5px 0;
 }
+.diamond-shape {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 14px solid blue; /* Change this color to your preference */
+  margin-top: -7px; /* Adjust this value to center the diamond vertically */
+}

@@ -60,7 +60,7 @@ const HeroSection = () => {
                   alt="Jaichuang Stellmacher"
                   width={1200}
                   height={1200}
-                  objectFit="cover"
+                  style={{ objectFit: 'cover' }}
                   className="rounded-full"
                 />
               </div>

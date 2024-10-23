@@ -1,0 +1,124 @@
+/* UniqueForm.css */
+
+.unique-form {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .unique-wrapper {
+    position: relative;
+    transform: skewY(-14deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .unique-wrapper li, .unique-button {
+    position: relative;
+    list-style: none;
+    width: 200px;
+    margin: 10px 0;
+    z-index: var(--i);
+    transition: transform 0.3s;
+    color: white;
+  }
+  
+  .unique-wrapper li::before, .unique-button::before {
+    position: absolute;
+    content: '';
+    background: #6d74e3;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    height: 40px;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.3s;
+  }
+  
+  .unique-wrapper li::after, .unique-button::after {
+    position: absolute;
+    content: '';
+    background: #6d74e3;
+    width: 200px;
+    height: 40px;
+    top: -40px;
+    left: 0;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 0.3s;
+  }
+  
+  /* Custom Colors for Input Fields */
+  .unique-wrapper li:nth-child(1)::after, .unique-wrapper li:nth-child(1)::before {
+    background-color: #d8daf7;
+  }
+  
+  .unique-wrapper li:nth-child(2)::after, .unique-wrapper li:nth-child(2)::before {
+    background-color: #c2c5f3;
+  }
+  
+  .unique-wrapper li:nth-child(3)::after, .unique-wrapper li:nth-child(3)::before {
+    background-color: #989deb;
+  }
+  
+  /* Inputs Styling */
+  .unique-input, .unique-button {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    color: black;
+    outline: none;
+    position: relative;
+  }
+  
+  .unique-input::placeholder {
+    color: black;
+  }
+  
+  /* Background Colors for Inputs */
+  .unique-wrapper li:nth-child(1) .unique-input {
+    background: #d8daf7;
+  }
+  
+  .unique-wrapper li:nth-child(2) .unique-input {
+    background: #c2c5f3;
+  }
+  
+  .unique-wrapper li:nth-child(3) .unique-input {
+    background: #989deb;
+  }
+  
+  /* Focus States */
+  .unique-wrapper li:nth-child(1) .unique-input:focus {
+    border: 3.5px solid #d8daf7;
+  }
+  
+  .unique-wrapper li:nth-child(2) .unique-input:focus {
+    border: 3.5px solid #c2c5f3;
+  }
+  
+  .unique-wrapper li:nth-child(3) .unique-input:focus {
+    border: 3.5px solid #989deb;
+  }
+  
+  /* Hover Effects */
+  .unique-wrapper li:hover, .unique-button:hover {
+    transform: translateX(-20px);
+  }
+  
+  .unique-button {
+    background: #6d74e3;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .unique-button:hover, .unique-button:hover::before, .unique-button:hover::after {
+    background: #575cb5;
+  }
+  
+  .unique-button:active {
+    transform: translateX(0px);
+  }
+  
