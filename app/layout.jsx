@@ -46,28 +46,28 @@ const Layout = ({ children, pathname }) => {
 
   return (
     <html lang="en" className={`${montserrat.variable} ${playfair.variable}`}>
-      <body className={`transition-colors duration-300 bg-gradient-to-r ${isDarkMode ? 'from-blue-900 to-purple-800' : 'from-white to-gray-200'} font-sans`}>
-  {/* Include the Navigation component here */}
-  <Navigation pathname={pathname} />
+<body className={`transition-colors duration-300 ${isDarkMode ? 'bg-gradient-to-r from-blue-900 to-purple-800' : 'bg-gradient-to-r from-[#ffffff] to-[#f7f7f7] text-foreground'} font-sans`}>
+{/* Include the Navigation component here */}
+        <Navigation pathname={pathname} />
 
-  {/* Theme Toggle Button */}
-  <div className="flex items-center justify-center my-4">
-    <button
-      onClick={toggleTheme}
-      className={`p-3 rounded-full transition-all duration-300 focus:outline-none ${
-        isDarkMode ? 'bg-gray-800 text-yellow-300' : 'bg-yellow-300 text-gray-800'
-      }`}
-    >
-      {isDarkMode ? (
-        <GiNightSleep className="w-8 h-8" />
-      ) : (
-        <BsEmojiSunglasses className="w-8 h-8" />
-      )}
-    </button>
-  </div>
+        {/* Theme Toggle Button */}
+        <div className="flex items-center justify-center my-4">
+          <button
+            onClick={toggleTheme}
+            className={`p-3 rounded-full transition-all duration-300 focus:outline-none ${
+              isDarkMode ? 'bg-gray-800 text-yellow-300' : 'bg-gray-800 text-white'
+            }`}
+          >
+            {isDarkMode ? (
+              <GiNightSleep className="w-8 h-8" />
+            ) : (
+              <BsEmojiSunglasses className="w-8 h-8" />
+            )}
+          </button>
+        </div>
 
-  {children}
-</body>
+        {children}
+      </body>
     </html>
   );
 };

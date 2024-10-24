@@ -68,9 +68,9 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className=" text-center">
-      <div className="w-full sm:w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[60vw] mx-auto px-4 pt-2 sm:px-6 bg-gray-800 dark:bg-gray-100 rounded-xl">
-        <h2 className="pt-2 text-4xl sm:text-5xl font-bold text-gray-100 dark:text-gray-800 mb-8 sm:mb-12">Projects</h2>
+    <section id="projects" className="text-center">
+<div className="bg-white p-6 rounded-lg shadow-lg mx-auto max-w-6xl">
+<h2 className="pt-2 text-4xl sm:text-5xl font-bold text-gray-800 dark:text-gray-800 mb-8 sm:mb-12">Projects</h2>
 
         {/* Category filter buttons */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">

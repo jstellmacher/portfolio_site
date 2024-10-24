@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import CTASection from '../components/CTASection';
-import IconSkills from '../components/IconSkills';
+import IconSkills from '../components/TechnicalSkills';
 import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
 import ExperienceSection from '../components/Experience';

@@ -38,7 +38,7 @@ const UniqueContactForm = () => {
   };
 
   return (
-    <div className="form-container">
+    <div id="contact" className="form-container">
 <div className="text-left text-gray-800 mb-4">
 <h2>Contact Me</h2>
       </div>
