@@ -59,7 +59,7 @@ const CTASection = () => {
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
   return (
-    <section id="about" className="py-20 bg-transparent text-center text-white relative">
+    <section id="about" className="bg-transparent text-center text-white relative">
       <div className="container mx-auto px-4">
         <div className="bg-white text-gray-800 p-10 rounded-lg shadow-lg mx-auto max-w-4xl mb-8">
           <div className="flex items-center justify-center mb-8">

@@ -10,6 +10,7 @@ import ExperienceSection from '../components/Experience';
 import SoftSkills from '../components/SoftSkills';
 import ConditionalFloatingSquid from '../components/ConditionalFloatingSquid';
 import Footer from '../components/Footer';
+import CreditsPage from '../components/CreditsPage';
 
 const Page = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -30,10 +31,11 @@ const Page = () => {
       <IconSkills className="mb-8" />
       <SoftSkills className="mb-8" />
       <ExperienceSection className="mb-8" />
-      <ProjectsSection className="mb-8" />
+      <ProjectsSection className="" />
       <ContactSection className="mb-8" />
       <ConditionalFloatingSquid scrollY={scrollY} />
-      <Footer /> {/* Add Footer component */}
+      <CreditsPage/>
+      <Footer />
     </>
   );
 };

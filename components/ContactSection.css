@@ -3,7 +3,9 @@
 .unique-form {
     display: flex;
     justify-content: center;
-  }
+    margin-left: 20px; /* Adjust this value to shift the form to the right */
+}
+
   
   .unique-wrapper {
     position: relative;
@@ -121,4 +123,17 @@
   .unique-button:active {
     transform: translateX(0px);
   }
+  .form-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 12px;
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    position: relative;
+}
+
+
   
+

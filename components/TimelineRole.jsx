@@ -25,7 +25,7 @@ const TimelineRole = ({ role }) => {
 
         {/* Role Description and Additional Info */}
         <div className="flex-1 w-full overflow-y-auto bg-gray-50 shadow-inner rounded-xl p-1 h-full max-h-[350px]">
-        <ul className="list-disc list-inside text-gray-800 mb-4 text-left">
+          <ul className="list-disc list-inside text-gray-800 mb-4 text-left">
             {role.description.map((desc, idx) => (
               <li key={idx} className="mb-2">{desc}</li>
             ))}
@@ -36,7 +36,7 @@ const TimelineRole = ({ role }) => {
                 className="text-lg font-semibold text-gray-800 cursor-pointer flex items-center justify-between"
                 onClick={() => toggleExpand(info.client)}
               >
-                {info.client} ({info.role}) 
+                {info.client} ({info.role})
                 <span className="ml-2">{expanded[info.client] ? '▲' : '▼'}</span>
               </h5>
               <AnimatePresence>
@@ -62,7 +62,9 @@ const TimelineRole = ({ role }) => {
       </div>
 
       {/* Year or Date */}
-      <div className="mt-2 text-sm text-gray-600">{role.date}</div>
+      <div className="mt-4 text-base font-semibold text-indigo-600 bg-indigo-100 p-2 rounded-lg shadow-sm">
+        {role.date}
+      </div>
     </div>
   );
 };
