@@ -32,21 +32,23 @@ const softSkills = [
     { name: 'Presentation Skills', icon: <GiPublicSpeaker className="text-3xl text-yellow-500" /> },
     { name: 'Organizational Skills', icon: <FaClock className="text-3xl text-pink-500" /> },
     { name: 'Motivational Skills', icon: <FaCreativeCommons className="text-3xl text-red-500" /> },
-  ];
+];
 
 const SoftSkills = () => (
-  <div className="bg-white p-6 rounded-lg shadow-lg mx-auto max-w-6xl mt-10">
+  <div className="bg-white p-6 rounded-lg shadow-lg mx-auto max-w-6xl mt-10 border border-blue-100">
     <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Soft Skills</h2>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center">
-      {softSkills.map(skill => (
-        <div
-          key={skill.name}
-          className="flex flex-col items-center text-center hover:animate-bob transition-transform duration-300 ease-in-out transform hover:scale-105"
-        >
-          {skill.icon}
-          <p className="mt-2 text-sm font-medium text-gray-800">{skill.name}</p>
-        </div>
-      ))}
+    <div className="overflow-y-auto max-h-96"> {/* Set max height and enable vertical overflow */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center">
+        {softSkills.map(skill => (
+          <div
+            key={skill.name}
+            className="flex flex-col items-center text-center hover:animate-bob transition-transform duration-300 ease-in-out transform hover:scale-105"
+          >
+            {skill.icon}
+            <p className="mt-2 text-sm font-medium text-gray-800">{skill.name}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 );

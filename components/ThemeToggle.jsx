@@ -1,25 +1,29 @@
-// components/ThemeToggle.js
 import { useEffect, useState } from 'react';
 
 const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleTheme = () => {
-    setIsDarkMode((prev) => !prev);
+    const newTheme = !isDarkMode ? 'dark' : 'light'; // Toggle between dark and light
+    setIsDarkMode(!isDarkMode);
     document.documentElement.classList.toggle('dark', !isDarkMode);
+    localStorage.setItem('theme', newTheme); // Store the user's choice
   };
 
   useEffect(() => {
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme) {
-      setIsDarkMode(currentTheme === 'dark');
-      document.documentElement.classList.toggle('dark', currentTheme === 'dark');
+    const storedTheme = localStorage.getItem('theme');
+    
+    if (storedTheme) {
+      // If there is a stored theme, apply it
+      setIsDarkMode(storedTheme === 'dark');
+      document.documentElement.classList.toggle('dark', storedTheme === 'dark');
+    } else {
+      // If no theme is stored, start with dark mode
+      setIsDarkMode(true);
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark'); // Save dark mode as the default choice
     }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-  }, [isDarkMode]);
+  }, []); // Run once when the component mounts
 
   return (
     <button onClick={toggleTheme} className="p-2">

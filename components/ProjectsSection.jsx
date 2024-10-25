@@ -69,7 +69,7 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="text-center">
-<div className="bg-white p-6 rounded-lg shadow-lg mx-auto max-w-6xl">
+<div className="bg-white p-6 rounded-lg shadow-lg mx-auto max-w-6xl border border-blue-100">
 <h2 className="pt-2 text-4xl sm:text-5xl font-bold text-gray-800 dark:text-gray-800 mb-8 sm:mb-12">Projects</h2>
 
         {/* Category filter buttons */}

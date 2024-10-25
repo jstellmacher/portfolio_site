@@ -18,12 +18,12 @@ const ExperienceSection = () => {
   })).filter(section => section.roles.length > 0);
 
   return (
-    <section id="experience" className=" bg-transparent mx-auto max-w-6xl text-center rounded-lg">
+    <section id="experience" className=" bg-transparent mx-auto max-w-6xl text-center rounded-lg mt-4">
       <h2 className="text-4xl font-extrabold mb-4 text-gray-800 dark:text-white">Work Experience</h2>
       <select
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
-        className="mb-8 bg-white text-gray-800 dark:bg-gray-100 dark:text-gray-800 rounded-md px-4 py-2"
+        className="mb-8 text-gray-800 dark:bg-gray-100 dark:text-gray-800 rounded-md px-4 py-2"
       >
         <option value="all">All Experiences</option>
         <option value="technical">Technical Experience</option>
@@ -31,7 +31,7 @@ const ExperienceSection = () => {
       </select>
       
       {/* View toggle buttons */}
-      <div className="p-4 bg-gray-200 rounded-t-lg shadow-md">
+      <div className="p-4 bg-opacity-20 bg-gray-200 rounded-t-lg border border-blue-100 border-b-0">
       <button
     onClick={() => setView('cards')}
     className={`mr-4 px-4 py-2 rounded-lg ${view === 'cards' ? 'font-bold text-blue-600' : 'text-gray-700'}`}
@@ -47,7 +47,7 @@ const ExperienceSection = () => {
 </div>
 
       
-      <div className=" rounded-lg mx-auto max-w-6xl">
+      <div className="rounded-lg mx-auto max-w-6xl">
         <AnimatePresence>
           {view === 'cards' ? (
             filteredExperiences.map((expSection, sectionIndex) => (
@@ -59,8 +59,8 @@ const ExperienceSection = () => {
                 transition={{ duration: 0.5 }}
                 className="mb-16"
               >
-                <h3 className="text-3xl font-bold mb-8 text-gray-800 dark:bg-gray-100 dark:text-gray-800 flex items-center justify-center space-x-4 bg-gray-200 p-4 rounded-b-lg shadow-lg">
-                  <motion.span
+<h3 className="border border-blue-100 border-t-0 text-3xl font-bold mb-8 text-gray-800 dark:bg-gray-100 dark:text-gray-800 flex items-center justify-center space-x-4 bg-opacity-20 bg-gray-100 p-4 rounded-b-lg">
+<motion.span
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}

@@ -25,13 +25,13 @@ const Page = () => {
 
   return (
     <>
-      <HeroSection className="mb-8" />
-      <CTASection className="mb-8" />
-      <IconSkills className="mb-8" />
-      <SoftSkills className="mb-8" />
-      <ExperienceSection className="mb-8" />
-      <ProjectsSection className="" />
-      <ContactSection className="mb-8" />
+      <HeroSection  />
+      <CTASection  />
+      <IconSkills  />
+      <SoftSkills  />
+      <ExperienceSection />
+      <ProjectsSection  />
+      <ContactSection  />
       <ConditionalFloatingSquid scrollY={scrollY} />
       
       <Footer />

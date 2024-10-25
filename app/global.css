@@ -19,7 +19,7 @@
 
 /* Root Variables */
 :root {
-  --background: linear-gradient(to right, #ffffff, #f7f7f7); /* Light gradient from white to light gray */
+  --background: linear-gradient(to right, #e7e7e7, #ffe8e8); /* Light gradient from white to light gray */
   --foreground: #171717; /* Dark text color for light mode */
 }
 

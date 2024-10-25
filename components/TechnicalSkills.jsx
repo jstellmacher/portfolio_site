@@ -57,7 +57,7 @@ const SkillSection = ({ title, skillsArray }) => (
 );
 
 const IconSkills = () => (
-  <div className="bg-white p-6 rounded-lg shadow-lg mx-auto max-w-6xl">
+  <div className="bg-white p-6 rounded-lg shadow-lg mx-auto max-w-6xl border border-blue-100">
     <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Technical Skills</h2>
     <SkillSection title="Proficient" skillsArray={skills} />
     <div className="mt-8">
