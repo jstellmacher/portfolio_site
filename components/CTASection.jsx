@@ -61,8 +61,8 @@ const CTASection = () => {
   return (
     <section id="about" className="bg-transparent text-center text-white relative">
       <div className="container mx-auto px-4">
-        <div className="bg-white text-gray-800 p-10 rounded-lg shadow-xl mx-auto max-w-4xl mb-8 border border-blue-100">
-          <div className="flex items-center justify-center mb-8">
+      <div className="bg-white text-gray-800 p-6 rounded-lg shadow-xl mx-auto max-w-6xl mb-8 border border-blue-100">          
+        <div className="flex items-center justify-center mb-8">
             <FaHandsHelping className="text-black text-3xl mr-4" />
             <h2 className="text-4xl font-extrabold px-4">About Me</h2>
             <MdComputer className="text-black text-3xl ml-4" />

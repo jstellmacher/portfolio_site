@@ -23,7 +23,7 @@ const ExperienceSection = () => {
       <select
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
-        className="mb-8 text-gray-800 dark:bg-gray-100 dark:text-gray-800 rounded-md px-4 py-2"
+        className="mb-8 text-gray-800 dark:bg-white dark:text-gray-800 rounded-md px-4 py-2"
       >
         <option value="all">All Experiences</option>
         <option value="technical">Technical Experience</option>
@@ -31,16 +31,16 @@ const ExperienceSection = () => {
       </select>
       
       {/* View toggle buttons */}
-      <div className="p-4 bg-opacity-20 bg-gray-200 rounded-t-lg border border-blue-100 border-b-0">
+      <div className="p-4 bg-opacity-20 bg-gray-200 rounded-t-lg border border-blue-100 border-b-0 ">
       <button
     onClick={() => setView('cards')}
-    className={`mr-4 px-4 py-2 rounded-lg ${view === 'cards' ? 'font-bold text-blue-600' : 'text-gray-700'}`}
+    className={`mr-4 px-4 py-2 rounded-lg ${view === 'cards' ? 'font-bold text-blue-200' : 'dark:text-gray-100 text-gray-700'}`}
   >
     Card View
   </button>
   <button
     onClick={() => setView('timeline')}
-    className={`px-4 py-2 rounded-lg ${view === 'timeline' ? 'font-bold text-blue-600' : 'text-gray-700'}`}
+    className={`px-4 py-2 rounded-lg ${view === 'timeline' ? 'font-bold text-blue-200' : 'dark:text-gray-100 text-gray-700'}`}
   >
     Timeline View
   </button>
@@ -59,7 +59,7 @@ const ExperienceSection = () => {
                 transition={{ duration: 0.5 }}
                 className="mb-16"
               >
-<h3 className="border border-blue-100 border-t-0 text-3xl font-bold mb-8 text-gray-800 dark:bg-gray-100 dark:text-gray-800 flex items-center justify-center space-x-4 bg-opacity-20 bg-gray-100 p-4 rounded-b-lg">
+<h3 className="border border-blue-100 border-t-0 text-3xl font-bold mb-8 text-gray-800 dark:text-gray100 dark:bg-gray-100 dark:bg-opacity-20 dark:text-gray-800 flex items-center justify-center space-x-4 bg-opacity-20 bg-gray-100 p-4 rounded-b-lg">
 <motion.span
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
