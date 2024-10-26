@@ -1,3 +1,4 @@
+// app/page.jsx
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -9,7 +10,7 @@ import ContactSection from '../components/ContactSection';
 import ExperienceSection from '../components/Experience';
 import SoftSkills from '../components/SoftSkills';
 import Footer from '../components/Footer';
-import GltfCanvas from '../components/GltfBackgroundModel'; // Import the GLTF model component
+import GltfCanvas from '../components/GltfBackgroundModel'; // Correct import for the GLTF model component
 
 const Page = () => {
   const [scrollY, setScrollY] = useState(0);
