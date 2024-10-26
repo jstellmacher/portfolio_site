@@ -8,8 +8,8 @@ import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
 import ExperienceSection from '../components/Experience';
 import SoftSkills from '../components/SoftSkills';
-import ConditionalFloatingSquid from '../components/ConditionalFloatingSquid';
 import Footer from '../components/Footer';
+import GltfCanvas from '../components/GltfBackgroundModel'; // Import the GLTF model component
 
 const Page = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -25,15 +25,14 @@ const Page = () => {
 
   return (
     <>
-      <HeroSection  />
-      <CTASection  />
-      <IconSkills  />
-      <SoftSkills  />
+      <GltfCanvas scrollY={scrollY} /> {/* Add the GLTF model in the background */}
+      <HeroSection />
+      <CTASection />
+      <IconSkills />
+      <SoftSkills />
       <ExperienceSection />
-      <ProjectsSection  />
-      <ContactSection  />
-      <ConditionalFloatingSquid scrollY={scrollY} />
-      
+      <ProjectsSection />
+      <ContactSection />
       <Footer />
     </>
   );
