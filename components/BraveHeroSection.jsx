@@ -37,13 +37,13 @@ const BraveHeroSection = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4 bg-transparent text-white relative">
+    <div className="flex items-center justify-center min-h-screen p-4 bg-transparent relative dark:bg-gray-900 bg-gray-100">
       {isBraveBrowser && (
         <div className="absolute top-4 right-4 flex flex-col items-center">
           <div className="w-16 h-16 md:w-24 md:h-24 bg-[#FB542B] rounded-full flex items-center justify-center">
             <GiLion className="w-3/4 h-3/4 text-white" />
           </div>
-          <span className="mt-2 text-xs md:text-sm font-bold text-white">My Logo Representation of Brave Browser</span>
+          <span className="mt-2 text-xs md:text-sm font-bold text-gray-800 dark:text-white">My Logo Representation of Brave Browser</span>
         </div>
       )}
       <div className="flex flex-col items-center space-y-6 text-center">
@@ -63,8 +63,8 @@ const BraveHeroSection = () => {
             className="z-10"
           />
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold font-serif">Jaichuang Stellmacher</h1>
-        <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-light font-sans tracking-wide">
+        <h1 className="text-4xl md:text-5xl font-bold font-serif text-gray-900 dark:text-white">Jaichuang Stellmacher</h1>
+        <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-light font-sans tracking-wide text-gray-800 dark:text-gray-300">
           <span className="inline-block">Full-Stack Developer</span>
           <span className="mx-1 sm:mx-2">|</span>
           <span className="inline-block">IT Cloud & Data Consultant</span>
@@ -72,10 +72,9 @@ const BraveHeroSection = () => {
           <span className="inline-block">Project Manager</span>
         </h2>
         <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-          {/* Button to open PDF viewer */}
           <button 
             onClick={handleOpenPDF} 
-            className="bg-white text-green-400 py-2 px-4 md:py-3 md:px-5 rounded-lg font-sans font-semibold tracking-wide transition-all duration-300 hover:bg-green-400 hover:text-white text-sm md:text-base"
+            className="bg-green-500 text-white py-2 px-4 md:py-3 md:px-5 rounded-lg font-sans font-semibold tracking-wide transition-all duration-300 hover:bg-green-600 text-sm md:text-base"
           >
             View Resume
           </button>
@@ -84,7 +83,7 @@ const BraveHeroSection = () => {
 
         <div className="mt-8 max-w-md mx-auto">
           <div className="rounded-full bg-white bg-opacity-10 backdrop-blur-sm p-3 shadow-lg transition-all duration-300 ease-in-out hover:scale-110 hover:bg-opacity-20">
-            <p className="text-xs text-center text-gray-200 font-light transition-all duration-300 ease-in-out hover:text-sm hover:text-black hover:bg-opacity-100">
+            <p className="text-xs text-center text-gray-800 dark:text-white font-light transition-all duration-300 ease-in-out hover:text-sm hover:text-black hover:bg-opacity-100">
               {isBraveBrowser 
                 ? "You're viewing a special Brave Browser rendering! For the original Three.js experience, please check out my site on another browser."
                 : ""}
@@ -104,7 +103,7 @@ const BraveHeroSection = () => {
               X
             </button>
             <iframe
-              src="/assets/JaichuangStellmacher_Template.pdf" // Make sure this PDF is in the correct path
+              src="/assets/JaichuangStellmacher_Template.pdf"
               className="w-full flex-grow border-2 border-gray-300 rounded"
               title="Resume PDF"
             />

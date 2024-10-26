@@ -14,6 +14,7 @@ const HeroSection = () => {
 
   useEffect(() => {
     const detectBrave = async () => {
+      // Check if the browser is Brave
       if (navigator.brave && (await navigator.brave.isBrave())) {
         setIsBraveBrowser(true);
       }
@@ -39,6 +40,7 @@ const HeroSection = () => {
     }
   };
 
+  // If detected as Brave browser, render the BraveHeroSection
   if (isBraveBrowser) {
     return <BraveHeroSection />;
   }
