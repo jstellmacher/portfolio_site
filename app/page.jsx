@@ -1,5 +1,6 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import CTASection from '../components/CTASection';
@@ -9,7 +10,9 @@ import ContactSection from '../components/ContactSection';
 import ExperienceSection from '../components/Experience';
 import SoftSkills from '../components/SoftSkills';
 import Footer from '../components/Footer';
-import GltfCanvas from '../components/GltfBackgroundModel'; // Your GLTF model component
+
+// Dynamically import GltfCanvas with no SSR
+const GltfCanvas = dynamic(() => import('../components/GltfBackgroundModel'), { ssr: false });
 
 const Page = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -20,14 +23,12 @@ const Page = () => {
     window.addEventListener('scroll', handleScroll);
 
     const detectBrave = async () => {
-      // Check if the browser is Brave
       if (navigator.brave && (await navigator.brave.isBrave())) {
         setIsBraveBrowser(true);
       }
     };
     
-    detectBrave(); // Call the Brave detection
-    window.addEventListener('scroll', handleScroll);
+    detectBrave();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -36,7 +37,6 @@ const Page = () => {
 
   return (
     <>
-      {/* Render the GLTF model only if not using Brave */}
       {!isBraveBrowser && <GltfCanvas scrollY={scrollY} />}
       <HeroSection />
       <CTASection />

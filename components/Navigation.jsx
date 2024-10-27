@@ -108,7 +108,8 @@ const Navigation = ({ pathname }) => {
                 <NavLink href="#experience" label="Work" color="yellow" mobile onClick={handleNavigation} />
                 <NavLink href="#contact" label="Contact" color="purple" mobile onClick={handleNavigation} />
                 <NavLink href="/miniApps" label="Mini Apps" color="red" mobile onClick={handleNavigation} />
-                <NavLink href="/interests" label="Interests" color="indigo" mobile onClick={handleNavigation} />
+                {/* Replaced Interests link with My Articles */}
+                <NavLink href="/articles" label="My Articles" color="indigo" mobile onClick={handleNavigation} />
                 <LoginButton isLoggedIn={isLoggedIn} onClick={isLoggedIn ? handleLogout : handleLoginClick} mobile />
               </div>
             </div>
@@ -121,7 +122,8 @@ const Navigation = ({ pathname }) => {
           <NavLink href="#experience" label="Work" color="yellow" icon={<FaComputer className="mr-2"/>} onClick={handleNavigation} />
           <NavLink href="#contact" label="Contact" color="purple" icon={<GiCandlestickPhone className="mr-2" />} onClick={handleNavigation} />
           <NavLink href="/miniApps" label="Mini Apps" color="red" icon={<FaRocket className="mr-2" />} onClick={handleNavigation} />
-          <NavLink href="/interests" label="Interests" color="indigo" icon={<GoSmiley className="mr-2" />} onClick={handleNavigation} />
+          {/* Replaced Interests link with My Articles */}
+          <NavLink href="/articles" label="My Articles" color="indigo" icon={<GoSmiley className="mr-2" />} onClick={handleNavigation} />
           <LoginButton isLoggedIn={isLoggedIn} onClick={isLoggedIn ? handleLogout : handleLoginClick} />
         </div>
       )}

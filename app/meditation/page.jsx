@@ -3,7 +3,7 @@ import { useState } from 'react';
 import GrowingCircle from '../../components/Meditation/GrowingCircle';
 import PomodoroTimer from '../../components/Meditation/PomodoroTimer';
 import VideoPlayer from '../../components/Meditation/VideoPlayer';
-import MeditationNav from '../../components/Meditation/MeditationNav'; // Add this import
+import MeditationNav from '../../components/Meditation/MeditationNav';
 
 const MeditationPage = () => {
     const [showGrowingCircle, setShowGrowingCircle] = useState(false);
