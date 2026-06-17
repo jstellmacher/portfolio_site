@@ -1,85 +1,196 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { experiences } from '../public/data/experienceData';
-import RoleCard from './RoleCard';
-import Timeline from './Timeline';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { experiences } from "../public/data/experienceData";
 
 const ExperienceSection = () => {
-  const [filter, setFilter] = useState('all');
-  const [view, setView] = useState('cards'); // New state for view mode
+  const [openIndex, setOpenIndex] = useState(null);
+  const [retailOpen, setRetailOpen] = useState(false);
 
-  const filteredExperiences = experiences.map(section => ({
-    ...section,
-    roles: section.roles.filter(role => 
-      filter === 'all' || role.category === filter
-    )
-  })).filter(section => section.roles.length > 0);
+  // Flatten roles
+  const allRoles = experiences.flatMap((section) =>
+    section.roles.map((role) => ({
+      ...role,
+      section: section.section,
+      sectionIcon: section.icon,
+    })),
+  );
+
+  const technicalRoles = allRoles.filter((r) => r.category === "technical");
+  const retailRoles = allRoles.filter((r) => r.category === "service");
+
+  const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section id="experience" className=" bg-transparent mx-auto max-w-6xl text-center rounded-lg mt-4">
-      <h2 className="text-4xl font-extrabold mb-4 text-gray-800 dark:text-white">Work Experience</h2>
-      <select
-        value={filter}
-        onChange={(e) => setFilter(e.target.value)}
-        className="mb-8 text-gray-800 dark:bg-white dark:text-gray-800 rounded-md px-4 py-2"
+    <section id="experience" className="px-0 py-0">
+      <div
+        className="
+          max-w-3xl mx-auto px-8 py-12 rounded-2xl shadow-2xl
+          backdrop-blur-xl border
+          bg-gradient-to-br from-white/70 to-gray-200/40
+          dark:from-black/70 dark:to-black/40
+          border-white/40 dark:border-white/10
+        "
       >
-        <option value="all">All Experiences</option>
-        <option value="technical">Technical Experience</option>
-        <option value="service">Service & Retail Experience</option>
-      </select>
-      
-      {/* View toggle buttons */}
-      <div className="p-4 bg-opacity-20 bg-gray-200 rounded-t-lg border border-blue-100 border-b-0 ">
-      <button
-    onClick={() => setView('cards')}
-    className={`mr-4 px-4 py-2 rounded-lg ${view === 'cards' ? 'font-bold text-blue-200' : 'dark:text-gray-100 text-gray-700'}`}
-  >
-    Card View
-  </button>
-  <button
-    onClick={() => setView('timeline')}
-    className={`px-4 py-2 rounded-lg ${view === 'timeline' ? 'font-bold text-blue-200' : 'dark:text-gray-100 text-gray-700'}`}
-  >
-    Timeline View
-  </button>
-</div>
+        <h2 className="text-4xl font-bold mb-10 text-center text-gray-900 dark:text-gray-100">
+          Work Experience
+        </h2>
 
-      
-      <div className="rounded-lg mx-auto max-w-6xl">
-        <AnimatePresence>
-          {view === 'cards' ? (
-            filteredExperiences.map((expSection, sectionIndex) => (
-              <motion.div
-                key={sectionIndex}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -50 }}
-                transition={{ duration: 0.5 }}
-                className="mb-16"
+        {/* Accordion Container */}
+        <div className="flex flex-col gap-6">
+          {/* TECHNICAL ROLES */}
+          {technicalRoles.map((role, index) => {
+            const isOpen = openIndex === index;
+
+            return (
+              <div
+                key={index}
+                className="
+                  rounded-xl p-4 backdrop-blur-xl
+                  bg-white/60 dark:bg-black/40
+                  border border-white/40 dark:border-white/10
+                  shadow-lg transition hover:shadow-xl
+                "
               >
-<h3 className="border border-blue-100 border-t-0 text-3xl font-bold mb-8 text-gray-800 dark:text-gray100 dark:bg-gray-100 dark:bg-opacity-20 dark:text-gray-800 flex items-center justify-center space-x-4 bg-opacity-20 bg-gray-100 p-4 rounded-b-lg">
-<motion.span
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {expSection.icon()}  
-                  </motion.span>
-                  <span>{expSection.section}</span>
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {expSection.roles.map((role, roleIndex) => (
-                    <RoleCard key={roleIndex} role={role} />
+                {/* Header */}
+                <button
+                  onClick={() => toggle(index)}
+                  className="w-full flex justify-between items-center text-left"
+                >
+                  <div className="flex items-center gap-3">
+                    {role.icon()}
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                        {role.title}
+                      </h4>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">
+                        {role.company} — {role.location}
+                      </p>
+                      <p className="text-xs text-gray-600 dark:text-gray-400">
+                        {role.duration}
+                      </p>
+                    </div>
+                  </div>
+
+                  <span className="text-2xl text-gray-700 dark:text-gray-300">
+                    {isOpen ? "−" : "+"}
+                  </span>
+                </button>
+
+                {/* Expanded Content */}
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="mt-4"
+                    >
+                      <ul className="list-disc ml-6 text-gray-900 dark:text-gray-200 text-[0.95rem] leading-loose">
+                        {role.description.map((item, idx) => (
+                          <li key={idx}>{item}</li>
+                        ))}
+                      </ul>
+
+                      {/* Client Details with ICON */}
+                      {role.additionalInfo && (
+                        <details className="mt-4">
+                          <summary className="cursor-pointer text-blue-600 dark:text-blue-300 text-sm font-semibold flex items-center gap-2">
+                            <span className="text-lg">🗄️</span>
+                            Client Details
+                            <span className="text-lg">🗄️</span>
+                          </summary>
+
+                          <div className="mt-3 flex flex-col gap-4">
+                            {role.additionalInfo.map((client, idx) => (
+                              <div key={idx}>
+                                <p className="font-bold text-gray-900 dark:text-gray-100">
+                                  {client.client}
+                                </p>
+                                <p className="text-sm text-gray-900 dark:text-gray-200 mb-1">
+                                  {client.role}
+                                </p>
+                                <ul className="list-disc ml-6 text-sm text-gray-900 dark:text-gray-200 leading-loose">
+                                  {client.details.map((d, i) => (
+                                    <li key={i}>{d}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        </details>
+                      )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+
+          {/* RETAIL GROUP */}
+          <div
+            className="
+              rounded-xl p-4 backdrop-blur-xl
+              bg-white/60 dark:bg-black/40
+              border border-white/40 dark:border-white/10
+              shadow-lg transition hover:shadow-xl
+            "
+          >
+            <button
+              onClick={() => setRetailOpen(!retailOpen)}
+              className="w-full flex justify-between items-center text-left"
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">🛒</span>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                  Retail & Service Experience ({retailRoles.length})
+                </h4>
+              </div>
+
+              <span className="text-2xl text-gray-700 dark:text-gray-300">
+                {retailOpen ? "−" : "+"}
+              </span>
+            </button>
+
+            <AnimatePresence>
+              {retailOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="mt-4 flex flex-col gap-6"
+                >
+                  {retailRoles.map((role, idx) => (
+                    <div key={idx} className="flex flex-col gap-2">
+                      <div className="flex items-center gap-3">
+                        {role.icon()}
+                        <div>
+                          <h4 className="text-md font-semibold text-gray-900 dark:text-gray-100">
+                            {role.title}
+                          </h4>
+                          <p className="text-sm text-gray-700 dark:text-gray-300">
+                            {role.company} — {role.location}
+                          </p>
+                          <p className="text-xs text-gray-600 dark:text-gray-400">
+                            {role.duration}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* ⭐ RESTORED RETAIL BULLETS */}
+                      <ul className="list-disc ml-6 text-gray-900 dark:text-gray-200 text-sm leading-loose">
+                        {role.description.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
-                </div>
-              </motion.div>
-            ))
-          ) : (
-            <Timeline filter={filter} /> // Render the Timeline component
-          )}
-        </AnimatePresence>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
       </div>
     </section>
   );

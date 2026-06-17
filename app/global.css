@@ -19,12 +19,20 @@
 
 /* Root Variables */
 :root {
-  --background: linear-gradient(to right, #e7e7e7, #ffe8e8); /* Light gradient from white to light gray */
+  --background: linear-gradient(
+    to right,
+    #e7e7e7,
+    #ffe8e8
+  ); /* Light gradient from white to light gray */
   --foreground: #171717; /* Dark text color for light mode */
 }
 
-[data-theme='dark'] {
-  --background: linear-gradient(to right, #0a0a0a, #1a1a1a); /* Dark gradient for dark mode */
+[data-theme="dark"] {
+  --background: linear-gradient(
+    to right,
+    #0a0a0a,
+    #1a1a1a
+  ); /* Dark gradient for dark mode */
   --foreground: #ededed; /* Light text color for dark mode */
 }
 
@@ -35,13 +43,20 @@ html {
 }
 
 body {
-  min-height: 100vh; /* Ensures body is tall enough to be scrollable */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  min-height: 100vh; /* OK — this is fine */
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease; /* Smooth transition */
 }
 
+/* ❌ THIS WAS BREAKING YOUR ENTIRE LAYOUT */
+/* ❌ It forced every section to be full screen height */
+/* ❌ This caused giant gaps under CTASection and others */
+/*
 section {
-  min-height: 100vh; /* Ensures sections are tall enough to be scrollable */
+  min-height: 100vh;
 }
+*/
 
 @media (max-width: 768px) {
   .nav {
@@ -58,7 +73,8 @@ section {
 
 /* Animations */
 @keyframes bob {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -67,9 +83,15 @@ section {
 }
 
 @keyframes bobbing {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .animate-bob {
@@ -109,6 +131,8 @@ canvas {
   z-index: 1;
 }
 
+/* ❗ These parallax rules are fine unless you see weird background behavior */
+/* Keeping them active since they don't affect spacing */
 .parallax {
   position: absolute;
   top: 0;
@@ -160,8 +184,12 @@ canvas {
 }
 
 @keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .animate-fade-out {
@@ -186,10 +214,10 @@ canvas {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   line-height: 1.6;
   border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .resume-preview h1 {
@@ -216,6 +244,6 @@ canvas {
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 14px solid blue; /* Change this color to your preference */
-  margin-top: -7px; /* Adjust this value to center the diamond vertically */
+  border-bottom: 14px solid blue;
+  margin-top: -7px;
 }

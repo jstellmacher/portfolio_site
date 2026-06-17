@@ -1,72 +1,121 @@
-'use client';
+"use client";
 
-import './global.css';
-import { Montserrat, Playfair_Display } from 'next/font/google';
-import { useEffect, useState } from 'react';
-import { BsEmojiSunglasses } from 'react-icons/bs';
-import { GiNightSleep } from 'react-icons/gi';
-import Navigation from '../components/Navigation'; // Adjusted import path
+import "./global.css";
+import { Montserrat, Playfair_Display } from "next/font/google";
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import { BsEmojiSunglasses } from "react-icons/bs";
+import { GiNightSleep } from "react-icons/gi";
 
-// Load Montserrat font
+const Navigation = dynamic(() => import("../components/Navigation"), {
+  ssr: false,
+});
+
 const montserrat = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
 });
 
-const Layout = ({ children, pathname }) => {
+const Layout = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [hydrated, setHydrated] = useState(false);
 
-  // Toggle theme function
-  const toggleTheme = () => {
-    setIsDarkMode((prev) => !prev);
-    document.documentElement.classList.toggle('dark', !isDarkMode);
-  };
-
-  // Load theme from local storage or system preference on mount
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-    
-    setIsDarkMode(theme === 'dark');
-    document.documentElement.classList.toggle('dark', theme === 'dark');
+    setHydrated(true);
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme) {
+      // User override exists → use it
+      const isDark = savedTheme === "dark";
+      setIsDarkMode(isDark);
+      document.documentElement.classList.toggle("dark", isDark);
+    } else {
+      // No override → follow system
+      const systemPrefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      setIsDarkMode(systemPrefersDark);
+      document.documentElement.classList.toggle("dark", systemPrefersDark);
+    }
   }, []);
 
-  // Save theme to local storage when it changes
+  // Save override when user toggles
   useEffect(() => {
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-  }, [isDarkMode]);
+    if (hydrated) {
+      localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+    }
+  }, [isDarkMode, hydrated]);
+
+  const toggleTheme = () => {
+    setIsDarkMode((prev) => !prev);
+    document.documentElement.classList.toggle("dark", !isDarkMode);
+  };
+
+  if (!hydrated) {
+    return (
+      <html>
+        <body className="bg-black w-full h-screen" />
+      </html>
+    );
+  }
 
   return (
     <html lang="en" className={`${montserrat.variable} ${playfair.variable}`}>
-<body className={`transition-colors duration-300 ${isDarkMode ? 'bg-gradient-to-r from-blue-900 to-purple-800' : 'bg-gradient-to-r from-[#ffffff] to-[#f7f7f7] text-foreground'} font-sans`}>
-{/* Include the Navigation component here */}
-        <Navigation pathname={pathname} />
+      <body
+        className={`
+          transition-colors duration-500 font-sans
+          ${
+            isDarkMode
+              ? "bg-gradient-to-b from-gray-900 via-black to-gray-950"
+              : "bg-gradient-to-b from-white via-gray-100 to-gray-200"
+          }
+        `}
+      >
+        <Navigation />
 
-        {/* Theme Toggle Button */}
-        <div className="flex items-center justify-center my-4">
+        {/* ⭐ Sliding Switch Theme Toggle */}
+        <div className="flex justify-end max-w-6xl mx-auto px-4 mt-4">
           <button
             onClick={toggleTheme}
-            className={`p-3 rounded-full transition-all duration-300 focus:outline-none ${
-              isDarkMode ? 'bg-gray-800 text-yellow-300' : 'bg-gray-800 text-white'
-            }`}
+            className={`
+              relative w-16 h-8 rounded-full flex items-center transition-all duration-300
+              backdrop-blur-xl border shadow-lg
+              ${
+                isDarkMode
+                  ? "bg-black/40 border-white/10"
+                  : "bg-white/40 border-black/10"
+              }
+            `}
           >
-            {isDarkMode ? (
-              <GiNightSleep className="w-8 h-8" />
-            ) : (
-              <BsEmojiSunglasses className="w-8 h-8" />
-            )}
+            <span
+              className={`
+                absolute w-7 h-7 rounded-full flex items-center justify-center shadow-md
+                transition-all duration-300
+                ${
+                  isDarkMode
+                    ? "translate-x-8 bg-white/20 text-yellow-300"
+                    : "translate-x-1 bg-white/70 text-gray-900"
+                }
+              `}
+            >
+              {isDarkMode ? (
+                <GiNightSleep className="w-5 h-5" />
+              ) : (
+                <BsEmojiSunglasses className="w-5 h-5" />
+              )}
+            </span>
           </button>
         </div>
 
-        {children}
+        <div className="max-w-6xl mx-auto px-4 space-y-24">{children}</div>
       </body>
     </html>
   );
